@@ -1,0 +1,132 @@
+/* 
+  Localizable.strings
+  TribeIPhone
+
+  Created by kita on 13-6-21.
+  Copyright (c) 2013年 kita. All rights reserved.
+*/
+
+// Message
+"message.filter.allMessage" = "全部消息";
+"message.comment" = "评论";
+"message.forward" = "转发";
+"message.contribute" = "写消息";
+"message.filter" = "筛选";
+"message.like" = "赞";
+"message.detail" = "消息详细";
+"message.refresh" = "刷新";
+"message.comment.count" = "评论：%d";
+"message.forward.count" = "转发：%d";
+"message.like.count" = "赞：%d";
+
+// Users
+"user.follower.count" = "粉丝：";
+"user.following.count" = "关注的人：";
+"user.follow" = "关注";
+"user.unfollow" = "取消关注";
+"user.filter.type.following" = "关注";
+"user.filter.type.follower" = "粉丝";
+"user.filter.type.joinGroup" = "参加的组";
+"user.filter.type.all" = "全部";
+"user.search.placeholder" = "检索名称、拼音、邮箱";
+"user.filter" = "筛选";
+"user.joinGroup" = "参加的组";
+"user.title" = "用户";
+"user.follower" = "粉丝";
+"user.folling" = "关注的人";
+"user.title.select" = "选择用户";
+"user.name" = "姓名";
+"user.photo" = "头像";
+"user.tel" = "手机";
+"user.email" = "邮件";
+"user.address" = "住址";
+"user.description" = "简介";
+"user.homepage.title" = "用户主页";
+"user.detail.title" = "用户详细";
+"user.select.title" = "用户选择";
+
+// Groups
+"group.join" = "加入";
+"group.invite" = "邀请";
+"group.leave" = "退出";
+"group.memberCount" = "成员人数：";
+"group.type.group" = "组";
+"group.type.department" = "部门";
+"group.type.all" = "组/部门";
+"group.search.placeholder" = "检索名称、拼音";
+"group.cell.memberCount" = "%d 成员";
+"group.members" = "成员一览";
+"group.name" = "名称";
+"group.photo" = "头像";
+"group.secure" = "公开";
+"group.tag" = "标签";
+"group.description" = "简介";
+"group.create" = "新建组";
+"group.title" = "组/部门";
+"group.joinList.title" = "参加的组";
+"group.homepage.title" = "组/部门主页";
+"group.detail.title" = "组/部门详细";
+"group.select.title" = "组/部门选择";
+
+
+// Files
+"file.type.image" = "图片";
+"file.type.video" = "视频";
+"file.type.audio" = "音频";
+"file.type.application" = "其它";
+"file.type.all" = "全部";
+"file.title" = "文书";
+"file.detail.title" = "文件详细";
+"file.name" = "文件名：";
+"file.owner" = "发布者：";
+"file.size" = "文件大小：";
+"file.date" = "更新时间：";
+"file.history" = "文件履历";
+"file.select.title" = "文件选择";
+
+// Setting
+"setting.confirmClearCache" = "确定删除吗？";
+"setting.title.server" =  "服务器";
+"setting.ipAddress" = "地址";
+"setting.port" = "端口";
+"setting.title.cache" = "缓存";
+"setting.cacheSize" = "缓存容量";
+"setting.clearCache" = "清除缓存数据";
+"setting.logout" = "注销";
+"setting.version" = "版本信息";
+"setting.title" = "设定";
+
+// Login
+"login.id.placeholder" = "邮箱地址";
+"login.password.placeholder" = "密码";
+"login.login" = "登录";
+
+
+// Error
+"error.network.dosnotWork" = "无法连接网络";
+"error.FetchError" = "无法获取数据";
+"error.updateError" = "更新失败";
+"error.nullUid" = "邮箱地址不能为空";
+"error.nullPassWord" = "密码不能为空";
+"error.loginError" = "登录失败";
+"error.loginError.detail" = "登录验证失败";
+
+// shortMail
+"shortmail.title" = "私信";
+
+// Notification
+"notification.title" = "通知";
+"notification.atMe" = "提到我";
+"notification.comment" = "评论";
+"notification.notify" = "通知";
+
+
+// Others
+"msg.updateSuccess" = "更新成功";
+"msg.saveSuccess" = "已保存";
+"btn.ok" = "确定";
+"btn.cancel" = "取消";
+"account.title" = "账户";
+"home.title" = "首页";
+"home.more" = "更多";
+

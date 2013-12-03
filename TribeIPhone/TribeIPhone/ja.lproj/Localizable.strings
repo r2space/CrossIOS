@@ -1,0 +1,130 @@
+/* 
+  Localizable.strings
+  TribeIPhone
+
+  Created by kita on 13-6-21.
+  Copyright (c) 2013年 kita. All rights reserved.
+*/
+
+"message.filter.allMessage" = "すべてメッセージ";
+"message.comment" = "コメント";
+"message.forward" = "転送";
+"message.contribute" = "メッセージ";
+"message.filter" = "フィルター";
+"message.like" = "いいね";
+"message.detail" = "メッセージ詳細";
+"message.refresh" = "リフレッシュ";
+"message.comment.count" = "コメント：%d";
+"message.forward.count" = "転送：%d";
+"message.like.count" = "いいね：%d";
+
+// Users
+"user.follower.count" = "フォロワー：";
+"user.following.count" = "フォロー：";
+"user.follow" = "フォロー";
+"user.unfollow" = "アンフォロー";
+"user.filter.type.following" = "フォロー";
+"user.filter.type.follower" = "フォロワー";
+"user.filter.type.joinGroup" = "所属グループ";
+"user.filter.type.all" = "全て";
+"user.search.placeholder" = "検索名称、ローマ字、メールアドレス";
+"user.filter" = "フィルタ";
+"user.joinGroup" = "所属グループ";
+"user.title" = "ユーザ";
+"user.follower" = "フォロワー";
+"user.folling" = "フォロー";
+"user.title.select" = "ユーザ選択";
+"user.name" = "名称";
+"user.photo" = "画像";
+"user.tel" = "モバイル";
+"user.email" = "メール";
+"user.address" = "住所";
+"user.description" = "コメント";
+"user.homepage.title" = "ユーザプロフィール";
+"user.detail.title" = "ユーザ詳細";
+"user.select.title" = "ユーザ選択";
+
+// Groups
+"group.join" = "参加";
+"group.invite" = "招待";
+"group.leave" = "退却";
+"group.memberCount" = "メンバー：";
+"group.type.group" = "グループ";
+"group.type.department" = "部署";
+"group.type.all" = "グループ・部署";
+"group.search.placeholder" = "検索名称、ローマ字";
+"group.cell.memberCount" = "%d メンバー";
+"group.members" = "メンバー";
+"group.name" = "名前";
+"group.photo" = "画像";
+"group.secure" = "公開";
+"group.tag" = "タグ";
+"group.description" = "コメント";
+"group.create" = "新規グループ";
+"group.title" = "グループ・部署";
+"group.joinList.title" = "所属グループ";
+"group.homepage.title" = "グループ・部署プロフィール";
+"group.detail.title" = "グループ・部署詳細";
+"group.select.title" = "グループ・部署選択";
+
+// Files
+"file.type.image" = "画像";
+"file.type.video" = "ビデオ";
+"file.type.audio" = "音声";
+"file.type.application" = "その他";
+"file.type.all" = "全て";
+"file.title" = "文書";
+"file.detail.title" = "文書詳細";
+"file.name" = "名前：";
+"file.owner" = "作成者：";
+"file.size" = "サイズ：";
+"file.date" = "更新日時：";
+"file.history" = "更新履歴";
+"file.select.title" = "文書選択";
+
+
+// Setting
+"setting.confirmClearCache" = "削除してもよろしいですか？";
+"setting.title.server" =  "サーバ";
+"setting.ipAddress" = "アドレス";
+"setting.port" = "ポート";
+"setting.title.cache" = "キャッシュ";
+"setting.cacheSize" = "容量";
+"setting.clearCache" = "クリア";
+"setting.logout" = "ログアウト";
+"setting.version" = "バージョン";
+"setting.title" = "設定";
+
+// Login
+"login.id.placeholder" = "メールアドレス";
+"login.password.placeholder" = "パスワード";
+"login.login" = "ログイン";
+
+// Error
+"error.network.dosnotWork" = "ネットに接続出来ません";
+"error.FetchError" = "データを取得出来ません";
+"error.updateError" = "更新失敗";
+"error.nullUid" = "メールアドレスを入力してください";
+"error.nullPassWord" = "パスワードを入力してください";
+"error.loginError" = "登録失敗";
+"error.loginError.detail" = "認証失敗";
+
+// shortMail
+"shortmail.title" = "Sメール";
+
+// Notification
+"notification.title" = "通知";
+"notification.atMe" = "関わる";
+"notification.comment" = "コメント";
+"notification.notify" = "通知";
+
+
+// Others
+"msg.updateSuccess" = "更新成功";
+"msg.saveSuccess" = "保存完了";
+"btn.ok" = "はい";
+"btn.cancel" = "いいえ";
+"account.title" = "アカウント";
+"home.title" = "ホーム";
+"home.more" = "その他";
+

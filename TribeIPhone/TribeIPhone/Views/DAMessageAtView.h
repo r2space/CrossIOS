@@ -7,7 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-#import <TribeSDK/TribeSDKHeader.h>
+#import "TribeSDKHeader.h"
 
 typedef void (^AtDidTouched)(int type, NSString *objectId);
 

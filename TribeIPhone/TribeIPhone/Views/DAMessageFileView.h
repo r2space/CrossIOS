@@ -7,7 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-#import <TribeSDK/DAMessage.h>
+#import "TribeSDKHeader.h"
 
 typedef void (^FileDidTouched)(int type, NSString *fileId);
 

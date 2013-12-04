@@ -7,7 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-#import <TribeSDK/TribeSDKHeader.h>
+#import "TribeSDKHeader.h"
 #import "SocketIO.h"
 #import "SocketIOPacket.h"
 

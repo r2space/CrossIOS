@@ -7,7 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
-#import <TribeSDK/DAAFHttpClient.h>
+#import "TribeSDKHeader.h"
 #import "CQMFloatingController.h"
 #import "DALeftSideViewController.h"
 

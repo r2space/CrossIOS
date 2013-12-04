@@ -139,3 +139,6 @@ Podfile.lock
 #
 # ...none. Everything is now explained.
 .svn
+
+*.xccheckout
+

@@ -13,7 +13,7 @@
 #import "DAShortmailViewController.h"
 #import "DAMemberViewController.h"
 #import "DAGroupViewController.h"
-#import <TribeSDK/DALoginModule.h>
+#import "TribeSDKHeader.h"
 
 @interface DAMoreViewController ()
 

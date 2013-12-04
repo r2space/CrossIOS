@@ -8,7 +8,7 @@
 
 #import "DAMainViewController.h"
 #import "DALoginViewController.h"
-#import <TribeSDK/DAMacros.h>
+#import "TribeSDKHeader.h"
 #import "MBProgressHUD.h"
 #import "DAHelper.h"
 

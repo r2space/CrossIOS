@@ -18,7 +18,6 @@
 
 // Thirdpartys
 #import "AFNetworking.h"
-#import "GTMHTTPFetcher.h"
 #import "Jastor.h"
 
 //

@@ -5,7 +5,7 @@
 //  Created by mac on 13-5-7.
 //  Copyright (c) 2013年 kita. All rights reserved.
 //
-#import <TribeSDK/TribeSDKHeader.h>
+#import "TribeSDKHeader.h"
 #import "DAFileDetailViewController.h"
 #import "DAFileWebViewController.h"
 #import "DAFileWebViewController.h"

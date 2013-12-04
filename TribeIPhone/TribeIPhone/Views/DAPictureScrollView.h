@@ -7,7 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-#import <TribeSDK/TribeSDKHeader.h>
+#import "TribeSDKHeader.h"
 
 typedef void (^PageDidChanged)(int idx);
 typedef void (^PictureDidTouched)(int idx);

@@ -7,7 +7,7 @@
 //
 
 #import "DAAppDelegate.h"
-#import <TribeSDK/TribeSDKHeader.h>
+#import "TribeSDKHeader.h"
 #import "DAMainViewController.h"
 
 #import "IIViewDeckController.h"

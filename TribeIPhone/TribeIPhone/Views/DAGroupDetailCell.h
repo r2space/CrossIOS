@@ -7,8 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-#import <TribeSDK/DAGroup.h>
-#import <TribeSDK/DAFileModule.h>
+#import "TribeSDKHeader.h"
 
 typedef void (^GroupClicked)(NSString *groupId);
 

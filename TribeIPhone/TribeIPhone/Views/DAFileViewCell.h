@@ -7,7 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-#import <TribeSDK/TribeSDKHeader.h>
+#import "TribeSDKHeader.h"
 
 @interface DAFileViewCell : UITableViewCell
 @property (weak, nonatomic) IBOutlet UIImageView *imgFileType;

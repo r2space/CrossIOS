@@ -7,9 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
-#import <TribeSDK/DAFileModule.h>
-#import <TribeSDK/DAFile.h>
-#import <TribeSDK/DAFileList.h>
+#import "TribeSDKHeader.h"
+
 @interface DAFileWebViewController : UIViewController
 {
 }

@@ -212,7 +212,6 @@
 		F223E2EB171E4C320095F1C1 /* DAGroupViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F223E2E9171E4B930095F1C1 /* DAGroupViewCell.m */; };
 		F223E30D171EDFAA0095F1C1 /* DAMemberDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F223E30B171EDFA00095F1C1 /* DAMemberDetailViewController.m */; };
 		F223E30E171EDFAA0095F1C1 /* DAMemberDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F223E30C171EDFA30095F1C1 /* DAMemberDetailViewController.xib */; };
-		F227AD56174081360086CFC7 /* TribeSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F2A385691740721C00194E00 /* TribeSDK.framework */; };
 		F22B385D1733C35E0017A986 /* 7z.png in Resources */ = {isa = PBXBuildFile; fileRef = F22B38261733C35E0017A986 /* 7z.png */; };
 		F22B385E1733C35E0017A986 /* avi.png in Resources */ = {isa = PBXBuildFile; fileRef = F22B38271733C35E0017A986 /* avi.png */; };
 		F22B385F1733C35E0017A986 /* bmp.png in Resources */ = {isa = PBXBuildFile; fileRef = F22B38281733C35E0017A986 /* bmp.png */; };
@@ -470,6 +469,51 @@
 		F2A6EBDA1730EB0000C1A9BF /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F2A6EBD91730EB0000C1A9BF /* SystemConfiguration.framework */; };
 		F2A6EBDC1730EB0900C1A9BF /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F2A6EBDB1730EB0900C1A9BF /* MobileCoreServices.framework */; };
 		F2B29F441746580F002F7CF8 /* DABaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F2B29F431746580F002F7CF8 /* DABaseViewController.m */; };
+		F2C94211184EC176006D05D5 /* DAAFHttpClient.m in Sources */ = {isa = PBXBuildFile; fileRef = F2C941AC184EC176006D05D5 /* DAAFHttpClient.m */; };
+		F2C94212184EC176006D05D5 /* DAAFHttpOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = F2C941AE184EC176006D05D5 /* DAAFHttpOperation.m */; };
+		F2C94213184EC176006D05D5 /* DACommon.m in Sources */ = {isa = PBXBuildFile; fileRef = F2C941B0184EC176006D05D5 /* DACommon.m */; };
+		F2C94214184EC176006D05D5 /* DAJsonHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = F2C941B2184EC176006D05D5 /* DAJsonHelper.m */; };
+		F2C94216184EC176006D05D5 /* DACategoryModule.m in Sources */ = {isa = PBXBuildFile; fileRef = F2C941B9184EC176006D05D5 /* DACategoryModule.m */; };
+		F2C94217184EC176006D05D5 /* DAFileModule.m in Sources */ = {isa = PBXBuildFile; fileRef = F2C941BB184EC176006D05D5 /* DAFileModule.m */; };
+		F2C94218184EC176006D05D5 /* DAGroupModule.m in Sources */ = {isa = PBXBuildFile; fileRef = F2C941BD184EC176006D05D5 /* DAGroupModule.m */; };
+		F2C94219184EC176006D05D5 /* DAJsonAPIUrl.m in Sources */ = {isa = PBXBuildFile; fileRef = F2C941BF184EC176006D05D5 /* DAJsonAPIUrl.m */; };
+		F2C9421A184EC176006D05D5 /* DALoginModule.m in Sources */ = {isa = PBXBuildFile; fileRef = F2C941C1184EC176006D05D5 /* DALoginModule.m */; };
+		F2C9421B184EC176006D05D5 /* DAMessageModule.m in Sources */ = {isa = PBXBuildFile; fileRef = F2C941C3184EC176006D05D5 /* DAMessageModule.m */; };
+		F2C9421C184EC176006D05D5 /* DANotificationModule.m in Sources */ = {isa = PBXBuildFile; fileRef = F2C941C5184EC176006D05D5 /* DANotificationModule.m */; };
+		F2C9421D184EC176006D05D5 /* DAShortmailModule.m in Sources */ = {isa = PBXBuildFile; fileRef = F2C941C7184EC176006D05D5 /* DAShortmailModule.m */; };
+		F2C9421E184EC176006D05D5 /* DAUserModule.m in Sources */ = {isa = PBXBuildFile; fileRef = F2C941C9184EC176006D05D5 /* DAUserModule.m */; };
+		F2C94220184EC176006D05D5 /* DAApns.m in Sources */ = {isa = PBXBuildFile; fileRef = F2C941CE184EC176006D05D5 /* DAApns.m */; };
+		F2C94221184EC176006D05D5 /* DACategory.m in Sources */ = {isa = PBXBuildFile; fileRef = F2C941D0184EC176006D05D5 /* DACategory.m */; };
+		F2C94222184EC176006D05D5 /* DAContact.m in Sources */ = {isa = PBXBuildFile; fileRef = F2C941D2184EC176006D05D5 /* DAContact.m */; };
+		F2C94223184EC176006D05D5 /* DAContactList.m in Sources */ = {isa = PBXBuildFile; fileRef = F2C941D4184EC176006D05D5 /* DAContactList.m */; };
+		F2C94224184EC176006D05D5 /* DAError.m in Sources */ = {isa = PBXBuildFile; fileRef = F2C941D6184EC176006D05D5 /* DAError.m */; };
+		F2C94225184EC176006D05D5 /* DAFile.m in Sources */ = {isa = PBXBuildFile; fileRef = F2C941D8184EC176006D05D5 /* DAFile.m */; };
+		F2C94226184EC176006D05D5 /* DAFileDetail.m in Sources */ = {isa = PBXBuildFile; fileRef = F2C941DA184EC176006D05D5 /* DAFileDetail.m */; };
+		F2C94227184EC176006D05D5 /* DAFileHistory.m in Sources */ = {isa = PBXBuildFile; fileRef = F2C941DC184EC176006D05D5 /* DAFileHistory.m */; };
+		F2C94228184EC176006D05D5 /* DAFileList.m in Sources */ = {isa = PBXBuildFile; fileRef = F2C941DE184EC176006D05D5 /* DAFileList.m */; };
+		F2C94229184EC176006D05D5 /* DAGroup.m in Sources */ = {isa = PBXBuildFile; fileRef = F2C941E0184EC176006D05D5 /* DAGroup.m */; };
+		F2C9422A184EC176006D05D5 /* DAGroupList.m in Sources */ = {isa = PBXBuildFile; fileRef = F2C941E2184EC176006D05D5 /* DAGroupList.m */; };
+		F2C9422B184EC176006D05D5 /* DAMessage.m in Sources */ = {isa = PBXBuildFile; fileRef = F2C941E4184EC176006D05D5 /* DAMessage.m */; };
+		F2C9422C184EC176006D05D5 /* DAMessageList.m in Sources */ = {isa = PBXBuildFile; fileRef = F2C941E6184EC176006D05D5 /* DAMessageList.m */; };
+		F2C9422D184EC176006D05D5 /* DANotification.m in Sources */ = {isa = PBXBuildFile; fileRef = F2C941E8184EC176006D05D5 /* DANotification.m */; };
+		F2C9422E184EC176006D05D5 /* DANotificationList.m in Sources */ = {isa = PBXBuildFile; fileRef = F2C941EA184EC176006D05D5 /* DANotificationList.m */; };
+		F2C9422F184EC176006D05D5 /* DAShortmail.m in Sources */ = {isa = PBXBuildFile; fileRef = F2C941EC184EC176006D05D5 /* DAShortmail.m */; };
+		F2C94230184EC176006D05D5 /* DAShortmailList.m in Sources */ = {isa = PBXBuildFile; fileRef = F2C941EE184EC176006D05D5 /* DAShortmailList.m */; };
+		F2C94231184EC176006D05D5 /* DAUser.m in Sources */ = {isa = PBXBuildFile; fileRef = F2C941F0184EC176006D05D5 /* DAUser.m */; };
+		F2C94232184EC176006D05D5 /* DAUserList.m in Sources */ = {isa = PBXBuildFile; fileRef = F2C941F2184EC176006D05D5 /* DAUserList.m */; };
+		F2C94233184EC176006D05D5 /* AFHTTPClient.m in Sources */ = {isa = PBXBuildFile; fileRef = F2C941F6184EC176006D05D5 /* AFHTTPClient.m */; };
+		F2C94234184EC176006D05D5 /* AFHTTPRequestOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = F2C941F8184EC176006D05D5 /* AFHTTPRequestOperation.m */; };
+		F2C94235184EC176006D05D5 /* AFImageRequestOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = F2C941FA184EC176006D05D5 /* AFImageRequestOperation.m */; };
+		F2C94236184EC176006D05D5 /* AFJSONRequestOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = F2C941FC184EC176006D05D5 /* AFJSONRequestOperation.m */; };
+		F2C94237184EC176006D05D5 /* AFNetworkActivityIndicatorManager.m in Sources */ = {isa = PBXBuildFile; fileRef = F2C941FE184EC176006D05D5 /* AFNetworkActivityIndicatorManager.m */; };
+		F2C94238184EC176006D05D5 /* AFPropertyListRequestOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = F2C94201184EC176006D05D5 /* AFPropertyListRequestOperation.m */; };
+		F2C94239184EC176006D05D5 /* AFURLConnectionOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = F2C94203184EC176006D05D5 /* AFURLConnectionOperation.m */; };
+		F2C9423A184EC176006D05D5 /* AFXMLRequestOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = F2C94205184EC176006D05D5 /* AFXMLRequestOperation.m */; };
+		F2C9423B184EC176006D05D5 /* UIImageView+AFNetworking.m in Sources */ = {isa = PBXBuildFile; fileRef = F2C94207184EC176006D05D5 /* UIImageView+AFNetworking.m */; };
+		F2C9423C184EC176006D05D5 /* Jastor.m in Sources */ = {isa = PBXBuildFile; fileRef = F2C9420A184EC176006D05D5 /* Jastor.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		F2C9423D184EC176006D05D5 /* JastorRuntimeHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = F2C9420C184EC176006D05D5 /* JastorRuntimeHelper.m */; };
+		F2C9423E184EC176006D05D5 /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = F2C9420F184EC176006D05D5 /* Reachability.m */; };
+		F2C94241184EC25A006D05D5 /* DARequestHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = F2C94240184EC25A006D05D5 /* DARequestHelper.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -1023,7 +1067,6 @@
 		F29FBF88171D2FDE006C9CCB /* DALoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DALoginViewController.h; sourceTree = "<group>"; };
 		F29FBF89171D2FDE006C9CCB /* DALoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DALoginViewController.m; sourceTree = "<group>"; };
 		F29FBF8A171D2FDE006C9CCB /* DALoginViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DALoginViewController.xib; sourceTree = "<group>"; };
-		F2A385691740721C00194E00 /* TribeSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = TribeSDK.framework; path = "../TribeSDK/build/Debug-framework/TribeSDK.framework"; sourceTree = "<group>"; };
 		F2A6EABA172AD09900C1A9BF /* DAShortmailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DAShortmailViewController.h; sourceTree = "<group>"; };
 		F2A6EABB172AD09900C1A9BF /* DAShortmailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DAShortmailViewController.m; sourceTree = "<group>"; };
 		F2A6EABC172AD09900C1A9BF /* DAShortmailViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DAShortmailViewController.xib; sourceTree = "<group>"; };
@@ -1037,6 +1080,165 @@
 		F2A6EBDB1730EB0900C1A9BF /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
 		F2B29F421746580F002F7CF8 /* DABaseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DABaseViewController.h; sourceTree = "<group>"; };
 		F2B29F431746580F002F7CF8 /* DABaseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DABaseViewController.m; sourceTree = "<group>"; };
+		F2C9409E184EB8BB006D05D5 /* AFHTTPClient.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AFHTTPClient.h; sourceTree = "<group>"; };
+		F2C9409F184EB8BB006D05D5 /* AFHTTPRequestOperation.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AFHTTPRequestOperation.h; sourceTree = "<group>"; };
+		F2C940A0184EB8BB006D05D5 /* AFImageRequestOperation.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AFImageRequestOperation.h; sourceTree = "<group>"; };
+		F2C940A1184EB8BB006D05D5 /* AFJSONRequestOperation.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AFJSONRequestOperation.h; sourceTree = "<group>"; };
+		F2C940A2184EB8BB006D05D5 /* AFNetworkActivityIndicatorManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AFNetworkActivityIndicatorManager.h; sourceTree = "<group>"; };
+		F2C940A3184EB8BB006D05D5 /* AFNetworking.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AFNetworking.h; sourceTree = "<group>"; };
+		F2C940A4184EB8BB006D05D5 /* AFPropertyListRequestOperation.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AFPropertyListRequestOperation.h; sourceTree = "<group>"; };
+		F2C940A5184EB8BB006D05D5 /* AFURLConnectionOperation.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AFURLConnectionOperation.h; sourceTree = "<group>"; };
+		F2C940A6184EB8BB006D05D5 /* AFXMLRequestOperation.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AFXMLRequestOperation.h; sourceTree = "<group>"; };
+		F2C940A7184EB8BB006D05D5 /* DAAFHttpClient.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DAAFHttpClient.h; sourceTree = "<group>"; };
+		F2C940A8184EB8BB006D05D5 /* DAAFHttpOperation.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DAAFHttpOperation.h; sourceTree = "<group>"; };
+		F2C940A9184EB8BB006D05D5 /* DAApns.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DAApns.h; sourceTree = "<group>"; };
+		F2C940AA184EB8BB006D05D5 /* DACategory.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DACategory.h; sourceTree = "<group>"; };
+		F2C940AB184EB8BB006D05D5 /* DACategoryModule.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DACategoryModule.h; sourceTree = "<group>"; };
+		F2C940AC184EB8BB006D05D5 /* DACommon.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DACommon.h; sourceTree = "<group>"; };
+		F2C940AD184EB8BB006D05D5 /* DAContact.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DAContact.h; sourceTree = "<group>"; };
+		F2C940AE184EB8BB006D05D5 /* DAContactList.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DAContactList.h; sourceTree = "<group>"; };
+		F2C940AF184EB8BB006D05D5 /* DAError.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DAError.h; sourceTree = "<group>"; };
+		F2C940B0184EB8BB006D05D5 /* DAFile.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DAFile.h; sourceTree = "<group>"; };
+		F2C940B1184EB8BB006D05D5 /* DAFileDetail.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DAFileDetail.h; sourceTree = "<group>"; };
+		F2C940B2184EB8BB006D05D5 /* DAFileHistory.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DAFileHistory.h; sourceTree = "<group>"; };
+		F2C940B3184EB8BB006D05D5 /* DAFileList.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DAFileList.h; sourceTree = "<group>"; };
+		F2C940B4184EB8BB006D05D5 /* DAFileModule.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DAFileModule.h; sourceTree = "<group>"; };
+		F2C940B5184EB8BB006D05D5 /* DAGroup.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DAGroup.h; sourceTree = "<group>"; };
+		F2C940B6184EB8BB006D05D5 /* DAGroupList.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DAGroupList.h; sourceTree = "<group>"; };
+		F2C940B7184EB8BB006D05D5 /* DAGroupModule.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DAGroupModule.h; sourceTree = "<group>"; };
+		F2C940B8184EB8BB006D05D5 /* DAJsonAPIUrl.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DAJsonAPIUrl.h; sourceTree = "<group>"; };
+		F2C940B9184EB8BB006D05D5 /* DAJsonHelper.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DAJsonHelper.h; sourceTree = "<group>"; };
+		F2C940BA184EB8BB006D05D5 /* DALoginModule.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DALoginModule.h; sourceTree = "<group>"; };
+		F2C940BB184EB8BB006D05D5 /* DAMacros.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DAMacros.h; sourceTree = "<group>"; };
+		F2C940BC184EB8BB006D05D5 /* DAMessage.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DAMessage.h; sourceTree = "<group>"; };
+		F2C940BD184EB8BB006D05D5 /* DAMessageList.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DAMessageList.h; sourceTree = "<group>"; };
+		F2C940BE184EB8BB006D05D5 /* DAMessageModule.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DAMessageModule.h; sourceTree = "<group>"; };
+		F2C940BF184EB8BB006D05D5 /* DANotification.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DANotification.h; sourceTree = "<group>"; };
+		F2C940C0184EB8BB006D05D5 /* DANotificationList.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DANotificationList.h; sourceTree = "<group>"; };
+		F2C940C1184EB8BB006D05D5 /* DANotificationModule.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DANotificationModule.h; sourceTree = "<group>"; };
+		F2C940C2184EB8BB006D05D5 /* DAPurchase.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DAPurchase.h; sourceTree = "<group>"; };
+		F2C940C3184EB8BB006D05D5 /* DAPurchaseList.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DAPurchaseList.h; sourceTree = "<group>"; };
+		F2C940C4184EB8BB006D05D5 /* DAPurchaseModule.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DAPurchaseModule.h; sourceTree = "<group>"; };
+		F2C940C5184EB8BB006D05D5 /* DARequestHelper.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DARequestHelper.h; sourceTree = "<group>"; };
+		F2C940C6184EB8BB006D05D5 /* DAShortmail.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DAShortmail.h; sourceTree = "<group>"; };
+		F2C940C7184EB8BB006D05D5 /* DAShortmailList.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DAShortmailList.h; sourceTree = "<group>"; };
+		F2C940C8184EB8BB006D05D5 /* DAShortmailModule.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DAShortmailModule.h; sourceTree = "<group>"; };
+		F2C940C9184EB8BB006D05D5 /* DATurnover.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DATurnover.h; sourceTree = "<group>"; };
+		F2C940CA184EB8BB006D05D5 /* DATurnoverList.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DATurnoverList.h; sourceTree = "<group>"; };
+		F2C940CB184EB8BB006D05D5 /* DATurnoverModule.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DATurnoverModule.h; sourceTree = "<group>"; };
+		F2C940CC184EB8BB006D05D5 /* DAUser.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DAUser.h; sourceTree = "<group>"; };
+		F2C940CD184EB8BB006D05D5 /* DAUserList.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DAUserList.h; sourceTree = "<group>"; };
+		F2C940CE184EB8BB006D05D5 /* DAUserModule.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DAUserModule.h; sourceTree = "<group>"; };
+		F2C940CF184EB8BB006D05D5 /* DAWebAccess.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DAWebAccess.h; sourceTree = "<group>"; };
+		F2C940D0184EB8BB006D05D5 /* GTMGatherInputStream.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GTMGatherInputStream.h; sourceTree = "<group>"; };
+		F2C940D1184EB8BB006D05D5 /* GTMHTTPFetcher.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GTMHTTPFetcher.h; sourceTree = "<group>"; };
+		F2C940D2184EB8BB006D05D5 /* GTMHTTPFetcherLogging.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GTMHTTPFetcherLogging.h; sourceTree = "<group>"; };
+		F2C940D3184EB8BB006D05D5 /* GTMHTTPFetcherService.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GTMHTTPFetcherService.h; sourceTree = "<group>"; };
+		F2C940D4184EB8BB006D05D5 /* GTMHTTPFetchHistory.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GTMHTTPFetchHistory.h; sourceTree = "<group>"; };
+		F2C940D5184EB8BB006D05D5 /* GTMHTTPUploadFetcher.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GTMHTTPUploadFetcher.h; sourceTree = "<group>"; };
+		F2C940D6184EB8BB006D05D5 /* GTMMIMEDocument.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GTMMIMEDocument.h; sourceTree = "<group>"; };
+		F2C940D7184EB8BB006D05D5 /* GTMReadMonitorInputStream.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GTMReadMonitorInputStream.h; sourceTree = "<group>"; };
+		F2C940D8184EB8BB006D05D5 /* Jastor.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Jastor.h; sourceTree = "<group>"; };
+		F2C940D9184EB8BB006D05D5 /* JastorRuntimeHelper.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JastorRuntimeHelper.h; sourceTree = "<group>"; };
+		F2C940DA184EB8BB006D05D5 /* Reachability.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Reachability.h; sourceTree = "<group>"; };
+		F2C940DB184EB8BB006D05D5 /* TribeSDK.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TribeSDK.h; sourceTree = "<group>"; };
+		F2C940DC184EB8BB006D05D5 /* TribeSDKHeader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TribeSDKHeader.h; sourceTree = "<group>"; };
+		F2C940DD184EB8BB006D05D5 /* UIImageView+AFNetworking.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIImageView+AFNetworking.h"; sourceTree = "<group>"; };
+		F2C940E0184EB8BB006D05D5 /* TribeSDK.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TribeSDK.h; sourceTree = "<group>"; };
+		F2C940E1184EB8BB006D05D5 /* libTribeSDK.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libTribeSDK.a; sourceTree = "<group>"; };
+		F2C941AB184EC176006D05D5 /* DAAFHttpClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DAAFHttpClient.h; sourceTree = "<group>"; };
+		F2C941AC184EC176006D05D5 /* DAAFHttpClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DAAFHttpClient.m; sourceTree = "<group>"; };
+		F2C941AD184EC176006D05D5 /* DAAFHttpOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DAAFHttpOperation.h; sourceTree = "<group>"; };
+		F2C941AE184EC176006D05D5 /* DAAFHttpOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DAAFHttpOperation.m; sourceTree = "<group>"; };
+		F2C941AF184EC176006D05D5 /* DACommon.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DACommon.h; sourceTree = "<group>"; };
+		F2C941B0184EC176006D05D5 /* DACommon.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DACommon.m; sourceTree = "<group>"; };
+		F2C941B1184EC176006D05D5 /* DAJsonHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DAJsonHelper.h; sourceTree = "<group>"; };
+		F2C941B2184EC176006D05D5 /* DAJsonHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DAJsonHelper.m; sourceTree = "<group>"; };
+		F2C941B3184EC176006D05D5 /* DAMacros.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DAMacros.h; sourceTree = "<group>"; };
+		F2C941B8184EC176006D05D5 /* DACategoryModule.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DACategoryModule.h; sourceTree = "<group>"; };
+		F2C941B9184EC176006D05D5 /* DACategoryModule.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DACategoryModule.m; sourceTree = "<group>"; };
+		F2C941BA184EC176006D05D5 /* DAFileModule.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DAFileModule.h; sourceTree = "<group>"; };
+		F2C941BB184EC176006D05D5 /* DAFileModule.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DAFileModule.m; sourceTree = "<group>"; };
+		F2C941BC184EC176006D05D5 /* DAGroupModule.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DAGroupModule.h; sourceTree = "<group>"; };
+		F2C941BD184EC176006D05D5 /* DAGroupModule.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DAGroupModule.m; sourceTree = "<group>"; };
+		F2C941BE184EC176006D05D5 /* DAJsonAPIUrl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DAJsonAPIUrl.h; sourceTree = "<group>"; };
+		F2C941BF184EC176006D05D5 /* DAJsonAPIUrl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DAJsonAPIUrl.m; sourceTree = "<group>"; };
+		F2C941C0184EC176006D05D5 /* DALoginModule.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DALoginModule.h; sourceTree = "<group>"; };
+		F2C941C1184EC176006D05D5 /* DALoginModule.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DALoginModule.m; sourceTree = "<group>"; };
+		F2C941C2184EC176006D05D5 /* DAMessageModule.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DAMessageModule.h; sourceTree = "<group>"; };
+		F2C941C3184EC176006D05D5 /* DAMessageModule.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DAMessageModule.m; sourceTree = "<group>"; };
+		F2C941C4184EC176006D05D5 /* DANotificationModule.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DANotificationModule.h; sourceTree = "<group>"; };
+		F2C941C5184EC176006D05D5 /* DANotificationModule.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DANotificationModule.m; sourceTree = "<group>"; };
+		F2C941C6184EC176006D05D5 /* DAShortmailModule.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DAShortmailModule.h; sourceTree = "<group>"; };
+		F2C941C7184EC176006D05D5 /* DAShortmailModule.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DAShortmailModule.m; sourceTree = "<group>"; };
+		F2C941C8184EC176006D05D5 /* DAUserModule.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DAUserModule.h; sourceTree = "<group>"; };
+		F2C941C9184EC176006D05D5 /* DAUserModule.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DAUserModule.m; sourceTree = "<group>"; };
+		F2C941CD184EC176006D05D5 /* DAApns.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DAApns.h; sourceTree = "<group>"; };
+		F2C941CE184EC176006D05D5 /* DAApns.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DAApns.m; sourceTree = "<group>"; };
+		F2C941CF184EC176006D05D5 /* DACategory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DACategory.h; sourceTree = "<group>"; };
+		F2C941D0184EC176006D05D5 /* DACategory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DACategory.m; sourceTree = "<group>"; };
+		F2C941D1184EC176006D05D5 /* DAContact.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DAContact.h; sourceTree = "<group>"; };
+		F2C941D2184EC176006D05D5 /* DAContact.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DAContact.m; sourceTree = "<group>"; };
+		F2C941D3184EC176006D05D5 /* DAContactList.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DAContactList.h; sourceTree = "<group>"; };
+		F2C941D4184EC176006D05D5 /* DAContactList.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DAContactList.m; sourceTree = "<group>"; };
+		F2C941D5184EC176006D05D5 /* DAError.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DAError.h; sourceTree = "<group>"; };
+		F2C941D6184EC176006D05D5 /* DAError.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DAError.m; sourceTree = "<group>"; };
+		F2C941D7184EC176006D05D5 /* DAFile.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DAFile.h; sourceTree = "<group>"; };
+		F2C941D8184EC176006D05D5 /* DAFile.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DAFile.m; sourceTree = "<group>"; };
+		F2C941D9184EC176006D05D5 /* DAFileDetail.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DAFileDetail.h; sourceTree = "<group>"; };
+		F2C941DA184EC176006D05D5 /* DAFileDetail.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DAFileDetail.m; sourceTree = "<group>"; };
+		F2C941DB184EC176006D05D5 /* DAFileHistory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DAFileHistory.h; sourceTree = "<group>"; };
+		F2C941DC184EC176006D05D5 /* DAFileHistory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DAFileHistory.m; sourceTree = "<group>"; };
+		F2C941DD184EC176006D05D5 /* DAFileList.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DAFileList.h; sourceTree = "<group>"; };
+		F2C941DE184EC176006D05D5 /* DAFileList.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DAFileList.m; sourceTree = "<group>"; };
+		F2C941DF184EC176006D05D5 /* DAGroup.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DAGroup.h; sourceTree = "<group>"; };
+		F2C941E0184EC176006D05D5 /* DAGroup.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DAGroup.m; sourceTree = "<group>"; };
+		F2C941E1184EC176006D05D5 /* DAGroupList.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DAGroupList.h; sourceTree = "<group>"; };
+		F2C941E2184EC176006D05D5 /* DAGroupList.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DAGroupList.m; sourceTree = "<group>"; };
+		F2C941E3184EC176006D05D5 /* DAMessage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DAMessage.h; sourceTree = "<group>"; };
+		F2C941E4184EC176006D05D5 /* DAMessage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DAMessage.m; sourceTree = "<group>"; };
+		F2C941E5184EC176006D05D5 /* DAMessageList.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DAMessageList.h; sourceTree = "<group>"; };
+		F2C941E6184EC176006D05D5 /* DAMessageList.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DAMessageList.m; sourceTree = "<group>"; };
+		F2C941E7184EC176006D05D5 /* DANotification.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DANotification.h; sourceTree = "<group>"; };
+		F2C941E8184EC176006D05D5 /* DANotification.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DANotification.m; sourceTree = "<group>"; };
+		F2C941E9184EC176006D05D5 /* DANotificationList.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DANotificationList.h; sourceTree = "<group>"; };
+		F2C941EA184EC176006D05D5 /* DANotificationList.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DANotificationList.m; sourceTree = "<group>"; };
+		F2C941EB184EC176006D05D5 /* DAShortmail.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DAShortmail.h; sourceTree = "<group>"; };
+		F2C941EC184EC176006D05D5 /* DAShortmail.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DAShortmail.m; sourceTree = "<group>"; };
+		F2C941ED184EC176006D05D5 /* DAShortmailList.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DAShortmailList.h; sourceTree = "<group>"; };
+		F2C941EE184EC176006D05D5 /* DAShortmailList.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DAShortmailList.m; sourceTree = "<group>"; };
+		F2C941EF184EC176006D05D5 /* DAUser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DAUser.h; sourceTree = "<group>"; };
+		F2C941F0184EC176006D05D5 /* DAUser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DAUser.m; sourceTree = "<group>"; };
+		F2C941F1184EC176006D05D5 /* DAUserList.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DAUserList.h; sourceTree = "<group>"; };
+		F2C941F2184EC176006D05D5 /* DAUserList.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DAUserList.m; sourceTree = "<group>"; };
+		F2C941F5184EC176006D05D5 /* AFHTTPClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFHTTPClient.h; sourceTree = "<group>"; };
+		F2C941F6184EC176006D05D5 /* AFHTTPClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFHTTPClient.m; sourceTree = "<group>"; };
+		F2C941F7184EC176006D05D5 /* AFHTTPRequestOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFHTTPRequestOperation.h; sourceTree = "<group>"; };
+		F2C941F8184EC176006D05D5 /* AFHTTPRequestOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFHTTPRequestOperation.m; sourceTree = "<group>"; };
+		F2C941F9184EC176006D05D5 /* AFImageRequestOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFImageRequestOperation.h; sourceTree = "<group>"; };
+		F2C941FA184EC176006D05D5 /* AFImageRequestOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFImageRequestOperation.m; sourceTree = "<group>"; };
+		F2C941FB184EC176006D05D5 /* AFJSONRequestOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFJSONRequestOperation.h; sourceTree = "<group>"; };
+		F2C941FC184EC176006D05D5 /* AFJSONRequestOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFJSONRequestOperation.m; sourceTree = "<group>"; };
+		F2C941FD184EC176006D05D5 /* AFNetworkActivityIndicatorManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFNetworkActivityIndicatorManager.h; sourceTree = "<group>"; };
+		F2C941FE184EC176006D05D5 /* AFNetworkActivityIndicatorManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFNetworkActivityIndicatorManager.m; sourceTree = "<group>"; };
+		F2C941FF184EC176006D05D5 /* AFNetworking.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFNetworking.h; sourceTree = "<group>"; };
+		F2C94200184EC176006D05D5 /* AFPropertyListRequestOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFPropertyListRequestOperation.h; sourceTree = "<group>"; };
+		F2C94201184EC176006D05D5 /* AFPropertyListRequestOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFPropertyListRequestOperation.m; sourceTree = "<group>"; };
+		F2C94202184EC176006D05D5 /* AFURLConnectionOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFURLConnectionOperation.h; sourceTree = "<group>"; };
+		F2C94203184EC176006D05D5 /* AFURLConnectionOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFURLConnectionOperation.m; sourceTree = "<group>"; };
+		F2C94204184EC176006D05D5 /* AFXMLRequestOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFXMLRequestOperation.h; sourceTree = "<group>"; };
+		F2C94205184EC176006D05D5 /* AFXMLRequestOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFXMLRequestOperation.m; sourceTree = "<group>"; };
+		F2C94206184EC176006D05D5 /* UIImageView+AFNetworking.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImageView+AFNetworking.h"; sourceTree = "<group>"; };
+		F2C94207184EC176006D05D5 /* UIImageView+AFNetworking.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImageView+AFNetworking.m"; sourceTree = "<group>"; };
+		F2C94209184EC176006D05D5 /* Jastor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Jastor.h; sourceTree = "<group>"; };
+		F2C9420A184EC176006D05D5 /* Jastor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Jastor.m; sourceTree = "<group>"; };
+		F2C9420B184EC176006D05D5 /* JastorRuntimeHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JastorRuntimeHelper.h; sourceTree = "<group>"; };
+		F2C9420C184EC176006D05D5 /* JastorRuntimeHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JastorRuntimeHelper.m; sourceTree = "<group>"; };
+		F2C9420E184EC176006D05D5 /* Reachability.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Reachability.h; sourceTree = "<group>"; };
+		F2C9420F184EC176006D05D5 /* Reachability.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Reachability.m; sourceTree = "<group>"; };
+		F2C94210184EC176006D05D5 /* TribeSDKHeader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TribeSDKHeader.h; sourceTree = "<group>"; };
+		F2C9423F184EC25A006D05D5 /* DARequestHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DARequestHelper.h; sourceTree = "<group>"; };
+		F2C94240184EC25A006D05D5 /* DARequestHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DARequestHelper.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -1049,7 +1251,6 @@
 				F29ACD531763145500AC0B68 /* Security.framework in Frameworks */,
 				F29ACD511763143D00AC0B68 /* CFNetwork.framework in Frameworks */,
 				F28AD4B71761A8E200D7CDC3 /* QuartzCore.framework in Frameworks */,
-				F227AD56174081360086CFC7 /* TribeSDK.framework in Frameworks */,
 				F2A6EBDC1730EB0900C1A9BF /* MobileCoreServices.framework in Frameworks */,
 				F2A6EBDA1730EB0000C1A9BF /* SystemConfiguration.framework in Frameworks */,
 				4782C95D171BD67E009E74DC /* CoreLocation.framework in Frameworks */,
@@ -1107,7 +1308,7 @@
 		471A0550171BC1AD0040CB93 = {
 			isa = PBXGroup;
 			children = (
-				F2A385691740721C00194E00 /* TribeSDK.framework */,
+				F2C941A9184EC176006D05D5 /* TribeSDK */,
 				471A0562171BC1AD0040CB93 /* TribeIPhone */,
 				471A0591171BC1AE0040CB93 /* TribeIPhoneTests */,
 				471A055B171BC1AD0040CB93 /* Frameworks */,
@@ -1127,6 +1328,7 @@
 		471A055B171BC1AD0040CB93 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				F2C9409C184EB8BB006D05D5 /* Debug-iphoneos */,
 				F232975A176B18C6003DF0BE /* AudioToolbox.framework */,
 				F29ACD541763168600AC0B68 /* libicucore.dylib */,
 				F29ACD521763145500AC0B68 /* Security.framework */,
@@ -1862,6 +2064,260 @@
 			name = Shortmail;
 			sourceTree = "<group>";
 		};
+		F2C9409C184EB8BB006D05D5 /* Debug-iphoneos */ = {
+			isa = PBXGroup;
+			children = (
+				F2C9409D184EB8BB006D05D5 /* Headers */,
+				F2C940DE184EB8BB006D05D5 /* include */,
+				F2C940E1184EB8BB006D05D5 /* libTribeSDK.a */,
+			);
+			name = "Debug-iphoneos";
+			path = "../TribeSDK/build/Debug-iphoneos";
+			sourceTree = "<group>";
+		};
+		F2C9409D184EB8BB006D05D5 /* Headers */ = {
+			isa = PBXGroup;
+			children = (
+				F2C9409E184EB8BB006D05D5 /* AFHTTPClient.h */,
+				F2C9409F184EB8BB006D05D5 /* AFHTTPRequestOperation.h */,
+				F2C940A0184EB8BB006D05D5 /* AFImageRequestOperation.h */,
+				F2C940A1184EB8BB006D05D5 /* AFJSONRequestOperation.h */,
+				F2C940A2184EB8BB006D05D5 /* AFNetworkActivityIndicatorManager.h */,
+				F2C940A3184EB8BB006D05D5 /* AFNetworking.h */,
+				F2C940A4184EB8BB006D05D5 /* AFPropertyListRequestOperation.h */,
+				F2C940A5184EB8BB006D05D5 /* AFURLConnectionOperation.h */,
+				F2C940A6184EB8BB006D05D5 /* AFXMLRequestOperation.h */,
+				F2C940A7184EB8BB006D05D5 /* DAAFHttpClient.h */,
+				F2C940A8184EB8BB006D05D5 /* DAAFHttpOperation.h */,
+				F2C940A9184EB8BB006D05D5 /* DAApns.h */,
+				F2C940AA184EB8BB006D05D5 /* DACategory.h */,
+				F2C940AB184EB8BB006D05D5 /* DACategoryModule.h */,
+				F2C940AC184EB8BB006D05D5 /* DACommon.h */,
+				F2C940AD184EB8BB006D05D5 /* DAContact.h */,
+				F2C940AE184EB8BB006D05D5 /* DAContactList.h */,
+				F2C940AF184EB8BB006D05D5 /* DAError.h */,
+				F2C940B0184EB8BB006D05D5 /* DAFile.h */,
+				F2C940B1184EB8BB006D05D5 /* DAFileDetail.h */,
+				F2C940B2184EB8BB006D05D5 /* DAFileHistory.h */,
+				F2C940B3184EB8BB006D05D5 /* DAFileList.h */,
+				F2C940B4184EB8BB006D05D5 /* DAFileModule.h */,
+				F2C940B5184EB8BB006D05D5 /* DAGroup.h */,
+				F2C940B6184EB8BB006D05D5 /* DAGroupList.h */,
+				F2C940B7184EB8BB006D05D5 /* DAGroupModule.h */,
+				F2C940B8184EB8BB006D05D5 /* DAJsonAPIUrl.h */,
+				F2C940B9184EB8BB006D05D5 /* DAJsonHelper.h */,
+				F2C940BA184EB8BB006D05D5 /* DALoginModule.h */,
+				F2C940BB184EB8BB006D05D5 /* DAMacros.h */,
+				F2C940BC184EB8BB006D05D5 /* DAMessage.h */,
+				F2C940BD184EB8BB006D05D5 /* DAMessageList.h */,
+				F2C940BE184EB8BB006D05D5 /* DAMessageModule.h */,
+				F2C940BF184EB8BB006D05D5 /* DANotification.h */,
+				F2C940C0184EB8BB006D05D5 /* DANotificationList.h */,
+				F2C940C1184EB8BB006D05D5 /* DANotificationModule.h */,
+				F2C940C2184EB8BB006D05D5 /* DAPurchase.h */,
+				F2C940C3184EB8BB006D05D5 /* DAPurchaseList.h */,
+				F2C940C4184EB8BB006D05D5 /* DAPurchaseModule.h */,
+				F2C940C5184EB8BB006D05D5 /* DARequestHelper.h */,
+				F2C940C6184EB8BB006D05D5 /* DAShortmail.h */,
+				F2C940C7184EB8BB006D05D5 /* DAShortmailList.h */,
+				F2C940C8184EB8BB006D05D5 /* DAShortmailModule.h */,
+				F2C940C9184EB8BB006D05D5 /* DATurnover.h */,
+				F2C940CA184EB8BB006D05D5 /* DATurnoverList.h */,
+				F2C940CB184EB8BB006D05D5 /* DATurnoverModule.h */,
+				F2C940CC184EB8BB006D05D5 /* DAUser.h */,
+				F2C940CD184EB8BB006D05D5 /* DAUserList.h */,
+				F2C940CE184EB8BB006D05D5 /* DAUserModule.h */,
+				F2C940CF184EB8BB006D05D5 /* DAWebAccess.h */,
+				F2C940D0184EB8BB006D05D5 /* GTMGatherInputStream.h */,
+				F2C940D1184EB8BB006D05D5 /* GTMHTTPFetcher.h */,
+				F2C940D2184EB8BB006D05D5 /* GTMHTTPFetcherLogging.h */,
+				F2C940D3184EB8BB006D05D5 /* GTMHTTPFetcherService.h */,
+				F2C940D4184EB8BB006D05D5 /* GTMHTTPFetchHistory.h */,
+				F2C940D5184EB8BB006D05D5 /* GTMHTTPUploadFetcher.h */,
+				F2C940D6184EB8BB006D05D5 /* GTMMIMEDocument.h */,
+				F2C940D7184EB8BB006D05D5 /* GTMReadMonitorInputStream.h */,
+				F2C940D8184EB8BB006D05D5 /* Jastor.h */,
+				F2C940D9184EB8BB006D05D5 /* JastorRuntimeHelper.h */,
+				F2C940DA184EB8BB006D05D5 /* Reachability.h */,
+				F2C940DB184EB8BB006D05D5 /* TribeSDK.h */,
+				F2C940DC184EB8BB006D05D5 /* TribeSDKHeader.h */,
+				F2C940DD184EB8BB006D05D5 /* UIImageView+AFNetworking.h */,
+			);
+			path = Headers;
+			sourceTree = "<group>";
+		};
+		F2C940DE184EB8BB006D05D5 /* include */ = {
+			isa = PBXGroup;
+			children = (
+				F2C940DF184EB8BB006D05D5 /* TribeSDK */,
+			);
+			path = include;
+			sourceTree = "<group>";
+		};
+		F2C940DF184EB8BB006D05D5 /* TribeSDK */ = {
+			isa = PBXGroup;
+			children = (
+				F2C940E0184EB8BB006D05D5 /* TribeSDK.h */,
+			);
+			path = TribeSDK;
+			sourceTree = "<group>";
+		};
+		F2C941A9184EC176006D05D5 /* TribeSDK */ = {
+			isa = PBXGroup;
+			children = (
+				F2C941AA184EC176006D05D5 /* Helper */,
+				F2C941B6184EC176006D05D5 /* Module */,
+				F2C941F3184EC176006D05D5 /* Thirdparty */,
+				F2C94210184EC176006D05D5 /* TribeSDKHeader.h */,
+			);
+			path = TribeSDK;
+			sourceTree = "<group>";
+		};
+		F2C941AA184EC176006D05D5 /* Helper */ = {
+			isa = PBXGroup;
+			children = (
+				F2C9423F184EC25A006D05D5 /* DARequestHelper.h */,
+				F2C94240184EC25A006D05D5 /* DARequestHelper.m */,
+				F2C941AB184EC176006D05D5 /* DAAFHttpClient.h */,
+				F2C941AC184EC176006D05D5 /* DAAFHttpClient.m */,
+				F2C941AD184EC176006D05D5 /* DAAFHttpOperation.h */,
+				F2C941AE184EC176006D05D5 /* DAAFHttpOperation.m */,
+				F2C941AF184EC176006D05D5 /* DACommon.h */,
+				F2C941B0184EC176006D05D5 /* DACommon.m */,
+				F2C941B1184EC176006D05D5 /* DAJsonHelper.h */,
+				F2C941B2184EC176006D05D5 /* DAJsonHelper.m */,
+				F2C941B3184EC176006D05D5 /* DAMacros.h */,
+			);
+			path = Helper;
+			sourceTree = "<group>";
+		};
+		F2C941B6184EC176006D05D5 /* Module */ = {
+			isa = PBXGroup;
+			children = (
+				F2C941B8184EC176006D05D5 /* DACategoryModule.h */,
+				F2C941B9184EC176006D05D5 /* DACategoryModule.m */,
+				F2C941BA184EC176006D05D5 /* DAFileModule.h */,
+				F2C941BB184EC176006D05D5 /* DAFileModule.m */,
+				F2C941BC184EC176006D05D5 /* DAGroupModule.h */,
+				F2C941BD184EC176006D05D5 /* DAGroupModule.m */,
+				F2C941BE184EC176006D05D5 /* DAJsonAPIUrl.h */,
+				F2C941BF184EC176006D05D5 /* DAJsonAPIUrl.m */,
+				F2C941C0184EC176006D05D5 /* DALoginModule.h */,
+				F2C941C1184EC176006D05D5 /* DALoginModule.m */,
+				F2C941C2184EC176006D05D5 /* DAMessageModule.h */,
+				F2C941C3184EC176006D05D5 /* DAMessageModule.m */,
+				F2C941C4184EC176006D05D5 /* DANotificationModule.h */,
+				F2C941C5184EC176006D05D5 /* DANotificationModule.m */,
+				F2C941C6184EC176006D05D5 /* DAShortmailModule.h */,
+				F2C941C7184EC176006D05D5 /* DAShortmailModule.m */,
+				F2C941C8184EC176006D05D5 /* DAUserModule.h */,
+				F2C941C9184EC176006D05D5 /* DAUserModule.m */,
+				F2C941CC184EC176006D05D5 /* Entities */,
+			);
+			path = Module;
+			sourceTree = "<group>";
+		};
+		F2C941CC184EC176006D05D5 /* Entities */ = {
+			isa = PBXGroup;
+			children = (
+				F2C941CD184EC176006D05D5 /* DAApns.h */,
+				F2C941CE184EC176006D05D5 /* DAApns.m */,
+				F2C941CF184EC176006D05D5 /* DACategory.h */,
+				F2C941D0184EC176006D05D5 /* DACategory.m */,
+				F2C941D1184EC176006D05D5 /* DAContact.h */,
+				F2C941D2184EC176006D05D5 /* DAContact.m */,
+				F2C941D3184EC176006D05D5 /* DAContactList.h */,
+				F2C941D4184EC176006D05D5 /* DAContactList.m */,
+				F2C941D5184EC176006D05D5 /* DAError.h */,
+				F2C941D6184EC176006D05D5 /* DAError.m */,
+				F2C941D7184EC176006D05D5 /* DAFile.h */,
+				F2C941D8184EC176006D05D5 /* DAFile.m */,
+				F2C941D9184EC176006D05D5 /* DAFileDetail.h */,
+				F2C941DA184EC176006D05D5 /* DAFileDetail.m */,
+				F2C941DB184EC176006D05D5 /* DAFileHistory.h */,
+				F2C941DC184EC176006D05D5 /* DAFileHistory.m */,
+				F2C941DD184EC176006D05D5 /* DAFileList.h */,
+				F2C941DE184EC176006D05D5 /* DAFileList.m */,
+				F2C941DF184EC176006D05D5 /* DAGroup.h */,
+				F2C941E0184EC176006D05D5 /* DAGroup.m */,
+				F2C941E1184EC176006D05D5 /* DAGroupList.h */,
+				F2C941E2184EC176006D05D5 /* DAGroupList.m */,
+				F2C941E3184EC176006D05D5 /* DAMessage.h */,
+				F2C941E4184EC176006D05D5 /* DAMessage.m */,
+				F2C941E5184EC176006D05D5 /* DAMessageList.h */,
+				F2C941E6184EC176006D05D5 /* DAMessageList.m */,
+				F2C941E7184EC176006D05D5 /* DANotification.h */,
+				F2C941E8184EC176006D05D5 /* DANotification.m */,
+				F2C941E9184EC176006D05D5 /* DANotificationList.h */,
+				F2C941EA184EC176006D05D5 /* DANotificationList.m */,
+				F2C941EB184EC176006D05D5 /* DAShortmail.h */,
+				F2C941EC184EC176006D05D5 /* DAShortmail.m */,
+				F2C941ED184EC176006D05D5 /* DAShortmailList.h */,
+				F2C941EE184EC176006D05D5 /* DAShortmailList.m */,
+				F2C941EF184EC176006D05D5 /* DAUser.h */,
+				F2C941F0184EC176006D05D5 /* DAUser.m */,
+				F2C941F1184EC176006D05D5 /* DAUserList.h */,
+				F2C941F2184EC176006D05D5 /* DAUserList.m */,
+			);
+			path = Entities;
+			sourceTree = "<group>";
+		};
+		F2C941F3184EC176006D05D5 /* Thirdparty */ = {
+			isa = PBXGroup;
+			children = (
+				F2C941F4184EC176006D05D5 /* AFNetworking */,
+				F2C94208184EC176006D05D5 /* Jastor */,
+				F2C9420D184EC176006D05D5 /* Reachability */,
+			);
+			path = Thirdparty;
+			sourceTree = "<group>";
+		};
+		F2C941F4184EC176006D05D5 /* AFNetworking */ = {
+			isa = PBXGroup;
+			children = (
+				F2C941F5184EC176006D05D5 /* AFHTTPClient.h */,
+				F2C941F6184EC176006D05D5 /* AFHTTPClient.m */,
+				F2C941F7184EC176006D05D5 /* AFHTTPRequestOperation.h */,
+				F2C941F8184EC176006D05D5 /* AFHTTPRequestOperation.m */,
+				F2C941F9184EC176006D05D5 /* AFImageRequestOperation.h */,
+				F2C941FA184EC176006D05D5 /* AFImageRequestOperation.m */,
+				F2C941FB184EC176006D05D5 /* AFJSONRequestOperation.h */,
+				F2C941FC184EC176006D05D5 /* AFJSONRequestOperation.m */,
+				F2C941FD184EC176006D05D5 /* AFNetworkActivityIndicatorManager.h */,
+				F2C941FE184EC176006D05D5 /* AFNetworkActivityIndicatorManager.m */,
+				F2C941FF184EC176006D05D5 /* AFNetworking.h */,
+				F2C94200184EC176006D05D5 /* AFPropertyListRequestOperation.h */,
+				F2C94201184EC176006D05D5 /* AFPropertyListRequestOperation.m */,
+				F2C94202184EC176006D05D5 /* AFURLConnectionOperation.h */,
+				F2C94203184EC176006D05D5 /* AFURLConnectionOperation.m */,
+				F2C94204184EC176006D05D5 /* AFXMLRequestOperation.h */,
+				F2C94205184EC176006D05D5 /* AFXMLRequestOperation.m */,
+				F2C94206184EC176006D05D5 /* UIImageView+AFNetworking.h */,
+				F2C94207184EC176006D05D5 /* UIImageView+AFNetworking.m */,
+			);
+			path = AFNetworking;
+			sourceTree = "<group>";
+		};
+		F2C94208184EC176006D05D5 /* Jastor */ = {
+			isa = PBXGroup;
+			children = (
+				F2C94209184EC176006D05D5 /* Jastor.h */,
+				F2C9420A184EC176006D05D5 /* Jastor.m */,
+				F2C9420B184EC176006D05D5 /* JastorRuntimeHelper.h */,
+				F2C9420C184EC176006D05D5 /* JastorRuntimeHelper.m */,
+			);
+			path = Jastor;
+			sourceTree = "<group>";
+		};
+		F2C9420D184EC176006D05D5 /* Reachability */ = {
+			isa = PBXGroup;
+			children = (
+				F2C9420E184EC176006D05D5 /* Reachability.h */,
+				F2C9420F184EC176006D05D5 /* Reachability.m */,
+			);
+			path = Reachability;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -1908,7 +2364,7 @@
 			isa = PBXProject;
 			attributes = {
 				CLASSPREFIX = DA;
-				LastUpgradeCheck = 0460;
+				LastUpgradeCheck = 0500;
 				ORGANIZATIONNAME = kita;
 			};
 			buildConfigurationList = 471A0554171BC1AD0040CB93 /* Build configuration list for PBXProject "TribeIPhone" */;
@@ -2338,51 +2794,83 @@
 				471A05FA171BCA250040CB93 /* DAMemberViewController.m in Sources */,
 				471A05FD171BCA250040CB93 /* DAGroupViewController.m in Sources */,
 				471A0602171BCA250040CB93 /* DAMoreViewController.m in Sources */,
+				F2C9423D184EC176006D05D5 /* JastorRuntimeHelper.m in Sources */,
+				F2C94217184EC176006D05D5 /* DAFileModule.m in Sources */,
 				471A0604171BCA250040CB93 /* DATimeLineViewController.m in Sources */,
 				4782C976171BF671009E74DC /* DAMessageCell.m in Sources */,
 				4782C985171CF001009E74DC /* DACommentCell.m in Sources */,
+				F2C9423E184EC176006D05D5 /* Reachability.m in Sources */,
 				4782C995171CFC32009E74DC /* DAMessageDetailCell.m in Sources */,
+				F2C94235184EC176006D05D5 /* AFImageRequestOperation.m in Sources */,
 				4782C9A3171D13FD009E74DC /* DAMessageDetailViewController.m in Sources */,
+				F2C9422D184EC176006D05D5 /* DANotification.m in Sources */,
+				F2C9422F184EC176006D05D5 /* DAShortmail.m in Sources */,
 				F24F5E58171D229C0032E93B /* DAMainViewController.m in Sources */,
 				F29FBF8B171D2FDE006C9CCB /* DALoginViewController.m in Sources */,
 				F223E2D5171D8A760095F1C1 /* DAGroupDetailViewController.m in Sources */,
 				F223E2E1171E3AEC0095F1C1 /* DAGroupDetailCell.m in Sources */,
 				F223E30D171EDFAA0095F1C1 /* DAMemberDetailViewController.m in Sources */,
+				F2C94225184EC176006D05D5 /* DAFile.m in Sources */,
 				F2656EBF171FE65F007E8207 /* DAMemberDetailCell.m in Sources */,
+				F2C9421A184EC176006D05D5 /* DALoginModule.m in Sources */,
 				F2656ECC1720DC2F007E8207 /* DAMemberCell.m in Sources */,
+				F2C94212184EC176006D05D5 /* DAAFHttpOperation.m in Sources */,
+				F2C9421E184EC176006D05D5 /* DAUserModule.m in Sources */,
+				F2C9421C184EC176006D05D5 /* DANotificationModule.m in Sources */,
 				F2656ED21720E12E007E8207 /* DAMemberController.m in Sources */,
+				F2C94241184EC25A006D05D5 /* DARequestHelper.m in Sources */,
 				47A021A7172404B200E2AF6C /* DAMessageAtView.m in Sources */,
 				F2656EF317239AD6007E8207 /* DAMemberMoreViewController.m in Sources */,
+				F2C9422E184EC176006D05D5 /* DANotificationList.m in Sources */,
 				F2656EF71723BB75007E8207 /* DAMemberMoreContainerViewController.m in Sources */,
 				F2656F061723CDEE007E8207 /* DAGroupController.m in Sources */,
+				F2C9421B184EC176006D05D5 /* DAMessageModule.m in Sources */,
 				47A021AC17251E7400E2AF6C /* DAMessageLabel.m in Sources */,
+				F2C94213184EC176006D05D5 /* DACommon.m in Sources */,
+				F2C94219184EC176006D05D5 /* DAJsonAPIUrl.m in Sources */,
+				F2C94229184EC176006D05D5 /* DAGroup.m in Sources */,
 				F2656F2117240292007E8207 /* DAHelper.m in Sources */,
+				F2C94227184EC176006D05D5 /* DAFileHistory.m in Sources */,
+				F2C9423B184EC176006D05D5 /* UIImageView+AFNetworking.m in Sources */,
+				F2C9423C184EC176006D05D5 /* Jastor.m in Sources */,
+				F2C94228184EC176006D05D5 /* DAFileList.m in Sources */,
+				F2C9421D184EC176006D05D5 /* DAShortmailModule.m in Sources */,
 				47A021B317261BEF00E2AF6C /* DAMessageFileView.m in Sources */,
 				F2972597172616E00070B406 /* DAGroupMoreViewController.m in Sources */,
+				F2C9422A184EC176006D05D5 /* DAGroupList.m in Sources */,
 				F297259D17261A500070B406 /* DAGroupMoreContainerViewController.m in Sources */,
 				F29725AE17267B890070B406 /* DAFileViewCell.m in Sources */,
 				F29725B417267D1E0070B406 /* DASettingViewController.m in Sources */,
 				F29725B917267D630070B406 /* DASettingContainerViewController.m in Sources */,
 				F24FC31B172775DB00C26D12 /* DAFileViewController.m in Sources */,
+				F2C94216184EC176006D05D5 /* DACategoryModule.m in Sources */,
+				F2C94214184EC176006D05D5 /* DAJsonHelper.m in Sources */,
 				471648F21727B62600622D5F /* DAGroupSelectViewController.m in Sources */,
 				471648F61727BFD700622D5F /* DAGroupCell.m in Sources */,
 				471648FC1729140700622D5F /* DAMemberSelectViewController.m in Sources */,
+				F2C94231184EC176006D05D5 /* DAUser.m in Sources */,
 				F2A6EABD172AD09900C1A9BF /* DAShortmailViewController.m in Sources */,
 				F2A6EAC2172AD0C800C1A9BF /* DAShortmailStoryViewController.m in Sources */,
 				F2A6EAC6172AD4B400C1A9BF /* DAShortmailViewCell.m in Sources */,
 				47120B181733A57800FB74AF /* DANotificationCell.m in Sources */,
+				F2C94232184EC176006D05D5 /* DAUserList.m in Sources */,
 				F22B38A4173652BF0017A986 /* MBProgressHUD.m in Sources */,
 				F22B38AC173658E60017A986 /* WTStatusBar.m in Sources */,
+				F2C94222184EC176006D05D5 /* DAContact.m in Sources */,
 				F22B38AD173658E60017A986 /* WTStatusView.m in Sources */,
+				F2C9423A184EC176006D05D5 /* AFXMLRequestOperation.m in Sources */,
 				F22B38AE173658E60017A986 /* WTStatusWindow.m in Sources */,
 				046D918C1737A7890076B693 /* DAFileDetailViewController.m in Sources */,
 				04AC26B91738CE3C00FEED21 /* DAFileWebViewController.m in Sources */,
+				F2C94224184EC176006D05D5 /* DAError.m in Sources */,
 				0A90C8F11744C97A00CA4A14 /* DANotificationViewController.m in Sources */,
 				F2B29F441746580F002F7CF8 /* DABaseViewController.m in Sources */,
 				473970D3174A3A6E00B78C1C /* DAPictureViewController.m in Sources */,
 				F28AD4BB1761A99100D7CDC3 /* DALeftSideViewController.m in Sources */,
 				F29ACD241762CA1400AC0B68 /* CQMFloatingContentOverlayView.m in Sources */,
+				F2C94220184EC176006D05D5 /* DAApns.m in Sources */,
 				F29ACD251762CA1400AC0B68 /* CQMFloatingController.m in Sources */,
+				F2C94221184EC176006D05D5 /* DACategory.m in Sources */,
 				F29ACD261762CA1400AC0B68 /* CQMFloatingFrameView.m in Sources */,
 				F29ACD271762CA1400AC0B68 /* CQMFloatingMaskControl.m in Sources */,
 				F29ACD281762CA1400AC0B68 /* CQMFloatingNavigationBar.m in Sources */,
@@ -2391,19 +2879,30 @@
 				F29ACD321762CC3700AC0B68 /* IIViewDeckController.m in Sources */,
 				F29ACD331762CC3700AC0B68 /* IIWrapController.m in Sources */,
 				F29ACD3C17630E1B00AC0B68 /* base64.c in Sources */,
+				F2C94234184EC176006D05D5 /* AFHTTPRequestOperation.m in Sources */,
 				F29ACD3D17630E1B00AC0B68 /* NSData+SRB64Additions.m in Sources */,
+				F2C94218184EC176006D05D5 /* DAGroupModule.m in Sources */,
+				F2C94226184EC176006D05D5 /* DAFileDetail.m in Sources */,
 				F29ACD3E17630E1B00AC0B68 /* SRWebSocket.m in Sources */,
+				F2C94223184EC176006D05D5 /* DAContactList.m in Sources */,
 				F29ACD62176316A300AC0B68 /* SocketIO.m in Sources */,
 				F29ACD63176316A300AC0B68 /* SocketIOJSONSerialization.m in Sources */,
 				F29ACD64176316A300AC0B68 /* SocketIOPacket.m in Sources */,
+				F2C94233184EC176006D05D5 /* AFHTTPClient.m in Sources */,
+				F2C9422C184EC176006D05D5 /* DAMessageList.m in Sources */,
 				F29ACD65176316A300AC0B68 /* SocketIOTransportWebsocket.m in Sources */,
 				F29ACD66176316A300AC0B68 /* SocketIOTransportXHR.m in Sources */,
+				F2C94230184EC176006D05D5 /* DAShortmailList.m in Sources */,
 				475AC84D1769D97A0097851B /* DAFileFilterViewController.m in Sources */,
+				F2C94237184EC176006D05D5 /* AFNetworkActivityIndicatorManager.m in Sources */,
 				F232975E176B1921003DF0BE /* DAShortmailStoryController.m in Sources */,
+				F2C94211184EC176006D05D5 /* DAAFHttpClient.m in Sources */,
+				F2C9422B184EC176006D05D5 /* DAMessage.m in Sources */,
 				F232978D176B20AE003DF0BE /* JSBubbleMessageCell.m in Sources */,
 				F232978E176B20AE003DF0BE /* JSBubbleView.m in Sources */,
 				F232978F176B20AE003DF0BE /* JSMessageInputView.m in Sources */,
 				F2329790176B20AE003DF0BE /* JSMessageSoundEffect.m in Sources */,
+				F2C94239184EC176006D05D5 /* AFURLConnectionOperation.m in Sources */,
 				F2329791176B20AE003DF0BE /* JSMessagesViewController.m in Sources */,
 				F2329792176B20AE003DF0BE /* NSString+JSMessagesView.m in Sources */,
 				F23297AB176B20AE003DF0BE /* UIButton+JSMessagesView.m in Sources */,
@@ -2412,8 +2911,10 @@
 				0AB15093176E978F002F31FB /* DAMemberFilterViewController.m in Sources */,
 				476855D2176F08FF00759389 /* DAGroupFilterViewController.m in Sources */,
 				0A93811C17714DAF00F65CA1 /* DAPictureScrollView.m in Sources */,
+				F2C94236184EC176006D05D5 /* AFJSONRequestOperation.m in Sources */,
 				476855E51771562900759389 /* DAFileSelectViewController.m in Sources */,
 				0A13CB7D177C38220080989D /* DAMemberMoreDetailCell.m in Sources */,
+				F2C94238184EC176006D05D5 /* AFPropertyListRequestOperation.m in Sources */,
 				0A1968E9177D130B00D576B5 /* DAGroupMoreDetailCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -2502,7 +3003,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
-				ONLY_ACTIVE_ARCH = NO;
+				ONLY_ACTIVE_ARCH = YES;
 				PROVISIONING_PROFILE = "";
 				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "";
 				SDKROOT = iphoneos;
@@ -2543,10 +3044,7 @@
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"\"$(SRCROOT)/../TribeSDK/build/Debug-framework\"",
-				);
+				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "TribeIPhone/TribeIPhone-Prefix.pch";
 				INFOPLIST_FILE = "TribeIPhone/TribeIPhone-Info.plist";
@@ -2565,10 +3063,7 @@
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "iPhone Distribution";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"\"$(SRCROOT)/../TribeSDK/build/Debug-framework\"",
-				);
+				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "TribeIPhone/TribeIPhone-Prefix.pch";
 				INFOPLIST_FILE = "TribeIPhone/TribeIPhone-Info.plist";

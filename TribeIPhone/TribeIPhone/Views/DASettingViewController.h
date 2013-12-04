@@ -7,7 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-#import <TribeSDK/TribeSDKHeader.h>
+#import "TribeSDKHeader.h"
 
 @interface DASettingViewController : UITableViewController <UIActionSheetDelegate>
 @property (weak, nonatomic) IBOutlet UITextField *txtServerAddress;

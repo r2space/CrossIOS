@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="3084" systemVersion="12E55" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="PwW-Aq-hoN">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="4514" systemVersion="13A603" targetRuntime="iOS.CocoaTouch" variant="6xAndEarlier" propertyAccessControl="none" useAutolayout="YES" initialViewController="PwW-Aq-hoN">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="2083"/>
+        <deployment defaultVersion="1536" identifier="iOS"/>
+        <development version="4600" identifier="xcode"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3747"/>
     </dependencies>
     <scenes>
         <!--Setting View Controller-->
@@ -23,6 +25,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" tag="11" contentMode="left" text="地址" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kGQ-xc-Gkn">
+                                                    <rect key="frame" x="53" y="11" width="160" height="21"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="21" id="9pL-Al-mAv"/>
                                                         <constraint firstAttribute="width" constant="160" id="mwt-Lc-mu2"/>
@@ -32,12 +35,14 @@
                                                     <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 </label>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="table_satellite-dish.png" translatesAutoresizingMaskIntoConstraints="NO" id="B2A-Sm-7h3">
+                                                    <rect key="frame" x="15" y="9" width="25" height="25"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="25" id="6sk-EB-Ojb"/>
                                                         <constraint firstAttribute="height" constant="25" id="cwo-WX-rF2"/>
                                                     </constraints>
                                                 </imageView>
                                                 <textField opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="10.2.8.199" placeholder="10.2.8.199" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="1Sx-fX-Fhb">
+                                                    <rect key="frame" x="120" y="7" width="160" height="30"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="160" id="0TP-nE-G5b"/>
                                                         <constraint firstAttribute="height" constant="30" id="G5f-ef-ocL"/>
@@ -69,6 +74,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" tag="12" contentMode="left" text="端口" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WID-Yf-agz">
+                                                    <rect key="frame" x="53" y="11" width="170" height="21"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="170" id="4Zv-cx-yY8"/>
                                                         <constraint firstAttribute="height" constant="21" id="713-pq-OOd"/>
@@ -78,12 +84,14 @@
                                                     <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 </label>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="table_lightbulb.png" translatesAutoresizingMaskIntoConstraints="NO" id="0yZ-kZ-ay6">
+                                                    <rect key="frame" x="15" y="9" width="25" height="25"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="25" id="R5m-ca-mE0"/>
                                                         <constraint firstAttribute="width" constant="25" id="io7-n9-hhY"/>
                                                     </constraints>
                                                 </imageView>
                                                 <textField opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="80" placeholder="10.2.8.199" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="rdI-mW-hf2">
+                                                    <rect key="frame" x="120" y="7" width="160" height="30"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="160" id="wQs-oJ-E4i"/>
                                                         <constraint firstAttribute="height" constant="30" id="zjf-KX-Sdd"/>
@@ -120,6 +128,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" tag="21" contentMode="left" text="缓存容量" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="9" translatesAutoresizingMaskIntoConstraints="NO" id="z7J-uh-NGb">
+                                                    <rect key="frame" x="53" y="11" width="78" height="21"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="78" id="5VQ-Zt-nLF"/>
                                                         <constraint firstAttribute="height" constant="21" id="fqR-Gn-QNd"/>
@@ -129,12 +138,14 @@
                                                     <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 </label>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="table_storage.png" translatesAutoresizingMaskIntoConstraints="NO" id="GYb-8h-3nE">
+                                                    <rect key="frame" x="15" y="9" width="25" height="25"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="25" id="bRA-E5-aFG"/>
                                                         <constraint firstAttribute="height" constant="25" id="wW7-vr-L3a"/>
                                                     </constraints>
                                                 </imageView>
                                                 <progressView opaque="NO" contentMode="scaleToFill" progressViewStyle="bar" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="J7T-rC-Afx">
+                                                    <rect key="frame" x="139" y="17" width="141" height="11"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="141" id="44j-kv-e79"/>
                                                     </constraints>
@@ -159,6 +170,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" tag="22" contentMode="left" text="清除缓存数据" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3P1-sn-hi9">
+                                                    <rect key="frame" x="53" y="11" width="160" height="21"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="160" id="PES-UD-rrN"/>
                                                         <constraint firstAttribute="height" constant="21" id="Xf3-sq-epa"/>
@@ -168,6 +180,7 @@
                                                     <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 </label>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="sweep.png" translatesAutoresizingMaskIntoConstraints="NO" id="UeF-W9-nvH">
+                                                    <rect key="frame" x="15" y="9" width="25" height="25"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="25" id="Siw-Xn-3o0"/>
                                                         <constraint firstAttribute="height" constant="25" id="YEx-Fp-yzQ"/>
@@ -195,6 +208,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" tag="31" contentMode="left" text="注销" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Owr-qG-kEh">
+                                                    <rect key="frame" x="53" y="11" width="160" height="21"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="21" id="0K4-Q9-50l"/>
                                                         <constraint firstAttribute="width" constant="160" id="c2B-G5-fhg"/>
@@ -204,6 +218,7 @@
                                                     <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 </label>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="table_entrance.png" translatesAutoresizingMaskIntoConstraints="NO" id="CWI-ml-W3v">
+                                                    <rect key="frame" x="15" y="9" width="25" height="25"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="25" id="6nf-fk-Xqo"/>
                                                         <constraint firstAttribute="height" constant="25" id="MUZ-9S-tLc"/>
@@ -231,6 +246,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" tag="41" contentMode="left" text="版本信息" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xaY-a0-raW">
+                                                    <rect key="frame" x="53" y="11" width="134" height="21"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="134" id="9Zp-Ya-ECu"/>
                                                         <constraint firstAttribute="height" constant="21" id="owg-az-vgc"/>
@@ -240,6 +256,7 @@
                                                     <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 </label>
                                                 <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Ver. 1.0" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xID-nV-WLV">
+                                                    <rect key="frame" x="200" y="11" width="80" height="21"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="80" id="7OS-3F-zYR"/>
                                                     </constraints>
@@ -248,6 +265,7 @@
                                                     <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 </label>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="table_anchor.png" translatesAutoresizingMaskIntoConstraints="NO" id="Dbs-Xv-go9">
+                                                    <rect key="frame" x="15" y="9" width="25" height="25"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="25" id="AGZ-qH-ReF"/>
                                                         <constraint firstAttribute="width" constant="25" id="wCL-go-mb8"/>
@@ -298,22 +316,6 @@
         <image name="table_satellite-dish.png" width="30" height="30"/>
         <image name="table_storage.png" width="30" height="30"/>
     </resources>
-    <classes>
-        <class className="DASettingViewController" superclassName="UITableViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/DASettingViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="didEndOnExit:"/>
-                <relationship kind="outlet" name="lblVersion" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="prvSpace" candidateClass="UIProgressView"/>
-                <relationship kind="outlet" name="tableView" candidateClass="UITableView"/>
-                <relationship kind="outlet" name="txtServerAddress" candidateClass="UITextField"/>
-                <relationship kind="outlet" name="txtServerPort" candidateClass="UITextField"/>
-            </relationships>
-        </class>
-        <class className="NSLayoutConstraint" superclassName="NSObject">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/NSLayoutConstraint.h"/>
-        </class>
-    </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>

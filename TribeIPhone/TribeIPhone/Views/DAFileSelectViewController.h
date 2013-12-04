@@ -7,7 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-#import <TribeSDK/TribeSDKHeader.h>
+#import "TribeSDKHeader.h"
 #import "DABaseViewController.h"
 
 typedef void (^FilesDidSelected)(NSArray *files);

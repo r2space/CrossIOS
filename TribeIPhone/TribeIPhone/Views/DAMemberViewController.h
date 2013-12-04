@@ -7,7 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-#import <TribeSDK/TribeSDKHeader.h>
+#import "TribeSDKHeader.h"
 #import "DABaseViewController.h"
 
 @interface DAMemberViewController : DABaseViewController<UITableViewDataSource,UITableViewDelegate,UISearchBarDelegate>

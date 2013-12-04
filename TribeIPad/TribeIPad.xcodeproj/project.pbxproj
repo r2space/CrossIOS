@@ -64,7 +64,6 @@
 		F213C1A8171BCC4900E562A8 /* DAMessageViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F213C031171BBFF200E562A8 /* DAMessageViewController.xib */; };
 		F213C1A9171BCC4900E562A8 /* DATimeLineCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F213C032171BBFF200E562A8 /* DATimeLineCell.xib */; };
 		F213C1AA171BCC4900E562A8 /* DATimeLineViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F213C033171BBFF200E562A8 /* DATimeLineViewController.xib */; };
-		F2A3856C1740723700194E00 /* TribeSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F2A3856B1740723700194E00 /* TribeSDK.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -136,7 +135,6 @@
 		F213C039171BBFF200E562A8 /* DAMoreViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DAMoreViewController.m; sourceTree = "<group>"; };
 		F213C03A171BBFF200E562A8 /* DATimeLineCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DATimeLineCell.m; sourceTree = "<group>"; };
 		F213C03B171BBFF200E562A8 /* DATimeLineViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DATimeLineViewController.m; sourceTree = "<group>"; };
-		F2A3856B1740723700194E00 /* TribeSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = TribeSDK.framework; path = "../TribeSDK/build/Debug-framework/TribeSDK.framework"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -144,7 +142,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F2A3856C1740723700194E00 /* TribeSDK.framework in Frameworks */,
 				F213BFCC171BBE2800E562A8 /* UIKit.framework in Frameworks */,
 				F213BFCE171BBE2800E562A8 /* Foundation.framework in Frameworks */,
 				F213BFD0171BBE2800E562A8 /* CoreGraphics.framework in Frameworks */,
@@ -167,7 +164,6 @@
 		F213BFBF171BBE2800E562A8 = {
 			isa = PBXGroup;
 			children = (
-				F2A3856B1740723700194E00 /* TribeSDK.framework */,
 				F213BFD1171BBE2800E562A8 /* TribeIPad */,
 				F213BFF5171BBE2900E562A8 /* TribeIPadTests */,
 				F213BFCA171BBE2800E562A8 /* Frameworks */,

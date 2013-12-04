@@ -5,9 +5,6 @@
       location = "group:TribeIPhone/TribeIPhone.xcodeproj">
    </FileRef>
    <FileRef
-      location = "group:TribeSDK/TribeSDK.xcodeproj">
-   </FileRef>
-   <FileRef
       location = "group:TribeIPad/TribeIPad.xcodeproj">
    </FileRef>
 </Workspace>

@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import <CoreLocation/CoreLocation.h>
-#import <TribeSDK/TribeSDKHeader.h>
+#import "TribeSDKHeader.h"
 #import "DAMemberSelectViewController.h"
 #import "DAGroupSelectViewController.h"
 #import "DABaseViewController.h"

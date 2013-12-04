@@ -548,6 +548,10 @@
         if ([self finishUpdateError:error]) {
             return ;
         }
+        
+        if (self.onComplet) {
+            self.onComplet();
+        }
         [self dismissViewControllerAnimated:YES completion:nil];
     }];
 }
@@ -560,6 +564,10 @@
     [[DAMessageModule alloc] forward:message callback:^(NSError *error, DAMessage *message){
         if ([self finishUpdateError:error]) {
             return ;
+        }
+        
+        if (self.onComplet) {
+            self.onComplet();
         }
         [self dismissViewControllerAnimated:YES completion:nil];
     }];

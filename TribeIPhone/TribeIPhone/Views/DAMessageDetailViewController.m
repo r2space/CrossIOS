@@ -329,6 +329,9 @@
         ctrl.message.type = [NSNumber numberWithInt:2];
         ctrl.message.range = _message.range;
         ctrl.message.target = _message._id;
+        ctrl.onComplet = ^(){
+            [self refresh];
+        };
         
         [self presentViewController:ctrl animated:YES completion:nil];
     }
@@ -338,9 +341,13 @@
         DAContributeViewController *ctrl = [[DAContributeViewController alloc] initWithNibName:@"DAContributeViewController" bundle:nil];
         ctrl.message.target = _message._id;
         ctrl.isForward = YES;
+        ctrl.onComplet = ^(){
+            [self refresh];
+        };
         
         [self presentViewController:ctrl animated:YES completion:nil];
     }
+    
     if (4 == item.tag) {
         
 
@@ -356,6 +363,7 @@
                 }
                 _message = message;
                 [self setLike];
+                [self refresh];
             }];
         } else {
             [[DAMessageModule alloc] like:_messageId callback:^(NSError *error, DAMessage *message) {
@@ -365,6 +373,7 @@
                 }
                 _message = message;
                 [self setLike];
+                [self refresh];
             }];
         }
     }

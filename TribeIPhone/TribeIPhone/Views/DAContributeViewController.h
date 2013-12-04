@@ -14,6 +14,8 @@
 #import "DABaseViewController.h"
 #import "DAHelper.h"
 
+typedef void (^DAContributeViewControllerComplet)();
+
 @interface DAContributeViewController : DABaseViewController <UINavigationControllerDelegate, UIImagePickerControllerDelegate, UIActionSheetDelegate, CLLocationManagerDelegate,UITextViewDelegate>
 {
 }
@@ -34,6 +36,7 @@
 
 @property (retain, nonatomic) DAMessage *message;
 @property (nonatomic) BOOL isForward;
+@property (strong, nonatomic) DAContributeViewControllerComplet onComplet;
 
 - (IBAction)onLocationClicked:(id)sender;
 - (IBAction)onCameraClicked:(id)sender;

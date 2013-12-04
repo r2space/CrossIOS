@@ -2366,6 +2366,11 @@
 				CLASSPREFIX = DA;
 				LastUpgradeCheck = 0500;
 				ORGANIZATIONNAME = kita;
+				TargetAttributes = {
+					471A0558171BC1AD0040CB93 = {
+						DevelopmentTeam = XQJ7HXB4XA;
+					};
+				};
 			};
 			buildConfigurationList = 471A0554171BC1AD0040CB93 /* Build configuration list for PBXProject "TribeIPhone" */;
 			compatibilityVersion = "Xcode 3.2";
@@ -3061,8 +3066,8 @@
 		471A059E171BC1AE0040CB93 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				CODE_SIGN_IDENTITY = "iPhone Distribution";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "TribeIPhone/TribeIPhone-Prefix.pch";

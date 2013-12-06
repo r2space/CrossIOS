@@ -107,7 +107,8 @@
     
     // 临时对应短用户名登录
     // TODO
-    NSString *suffix = @"@dreamarts.co.jp";
+//    NSString *suffix = @"@dreamarts.co.jp";
+    NSString *suffix = @"";
     NSRange range = [userId rangeOfString:suffix];
     if (range.location == NSNotFound) {
         userId = [userId stringByAppendingString:suffix];

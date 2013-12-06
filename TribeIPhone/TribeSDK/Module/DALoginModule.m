@@ -11,7 +11,7 @@
 #define kHTTPHeaderCookieName   @"Set-Cookie"
 #define kHTTPHeaderCsrftoken    @"csrftoken"
 #define kHTTPHeaderUserID       @"userid"
-#define kURLLogin               @"simplelogin?name=%@&pass=%@"
+#define kURLLogin               @"simplelogin?name=%@&password=%@"
 #define kURLLogout              @"simplelogout"
 
 @implementation DALoginModule

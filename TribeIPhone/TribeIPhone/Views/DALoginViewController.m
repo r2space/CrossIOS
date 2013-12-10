@@ -28,6 +28,20 @@
     self.txtPassword.placeholder = [DAHelper localizedStringWithKey:@"login.password.placeholder" comment:@"密码"];
     self.lblLogin.text = [DAHelper localizedStringWithKey:@"login.login" comment:@"登录"];
     
+    double lastExitTime = [[[NSUserDefaults standardUserDefaults] objectForKey:@"jp.co.dreamarts.smart.message.lastaccess"] doubleValue];
+    double now = [[NSDate date] timeIntervalSince1970];
+    
+    
+    if (now - lastExitTime < 10) {
+        NSString *userId = [[NSUserDefaults standardUserDefaults] objectForKey:@"jp.co.dreamarts.smart.message.userid"];
+        NSString *passWord = [[NSUserDefaults standardUserDefaults] objectForKey:@"jp.co.dreamarts.smart.message.password"];
+        if (userId != nil && passWord != nil) {
+            self.txtUserId.text = userId;
+            self.txtPassword.text = passWord;
+        }
+
+    }
+    
     // 注册键盘显示的Notification
     [self registerForKeyboardNotifications];
 

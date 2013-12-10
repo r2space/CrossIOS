@@ -96,7 +96,7 @@
 "setting.title" = "設定";
 
 // Login
-"login.id.placeholder" = "メールアドレス";
+"login.id.placeholder" = "ユーザーID";
 "login.password.placeholder" = "パスワード";
 "login.login" = "ログイン";
 

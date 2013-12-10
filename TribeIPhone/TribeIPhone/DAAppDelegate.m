@@ -71,6 +71,9 @@
 // アプリケーションがバックグラウンドになっていることをデリゲートに伝えます。
 - (void)applicationDidEnterBackground:(UIApplication *)application
 {
+    double now = [[NSDate date] timeIntervalSince1970];
+    [[NSUserDefaults standardUserDefaults] setObject:[NSString stringWithFormat:@"%f",now] forKey:@"jp.co.dreamarts.smart.message.lastaccess"];
+    [[NSUserDefaults standardUserDefaults] synchronize];
     // Use this method to release shared resources, save user data, invalidate timers, and store enough application state information to restore your application to its current state in case it is terminated later. 
     // If your application supports background execution, this method is called instead of applicationWillTerminate: when the user quits.
 }

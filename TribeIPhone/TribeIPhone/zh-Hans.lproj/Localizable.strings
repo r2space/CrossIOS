@@ -97,7 +97,7 @@
 "setting.title" = "设定";
 
 // Login
-"login.id.placeholder" = "邮箱地址";
+"login.id.placeholder" = "用户ID";
 "login.password.placeholder" = "密码";
 "login.login" = "登录";
 

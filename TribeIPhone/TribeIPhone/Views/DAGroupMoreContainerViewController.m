@@ -122,6 +122,7 @@
                 return ;
             }
             [DAHelper alert:self.view message:[DAHelper localizedStringWithKey:@"msg.updateSuccess" comment:@"更新成功"] detail:nil delay:0.6 yOffset:0];
+             [self performSelector:@selector(back) withObject:self afterDelay:0.6];
             
         }];
     } else {
@@ -132,12 +133,18 @@
                 return ;
             }
             [DAHelper alert:self.view message:[DAHelper localizedStringWithKey:@"msg.updateSuccess" comment:@"更新成功"] detail:nil delay:0.6 yOffset:0];
+            [self performSelector:@selector(back) withObject:self afterDelay:0.6];
+            
             
         }];
     }
     
 }
 
+- (void)back
+{
+    [self.navigationController popViewControllerAnimated:YES];
+}
 
 #pragma mark - Table view data source
 

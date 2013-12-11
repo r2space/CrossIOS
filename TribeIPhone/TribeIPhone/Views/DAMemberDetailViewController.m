@@ -41,7 +41,7 @@
     [self fetch];
     
     UINib *cellNib = [UINib nibWithNibName:@"DAMessageCell" bundle:nil];
-    [self.tableView registerNib:cellNib forCellReuseIdentifier:@"DAMessageCell"];
+    [self.tableView registerNib:cellNib forCellReuseIdentifier:@"DAImageMessageCell"];
 
 
 }

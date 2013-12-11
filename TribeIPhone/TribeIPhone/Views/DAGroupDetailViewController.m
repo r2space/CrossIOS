@@ -36,6 +36,9 @@
 {
     [super viewDidLoad];
     
+    UINib *cellNib = [UINib nibWithNibName:@"DAMessageCell" bundle:nil];
+    [self.tableView registerNib:cellNib forCellReuseIdentifier:@"DAImageMessageCell"];
+    
     self.barTitle.title = [DAHelper localizedStringWithKey:@"group.homepage.title" comment:@"组/部门主页"];
     // Do any additional setup after loading the view from its nib.
     [self fetch];

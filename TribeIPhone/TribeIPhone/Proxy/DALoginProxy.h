@@ -19,5 +19,6 @@
 - (void) setCurVC:(UIViewController *)vc;
 - (UIViewController *) getCurVC;
 - (DALoginViewController *) getLoginVC;
+- (void) cleanCurVC;
 - (void) activeProxy;
 @end

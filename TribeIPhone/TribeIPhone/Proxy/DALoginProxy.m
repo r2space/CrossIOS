@@ -63,4 +63,8 @@ static DALoginViewController *loginViewController = nil;
     }
     
 }
+- (void) cleanCurVC
+{
+    curViewController = nil;
+}
 @end

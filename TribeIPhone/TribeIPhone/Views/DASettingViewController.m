@@ -8,6 +8,7 @@
 
 #import "DASettingViewController.h"
 #import "DAHelper.h"
+#import "DALoginProxy.h"
 
 #define kInfoPlistKeyServerAddress  @"ServerAddress"
 #define kInfoPlistKeyServerPort     @"ServerPort"
@@ -109,6 +110,9 @@
             
             // 显示登陆画面
             [[NSNotificationCenter defaultCenter] postNotification:[NSNotification notificationWithName:@"NeedsLogin" object:nil]];
+            
+            DALoginProxy *loginProxy = [DALoginProxy sharedInstance];
+            [loginProxy cleanCurVC];
         }];
     }
 

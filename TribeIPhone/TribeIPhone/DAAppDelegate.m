@@ -78,23 +78,28 @@
     UIViewController *curVC = [loginProxy getCurVC];
 
     DALoginViewController *loginView = [loginProxy getLoginVC];
-    if(curVC.presentingViewController != nil){
-        [curVC addChildViewController:loginView];
-        [loginView.view setFrame:CGRectMake(0, 0,curVC.view.bounds.size.width, curVC.view.bounds.size.height + 20)];
-        
-        [curVC.view addSubview:loginView.view];
-    } else {
-        [self.window.rootViewController addChildViewController:loginView];
-        [loginView.view setFrame:CGRectMake(0, 0,self.window.rootViewController.view.bounds.size.width, self.window.rootViewController.view.bounds.size.height + 20)];
-        
-        [self.window.rootViewController.view addSubview:loginView.view];
-    }
+    NSString *userId = [[NSUserDefaults standardUserDefaults] objectForKey:@"jp.co.dreamarts.smart.message.userid"];
     
+    if (userId!=nil && userId.length > 0) {
+        
+    
+        if(curVC != nil && curVC.presentingViewController != nil){
+            [curVC addChildViewController:loginView];
+            [loginView.view setFrame:CGRectMake(0, 0,curVC.view.bounds.size.width, curVC.view.bounds.size.height + 20)];
+            
+            [curVC.view addSubview:loginView.view];
+        } else {
+            [self.window.rootViewController addChildViewController:loginView];
+            [loginView.view setFrame:CGRectMake(0, 0,self.window.rootViewController.view.bounds.size.width, self.window.rootViewController.view.bounds.size.height + 20)];
+            
+            [self.window.rootViewController.view addSubview:loginView.view];
+        }
+    }
     
     double now = [[NSDate date] timeIntervalSince1970];
     [[NSUserDefaults standardUserDefaults] setObject:[NSString stringWithFormat:@"%f",now] forKey:@"jp.co.dreamarts.smart.message.lastaccess"];
     [[NSUserDefaults standardUserDefaults] synchronize];
-    NSString *userId = [[NSUserDefaults standardUserDefaults] objectForKey:@"jp.co.dreamarts.smart.message.userid"];
+    
     NSString *passWord = [[NSUserDefaults standardUserDefaults] objectForKey:@"jp.co.dreamarts.smart.message.password"];
     if (userId != nil && passWord != nil) {
         loginView.txtUserId.text = userId;

@@ -9,6 +9,8 @@
 #import "DAFileSelectViewController.h"
 #import "DAFileViewCell.h"
 #import "DAHelper.h"
+#import "DALoginProxy.h"
+
 
 @interface DAFileSelectViewController ()
 {
@@ -36,6 +38,13 @@
     _unSelectFiles = [[NSMutableArray alloc] init];
     self.barTitle.title = [DAHelper localizedStringWithKey:@"file.select.title" comment:@"文件选择"];
     [self refresh];
+}
+
+-(void) viewDidAppear:(BOOL)animated
+{
+    DALoginProxy *loginProxy = [DALoginProxy sharedInstance];
+    [loginProxy setCurVC:self];
+    [super viewDidAppear:animated];
 }
 
 - (void)didReceiveMemoryWarning

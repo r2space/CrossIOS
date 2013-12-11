@@ -7,6 +7,7 @@
 //
 
 #import "DAGroupSelectViewController.h"
+#import "DALoginProxy.h"
 
 @interface DAGroupSelectViewController ()
 {
@@ -37,6 +38,14 @@
     self.barTitle.title = [DAHelper localizedStringWithKey:@"group.select.title" comment:@"组/部门选择"];
     
     [self refresh];
+}
+
+
+-(void) viewDidAppear:(BOOL)animated
+{
+    DALoginProxy *loginProxy = [DALoginProxy sharedInstance];
+    [loginProxy setCurVC:self];
+    [super viewDidAppear:animated];
 }
 
 - (void)didReceiveMemoryWarning

@@ -9,6 +9,7 @@
 #import "DAGroupDetailViewController.h"
 #import "DAMemberController.h"
 #import "DAGroupMoreContainerViewController.h"
+#import "DALoginProxy.h"
 
 @interface DAGroupDetailViewController ()
 {
@@ -39,6 +40,13 @@
     // Do any additional setup after loading the view from its nib.
     [self fetch];
 }
+- (void)viewDidAppear:(BOOL)animated
+{
+    DALoginProxy *loginProxy = [DALoginProxy sharedInstance];
+    [loginProxy setCurVC:self];
+    [super viewDidAppear:animated];
+}
+
 -(void)fetch
 {
     if ([self preFetch]) {
@@ -72,10 +80,7 @@
     
 }
 
-- (void)viewDidAppear:(BOOL)animated
-{
 
-}
 
 - (void)didReceiveMemoryWarning
 {
@@ -182,7 +187,7 @@
         return cell;
         
     } else {
-        DAMessageCell *cell = [DAMessageCell initWithMessage:[list objectAtIndex:indexPath.row ] tableView:tableView];
+        DAMessageCell *cell = [DAMessageCell initWithMessage:[list objectAtIndex:indexPath.row ] tableView:tableView indexPath:indexPath];
         //        cell.parentController = self;
         return cell;
     }

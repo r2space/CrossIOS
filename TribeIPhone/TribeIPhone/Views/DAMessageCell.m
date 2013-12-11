@@ -45,18 +45,12 @@
 }
 
 
-+(DAMessageCell *)initWithMessage:(DAMessage *)message tableView:(UITableView *)tableView
++(DAMessageCell *)initWithMessage:(DAMessage *)message tableView:(UITableView *)tableView indexPath:(NSIndexPath *)indexPath
 {
-    NSString *identifier = @"DAMessageCell";
+    NSString *identifier = @"DAImageMessageCell";
     
-	DAMessageCell *cell = [tableView dequeueReusableCellWithIdentifier:identifier];
-    if (cell == nil) {
-        UINib *nib = [UINib nibWithNibName:identifier bundle:nil];
-        NSArray *array = [nib instantiateWithOwner:nil options:nil];
-        cell = [array objectAtIndex:0];
-    }
+    DAMessageCell *cell = [tableView dequeueReusableCellWithIdentifier:identifier forIndexPath:indexPath];
     [cell cellInitWithMessage:message];
-    
     
     return cell;
 }
@@ -109,6 +103,7 @@
     self.imgPortrait.layer.masksToBounds = YES;
     self.imgPortrait.layer.cornerRadius = 5;
     if ([user isUserPhotoCatched] || [user getUserPhotoId] == nil) {
+        
 //    if ([user getUserPhotoId] == nil) {
         self.imgPortrait.image = [user getUserPhotoImage];
     } else {
@@ -189,7 +184,12 @@
         height += fview.frame.size.height;
     }
     
-    
+//    UIGraphicsBeginImageContext(CGSizeMake(200, 400));
+//    [img drawInRect:CGRectMake(0, 0, 200, 400)];
+//    UIImage *reSizeImage = UIGraphicsGetImageFromCurrentImageContext();
+//    UIGraphicsEndImageContext();
+//    
+//    return reSizeImage;
     if ([message_contenttype_image isEqualToString:message.contentType]) {
         if (message.attach.count > 0) {
             height += 5;
@@ -197,23 +197,29 @@
             float imgHeight;
             NSString *fileid = @"";
             if (message.thumb!=nil) {
-                imgHeight= 160.0f* [message.thumb.height floatValue]/500.0f;
+                imgHeight= 160.0f * [message.thumb.height floatValue]/500.0f;
                 fileid  = message.thumb.fileid;
             }else{
                 fileid  = file.fileid;
                 imgHeight = 120;
             }
             [self.imgAttach removeFromSuperview];
-            UIImageView *newThumb = [[UIImageView alloc]initWithFrame:CGRectMake(CONTENT_LABEL_TO_LEFT, height, 160, imgHeight)];
+            UIImageView *newThumb = [[UIImageView alloc]initWithFrame:CGRectMake(CONTENT_LABEL_TO_LEFT, height, 100, imgHeight)];
             self.imgAttach = newThumb;
             
             if ([DACommon isImageCatched:fileid]) {
                     self.imgAttach.image = [DACommon getCatchedImage:fileid];
+                CGSize size = [self setPicture:fileid];
+                [newThumb setFrame:CGRectMake(CONTENT_LABEL_TO_LEFT, height, size.width, size.height)];
             } else {
                 [[DAFileModule alloc] getPicture:fileid callback:^(NSError *err, NSString *pictureId){
+                    
                     self.imgAttach.image = [DACommon getCatchedImage:pictureId];
+                    CGSize size = [self setPicture:pictureId];
+                    [newThumb setFrame:CGRectMake(CONTENT_LABEL_TO_LEFT, height, size.width, size.height)];
                 }];
             }
+
             [self addSubview:newThumb];
         }
     } else {
@@ -221,5 +227,39 @@
     }
 }
 
+
+-(CGSize )setPicture:(NSString *)pictureId
+{
+    UIImage *img = [DACommon getCatchedImage:pictureId];
+    CGSize size = [self sizeFixToImageSize:img.size];
+    return size;
+}
+-(CGSize)sizeFixToImageSize:(CGSize)imgSize
+{
+    float maxWidth = self.frame.size.width;
+    float maxHeight = 120 ;
+    if (imgSize.width <= maxWidth && imgSize.height <= maxHeight) {
+        return CGSizeMake(imgSize.width, imgSize.height);
+    }
+    if (imgSize.width > maxWidth){
+        float ratio = imgSize.height / imgSize.width;
+        float h = maxWidth * ratio;
+        CGSize size = CGSizeMake(maxWidth, h);
+        if (h > maxHeight) {
+            return [self sizeFixToImageSize:size];
+        }
+        return size;
+    }
+    if (imgSize.height > maxHeight) {
+        float ratio = imgSize.width / imgSize.height;
+        float w = maxHeight *ratio;
+        CGSize size = CGSizeMake(w, maxHeight);
+        if (w > maxWidth) {
+            return [self sizeFixToImageSize:size];
+        }
+        return size;
+    }
+    return CGSizeMake(maxWidth/2, maxHeight/2);
+}
 
 @end

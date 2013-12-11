@@ -11,6 +11,7 @@
 #import "DAGroupDetailViewController.h"
 #import "DAGroupMoreContainerViewController.h"
 #import "DAGroupFilterViewController.h"
+#import "DALoginProxy.h"
 
 @interface DAGroupViewController ()
 {
@@ -52,8 +53,13 @@
 
 - (void)viewDidAppear:(BOOL)animated
 {
-    [super viewDidAppear:animated];
+    DALoginProxy *loginProxy = [DALoginProxy sharedInstance];
+    [loginProxy setCurVC:self];
+    
+    
     _searchBar.placeholder = [DAHelper localizedStringWithKey:@"group.search.placeholder" comment:@"检索名称、拼音"];
+
+    [super viewDidAppear:animated];
 }
 
 - (void)didReceiveMemoryWarning

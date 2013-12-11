@@ -27,6 +27,9 @@
     filterType = @"all";
     [self fetch];
     
+    UINib *cellNib = [UINib nibWithNibName:@"DAMessageCell" bundle:nil];
+    [self.tableView registerNib:cellNib forCellReuseIdentifier:@"DAImageMessageCell"];
+    
 }
 
 - (IBAction)onNotifiactionClicked:(id)sender
@@ -55,7 +58,7 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     DAMessage *message = [list objectAtIndex:indexPath.row];
-	DAMessageCell *cell = [DAMessageCell initWithMessage:message tableView:tableView];
+	DAMessageCell *cell = [DAMessageCell initWithMessage:message tableView:tableView indexPath:indexPath];
 //    cell.parentController = self;
     
     return cell;

@@ -51,6 +51,7 @@
 		0A13CB7F177C38540080989D /* DAMemberMoreDetailCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0A13CB7E177C38530080989D /* DAMemberMoreDetailCell.xib */; };
 		0A1968E9177D130B00D576B5 /* DAGroupMoreDetailCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A1968E8177D130B00D576B5 /* DAGroupMoreDetailCell.m */; };
 		0A1968EB177D132300D576B5 /* DAGroupMoreDetailCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0A1968EA177D132300D576B5 /* DAGroupMoreDetailCell.xib */; };
+		0A1AA9421858074B00FAE1E2 /* DALoginProxy.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A1AA9411858074B00FAE1E2 /* DALoginProxy.m */; };
 		0A59B1C9177BE6A1005CEC15 /* info.png in Resources */ = {isa = PBXBuildFile; fileRef = 0A59B1C7177BE6A1005CEC15 /* info.png */; };
 		0A59B1CA177BE6A1005CEC15 /* info@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0A59B1C8177BE6A1005CEC15 /* info@2x.png */; };
 		0A59B1CD177BEABF005CEC15 /* info-white.png in Resources */ = {isa = PBXBuildFile; fileRef = 0A59B1CB177BEABF005CEC15 /* info-white.png */; };
@@ -575,6 +576,8 @@
 		0A1968E7177D130B00D576B5 /* DAGroupMoreDetailCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DAGroupMoreDetailCell.h; sourceTree = "<group>"; };
 		0A1968E8177D130B00D576B5 /* DAGroupMoreDetailCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DAGroupMoreDetailCell.m; sourceTree = "<group>"; };
 		0A1968EA177D132300D576B5 /* DAGroupMoreDetailCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DAGroupMoreDetailCell.xib; sourceTree = "<group>"; };
+		0A1AA9401858074B00FAE1E2 /* DALoginProxy.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DALoginProxy.h; path = Proxy/DALoginProxy.h; sourceTree = "<group>"; };
+		0A1AA9411858074B00FAE1E2 /* DALoginProxy.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DALoginProxy.m; path = Proxy/DALoginProxy.m; sourceTree = "<group>"; };
 		0A59B1C7177BE6A1005CEC15 /* info.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = info.png; sourceTree = "<group>"; };
 		0A59B1C8177BE6A1005CEC15 /* info@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "info@2x.png"; sourceTree = "<group>"; };
 		0A59B1CB177BEABF005CEC15 /* info-white.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "info-white.png"; sourceTree = "<group>"; };
@@ -1273,6 +1276,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0A1AA93F1858072600FAE1E2 /* Proxy */ = {
+			isa = PBXGroup;
+			children = (
+				0A1AA9401858074B00FAE1E2 /* DALoginProxy.h */,
+				0A1AA9411858074B00FAE1E2 /* DALoginProxy.m */,
+			);
+			name = Proxy;
+			sourceTree = "<group>";
+		};
 		47120B151733A4F900FB74AF /* Notification */ = {
 			isa = PBXGroup;
 			children = (
@@ -1348,6 +1360,7 @@
 		471A0562171BC1AD0040CB93 /* TribeIPhone */ = {
 			isa = PBXGroup;
 			children = (
+				0A1AA93F1858072600FAE1E2 /* Proxy */,
 				F22B38A0173652BF0017A986 /* Thirdparty */,
 				471A05A8171BC3D10040CB93 /* Images */,
 				471A05A7171BC3B40040CB93 /* Views */,
@@ -2840,6 +2853,7 @@
 				F2C9423C184EC176006D05D5 /* Jastor.m in Sources */,
 				F2C94228184EC176006D05D5 /* DAFileList.m in Sources */,
 				F2C9421D184EC176006D05D5 /* DAShortmailModule.m in Sources */,
+				0A1AA9421858074B00FAE1E2 /* DALoginProxy.m in Sources */,
 				47A021B317261BEF00E2AF6C /* DAMessageFileView.m in Sources */,
 				F2972597172616E00070B406 /* DAGroupMoreViewController.m in Sources */,
 				F2C9422A184EC176006D05D5 /* DAGroupList.m in Sources */,

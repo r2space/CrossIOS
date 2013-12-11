@@ -10,6 +10,7 @@
 #import "DAMemberViewCell.h"
 #import "DAMemberDetailViewController.h"
 #import "DAMemberFilterViewController.h"
+#import "DALoginProxy.h"
 
 @interface DAMemberViewController ()
 {
@@ -51,6 +52,14 @@
     [self fetch];
     _searchBar.placeholder = [DAHelper localizedStringWithKey:@"user.search.placeholder" comment:@"检索名称、拼音、邮箱"];
 }
+
+-(void)viewDidAppear:(BOOL)animated
+{
+    DALoginProxy *loginProxy = [DALoginProxy sharedInstance];
+    [loginProxy setCurVC:self];
+    [super viewDidAppear:animated];
+}
+
 -(void)displayFilter
 {
     if ([_type isEqualToString:@"all"]) {
@@ -71,14 +80,7 @@
     }
     
 }
-- (void)viewDidAppear:(BOOL)animated
-{
-    [super viewDidAppear:animated];
 
-    
-    
-//    [self.tableView scrollsToTop];
-}
 
 - (void)didReceiveMemoryWarning
 {

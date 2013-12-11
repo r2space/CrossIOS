@@ -9,9 +9,12 @@
 #import "DAAppDelegate.h"
 #import "TribeSDKHeader.h"
 #import "DAMainViewController.h"
+#import "DALoginViewController.h"
 
 #import "IIViewDeckController.h"
 #import "DALeftSideViewController.h"
+#import "DALoginProxy.h"
+
 
 #define kInfoPlistKeyServerAddress  @"ServerAddress"
 #define kInfoPlistKeyServerPort     @"ServerPort"
@@ -71,10 +74,34 @@
 // アプリケーションがバックグラウンドになっていることをデリゲートに伝えます。
 - (void)applicationDidEnterBackground:(UIApplication *)application
 {
+    DALoginProxy *loginProxy = [DALoginProxy sharedInstance];
+    UIViewController *curVC = [loginProxy getCurVC];
+
+    DALoginViewController *loginView = [loginProxy getLoginVC];
+    if(curVC.presentingViewController != nil){
+        [curVC addChildViewController:loginView];
+        [loginView.view setFrame:CGRectMake(0, 0,curVC.view.bounds.size.width, curVC.view.bounds.size.height + 20)];
+        
+        [curVC.view addSubview:loginView.view];
+    } else {
+        [self.window.rootViewController addChildViewController:loginView];
+        [loginView.view setFrame:CGRectMake(0, 0,self.window.rootViewController.view.bounds.size.width, self.window.rootViewController.view.bounds.size.height + 20)];
+        
+        [self.window.rootViewController.view addSubview:loginView.view];
+    }
+    
+    
     double now = [[NSDate date] timeIntervalSince1970];
     [[NSUserDefaults standardUserDefaults] setObject:[NSString stringWithFormat:@"%f",now] forKey:@"jp.co.dreamarts.smart.message.lastaccess"];
     [[NSUserDefaults standardUserDefaults] synchronize];
-    // Use this method to release shared resources, save user data, invalidate timers, and store enough application state information to restore your application to its current state in case it is terminated later. 
+    NSString *userId = [[NSUserDefaults standardUserDefaults] objectForKey:@"jp.co.dreamarts.smart.message.userid"];
+    NSString *passWord = [[NSUserDefaults standardUserDefaults] objectForKey:@"jp.co.dreamarts.smart.message.password"];
+    if (userId != nil && passWord != nil) {
+        loginView.txtUserId.text = userId;
+        loginView.txtPassword.text = passWord;
+    }
+    
+    // Use this method to release shared resources, save user data, invalidate timers, and store enough application state information to restore your application to its current state in case it is terminated later.
     // If your application supports background execution, this method is called instead of applicationWillTerminate: when the user quits.
 }
 
@@ -82,6 +109,9 @@
 - (void)applicationWillEnterForeground:(UIApplication *)application
 {
     // Called as part of the transition from the background to the inactive state; here you can undo many of the changes made on entering the background.
+    
+    DALoginProxy *loginProxy = [DALoginProxy sharedInstance];
+    [loginProxy activeProxy];
     
     NSString *loginuid = [DALoginModule getLoginUserId];
     if (loginuid != nil) {

@@ -35,7 +35,7 @@
 @property (weak, nonatomic) UILabel *lblMessage;
 @property (weak, nonatomic) UIViewController *parentController;
 
-+(DAMessageCell *) initWithMessage:(DAMessage *)message tableView:(UITableView *)tableView;
++(DAMessageCell *) initWithMessage:(DAMessage *)message tableView:(UITableView *)tableView indexPath:(NSIndexPath *)indexPath;
 +(float)cellHeightWithMessage:(DAMessage *)message;
 -(void) cellInitWithMessage:(DAMessage *)message;
 @end

@@ -9,6 +9,7 @@
 #import "DASettingContainerViewController.h"
 #import "DASettingViewController.h"
 #import "DAHelper.h"
+#import "DALoginProxy.h"
 
 @interface DASettingContainerViewController ()
 {
@@ -41,6 +42,12 @@
     settingViewController.view.frame = CGRectMake(0, 44, 320, 548);
     [self addChildViewController:settingViewController];
     [self.view addSubview:settingViewController.view];
+}
+-(void) viewDidAppear:(BOOL)animated
+{
+    DALoginProxy *loginProxy = [DALoginProxy sharedInstance];
+    [loginProxy setCurVC:self];
+    [super viewDidAppear:animated];
 }
 
 - (void)didReceiveMemoryWarning

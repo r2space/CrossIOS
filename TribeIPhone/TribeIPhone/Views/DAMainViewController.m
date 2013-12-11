@@ -11,6 +11,8 @@
 #import "TribeSDKHeader.h"
 #import "MBProgressHUD.h"
 #import "DAHelper.h"
+#import "DALoginProxy.h"
+
 
 @interface DAMainViewController ()
 {
@@ -55,13 +57,16 @@
 
 - (void)viewDidAppear:(BOOL)animated
 {
-    [super viewDidAppear:animated];
+
     
     NSString *userid = [[NSUserDefaults standardUserDefaults] objectForKey:@"jp.co.dreamarts.smart.message.userid"];
     NSLog(@"current user : %@", userid);
     if (userid == nil) {
         [[NSNotificationCenter defaultCenter] postNotification:[NSNotification notificationWithName:@"NeedsLogin" object:nil]];
     }
+    DALoginProxy *loginProxy = [DALoginProxy sharedInstance];
+    [loginProxy setCurVC:self];
+    [super viewDidAppear:animated];
 }
 
 - (void)didReceiveMemoryWarning

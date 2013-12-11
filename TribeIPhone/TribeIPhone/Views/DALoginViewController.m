@@ -9,6 +9,8 @@
 #import "DALoginViewController.h"
 #import "DATimeLineViewController.h"
 #import "DAMainViewController.h"
+#import "DALoginProxy.h"
+
 
 @interface DALoginViewController ()
 
@@ -28,19 +30,7 @@
     self.txtPassword.placeholder = [DAHelper localizedStringWithKey:@"login.password.placeholder" comment:@"密码"];
     self.lblLogin.text = [DAHelper localizedStringWithKey:@"login.login" comment:@"登录"];
     
-    double lastExitTime = [[[NSUserDefaults standardUserDefaults] objectForKey:@"jp.co.dreamarts.smart.message.lastaccess"] doubleValue];
-    double now = [[NSDate date] timeIntervalSince1970];
     
-    
-    if (now - lastExitTime < 10) {
-        NSString *userId = [[NSUserDefaults standardUserDefaults] objectForKey:@"jp.co.dreamarts.smart.message.userid"];
-        NSString *passWord = [[NSUserDefaults standardUserDefaults] objectForKey:@"jp.co.dreamarts.smart.message.password"];
-        if (userId != nil && passWord != nil) {
-            self.txtUserId.text = userId;
-            self.txtPassword.text = passWord;
-        }
-
-    }
     
     // 注册键盘显示的Notification
     [self registerForKeyboardNotifications];
@@ -159,17 +149,33 @@
         NSData *userdata = [NSKeyedArchiver archivedDataWithRootObject:user];
         [userdata writeToFile:[NSString stringWithFormat:@"%@/%@", documentDir, user._id] atomically:YES];
         
-        // 显示第一个消息画面
-        DAMainViewController *controller = (DAMainViewController *)self.parentViewController;
-        UINavigationController *navigationController = [controller.viewControllers objectAtIndex: 0];
-        controller.selectedViewController = navigationController;
-        
-        // 刷新数据
-        DATimeLineViewController *timeLineViewController = [navigationController.viewControllers objectAtIndex:0];
-        [timeLineViewController fetch];
+        DALoginProxy *loginProxy = [DALoginProxy sharedInstance];
+        UIViewController *curVC =  [loginProxy getCurVC];
+        if (curVC!=nil) {
+            NSArray *vcArray = [curVC childViewControllers];
+            for (UIViewController *childVC in vcArray ) {
+                NSLog(@"%@",[childVC class]) ;
+                NSString *clazz = [NSString stringWithFormat:@"%@",[childVC class]];
+                if ([clazz isEqualToString:@"DALoginViewController"]) {
+                    [childVC.view removeFromSuperview];
+                }
+            }
+        } else {
+            // 显示第一个消息画面
+            DAMainViewController *controller = (DAMainViewController *)self.parentViewController;
+            UINavigationController *navigationController = [controller.viewControllers objectAtIndex: 0];
+            controller.selectedViewController = navigationController;
+            // 刷新数据
+            DATimeLineViewController *timeLineViewController = [navigationController.viewControllers objectAtIndex:0];
+            [timeLineViewController fetch];
+
+        }
+
         
         // 更新APN通知用设备ID
         [self updateDeviceToken:user._id];
+        
+
     }];
 }
 

@@ -9,6 +9,8 @@
 #import "DAPictureViewController.h"
 #import "MBProgressHUD.h"
 #import "DAHelper.h"
+#import "DALoginProxy.h"
+
 
 #define prictureSpace 0
 
@@ -42,11 +44,16 @@
     [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleBlackTranslucent animated:YES];
 }
 
--(void)viewDidAppear:(BOOL)animated
+- (void)viewDidAppear:(BOOL)animated
 {
+    DALoginProxy *loginProxy = [DALoginProxy sharedInstance];
+    [loginProxy setCurVC:self];
+
+    
     [self.scrollView renderWithPictureIds:self.PictureIds];
     [self.scrollView scrollToIndex:_currIndex];
     [self setTitle];
+    [super viewDidAppear:animated];
 }
 
 - (void)didReceiveMemoryWarning

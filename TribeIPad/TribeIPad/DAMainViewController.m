@@ -7,6 +7,7 @@
 //
 
 #import "DAMainViewController.h"
+#import "DALoginProxy.h"
 
 @interface DAMainViewController ()
 {
@@ -46,6 +47,11 @@
     if (userid == nil) {
         [[NSNotificationCenter defaultCenter] postNotification:[NSNotification notificationWithName:@"NeedsLogin" object:nil]];
     }
+
+    DALoginProxy *loginProxy = [DALoginProxy sharedInstance];
+    [loginProxy setCurVC:self];
+    
+    [super viewDidAppear:animated];
 }
 
 - (void)didReceiveMemoryWarning

@@ -9,6 +9,7 @@
 #import "DAContributeViewController.h"
 #import "DAFileSelectViewController.h"
 #import "WTStatusBar.h"
+#import "DALoginProxy.h"
 
 @interface DAContributeViewController ()
 {
@@ -90,6 +91,12 @@
                                              selector:@selector(keyboardWillShow:)
                                                  name:UIKeyboardWillShowNotification
                                                object:nil];
+}
+-(void) viewDidAppear:(BOOL)animated
+{
+    DALoginProxy *loginProxy = [DALoginProxy sharedInstance];
+    [loginProxy setCurVC:self];
+    [super viewDidAppear:animated];
 }
 
 - (void)didReceiveMemoryWarning

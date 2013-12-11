@@ -10,6 +10,8 @@
 #import "DAShortmailViewCell.h"
 #import "DAShortmailStoryViewController.h"
 #import "DAMessageDetailViewController.h"
+#import "DALoginProxy.h"
+
 
 @interface DANotificationViewController ()
 {
@@ -119,6 +121,12 @@
             break;
         }
     }
+}
+-(void)viewDidAppear:(BOOL)animated
+{
+    DALoginProxy *loginProxy = [DALoginProxy sharedInstance];
+    [loginProxy setCurVC:self];
+    [super viewDidAppear:animated];
 }
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView

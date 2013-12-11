@@ -39,6 +39,9 @@
     self.barTitle.title = [DAHelper localizedStringWithKey:@"user.homepage.title" comment:@"用户主页"];
     
     [self fetch];
+    
+    UINib *cellNib = [UINib nibWithNibName:@"DAMessageCell" bundle:nil];
+    [self.tableView registerNib:cellNib forCellReuseIdentifier:@"DAMessageCell"];
 
 
 }
@@ -185,7 +188,7 @@
         return cell;
         
     } else {
-        DAMessageCell *cell = [DAMessageCell initWithMessage:[list objectAtIndex:indexPath.row ] tableView:tableView];
+        DAMessageCell *cell = [DAMessageCell initWithMessage:[list objectAtIndex:indexPath.row ] tableView:tableView indexPath:indexPath];
         //        cell.parentController = self;
         return cell;
     }

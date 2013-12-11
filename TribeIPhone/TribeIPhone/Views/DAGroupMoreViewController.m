@@ -8,6 +8,7 @@
 
 #import "DAGroupMoreViewController.h"
 #import "DAHelper.h"
+#import "DALoginProxy.h"
 
 @interface DAGroupMoreViewController ()
 
@@ -34,6 +35,13 @@
         }
     }
 }
+-(void) viewDidAppear:(BOOL)animated
+{
+    DALoginProxy *loginProxy = [DALoginProxy sharedInstance];
+    [loginProxy setCurVC:self];
+    [super viewDidAppear:animated];
+}
+
 - (IBAction)didSwitchON:(id)sender
 {
 //        UISwitch *safe = [(UISwitc

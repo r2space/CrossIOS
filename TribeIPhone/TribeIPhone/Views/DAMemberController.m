@@ -7,6 +7,8 @@
 //
 
 #import "DAMemberController.h"
+#import "DALoginProxy.h"
+
 
 @interface DAMemberController ()
 {
@@ -94,6 +96,12 @@
             [self.tblUsers reloadData];
         }];
     }
+}
+-(void) viewDidAppear:(BOOL)animated
+{
+    [super viewDidAppear:animated];
+    DALoginProxy *loginProxy = [DALoginProxy sharedInstance];
+    [loginProxy setCurVC:self];
 }
 
 - (void)didReceiveMemoryWarning

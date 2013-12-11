@@ -7,6 +7,7 @@
 //
 
 #import "DAMemberSelectViewController.h"
+#import "DALoginProxy.h"
 
 @interface DAMemberSelectViewController ()
 {
@@ -38,6 +39,13 @@
     self.barTitle.title = [DAHelper localizedStringWithKey:@"user.select.title" comment:@"用户选择"];
     
     [self refresh];
+}
+
+-(void) viewDidAppear:(BOOL)animated
+{
+    DALoginProxy *loginProxy = [DALoginProxy sharedInstance];
+    [loginProxy setCurVC:self];
+    [super viewDidAppear:animated];
 }
 
 - (void)didReceiveMemoryWarning

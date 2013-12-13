@@ -43,9 +43,11 @@
     
     DAUser *user = notification.user;
     if ([user getUserPhotoId] == nil) {
-        cell.imgPortrait.image = [UIImage imageNamed:@"Default.png"];
+        cell.imgPortrait.image = [UIImage imageNamed:@"user_thumb.png"];
     } else {
+        cell.imgPortrait.image = [UIImage imageNamed:@"user_thumb.png"];
         if ([user isUserPhotoCatched]) {
+            
             [[DAFileModule alloc] getPicture:[user getUserPhotoId] callback:^(NSError *err, NSString *pictureId){
                 cell.imgPortrait.image = [DACommon getCatchedImage:pictureId];
             }];

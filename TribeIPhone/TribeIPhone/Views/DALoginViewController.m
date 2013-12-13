@@ -138,20 +138,13 @@
             [self.txtUserId becomeFirstResponder];
             return;
         }
-        
-        [[NSUserDefaults standardUserDefaults] setObject:userId forKey:@"jp.co.dreamarts.smart.message.userid"];
-        [[NSUserDefaults standardUserDefaults] setObject:password forKey:@"jp.co.dreamarts.smart.message.password"];
-        
-        // 保存用户数据
-        NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
-        NSString* documentDir = [paths objectAtIndex:0];
-        
-        NSData *userdata = [NSKeyedArchiver archivedDataWithRootObject:user];
-        [userdata writeToFile:[NSString stringWithFormat:@"%@/%@", documentDir, user._id] atomically:YES];
+
         
         DALoginProxy *loginProxy = [DALoginProxy sharedInstance];
         UIViewController *curVC =  [loginProxy getCurVC];
-        if (curVC!=nil) {
+        NSString *oldUserId = [[NSUserDefaults standardUserDefaults] objectForKey:@"jp.co.dreamarts.smart.message.userid"];
+        
+        if (curVC != nil && oldUserId != nil && [oldUserId isEqualToString:userId]) {
             NSArray *vcArray = [curVC childViewControllers];
             for (UIViewController *childVC in vcArray ) {
                 NSLog(@"%@",[childVC class]) ;
@@ -170,7 +163,16 @@
             [timeLineViewController fetch];
 
         }
-
+        
+        [[NSUserDefaults standardUserDefaults] setObject:userId forKey:@"jp.co.dreamarts.smart.message.userid"];
+        [[NSUserDefaults standardUserDefaults] setObject:password forKey:@"jp.co.dreamarts.smart.message.password"];
+        
+        // 保存用户数据
+        NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
+        NSString* documentDir = [paths objectAtIndex:0];
+        
+        NSData *userdata = [NSKeyedArchiver archivedDataWithRootObject:user];
+        [userdata writeToFile:[NSString stringWithFormat:@"%@/%@", documentDir, user._id] atomically:YES];
         
         // 更新APN通知用设备ID
         [self updateDeviceToken:user._id];

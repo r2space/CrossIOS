@@ -48,17 +48,17 @@ static DALoginViewController *loginViewController = nil;
     double lastExitTime = [[[NSUserDefaults standardUserDefaults] objectForKey:@"jp.co.dreamarts.smart.message.lastaccess"] doubleValue];
     double now = [[NSDate date] timeIntervalSince1970];
     
+    NSString *userId = [[NSUserDefaults standardUserDefaults] objectForKey:@"jp.co.dreamarts.smart.message.userid"];
+    NSString *passWord = [[NSUserDefaults standardUserDefaults] objectForKey:@"jp.co.dreamarts.smart.message.password"];
     
     if (now - lastExitTime < 3600) {
-        NSString *userId = [[NSUserDefaults standardUserDefaults] objectForKey:@"jp.co.dreamarts.smart.message.userid"];
-        NSString *passWord = [[NSUserDefaults standardUserDefaults] objectForKey:@"jp.co.dreamarts.smart.message.password"];
         if (userId != nil && passWord != nil) {
             loginViewController.txtUserId.text = userId;
             loginViewController.txtPassword.text = passWord;
         }
         
     } else {
-        loginViewController.txtUserId.text = @"";
+        loginViewController.txtUserId.text = userId;
         loginViewController.txtPassword.text = @"";
     }
     

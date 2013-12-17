@@ -35,7 +35,7 @@
 
 - (void)viewDidLoad
 {
-    withoutGetMore = YES;
+    //withoutGetMore = YES;
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
     
@@ -73,7 +73,7 @@
         return;
     }
     NSString *type = [_type isEqualToString:@"all"] ? @"" : _type;
-    [[DAGroupModule alloc] getGroupListStart:0 count:20 type:type keywords:_keywords callback:^(NSError *error, DAGroupList *groups){
+    [[DAGroupModule alloc] getGroupListStart:start count:count type:type keywords:_keywords callback:^(NSError *error, DAGroupList *groups){
         [self finishFetch:groups.items error:error];
         [self displayFilter];
         if (isFirstIn && list.count > 0) {

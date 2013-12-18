@@ -155,7 +155,11 @@
 
 -(NSString *) getUserPhotoId
 {
-    return self.photo.big;
+    if([self.photo.big length] == 0){
+        return nil;
+    }else{
+        return self.photo.big;
+    }
 }
 
 -(UIImage *) getUserDefaultPhotoImage

@@ -77,7 +77,7 @@
 							<object class="IBUIBarButtonItem" id="961061522">
 								<object class="NSCustomResource" key="IBUIImage">
 									<string key="NSClassName">NSImage</string>
-									<string key="NSResourceName">paper-plane-fix.png</string>
+									<string key="NSResourceName">tool_paper-plane-fix.png</string>
 								</object>
 								<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
 								<reference key="IBUIToolbar" ref="693297988"/>
@@ -529,7 +529,7 @@
 								<int key="contentType">3</int>
 								<bool key="placeholder">NO</bool>
 							</object>
-							<object class="IBNSLayoutConstraint" id="991562144">
+							<object class="IBNSLayoutConstraint" id="996861866">
 								<reference key="firstItem" ref="1020119481"/>
 								<int key="firstAttribute">9</int>
 								<int key="relation">0</int>
@@ -610,7 +610,7 @@
 							<reference ref="912550192"/>
 							<reference ref="950857905"/>
 							<reference ref="961061522"/>
-							<object class="IBNSLayoutConstraint" id="720782266">
+							<object class="IBNSLayoutConstraint" id="76114410">
 								<reference key="firstItem" ref="693297988"/>
 								<int key="firstAttribute">7</int>
 								<int key="relation">0</int>
@@ -1033,7 +1033,7 @@
 						<int key="objectID">26</int>
 						<reference key="object" ref="534004160"/>
 						<array class="NSMutableArray" key="children">
-							<object class="IBNSLayoutConstraint" id="1052751706">
+							<object class="IBNSLayoutConstraint" id="402260603">
 								<reference key="firstItem" ref="534004160"/>
 								<int key="firstAttribute">8</int>
 								<int key="relation">0</int>
@@ -1137,17 +1137,17 @@
 					</object>
 					<object class="IBObjectRecord">
 						<int key="objectID">1203</int>
-						<reference key="object" ref="1052751706"/>
+						<reference key="object" ref="402260603"/>
 						<reference key="parent" ref="534004160"/>
 					</object>
 					<object class="IBObjectRecord">
 						<int key="objectID">1205</int>
-						<reference key="object" ref="991562144"/>
+						<reference key="object" ref="996861866"/>
 						<reference key="parent" ref="517917157"/>
 					</object>
 					<object class="IBObjectRecord">
 						<int key="objectID">1206</int>
-						<reference key="object" ref="720782266"/>
+						<reference key="object" ref="76114410"/>
 						<reference key="parent" ref="693297988"/>
 					</object>
 				</array>
@@ -1207,7 +1207,7 @@
 				<reference key="26.IBUserGuides" ref="0"/>
 				<array key="26.IBViewMetadataConstraints">
 					<reference ref="189635386"/>
-					<reference ref="1052751706"/>
+					<reference ref="402260603"/>
 				</array>
 				<boolean value="NO" key="26.IBViewMetadataTranslatesAutoresizingMaskIntoConstraints"/>
 				<boolean value="NO" key="26.showNotes"/>
@@ -1228,7 +1228,7 @@
 				<string key="31.IBPluginDependency">com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
 				<reference key="31.IBUserGuides" ref="0"/>
 				<array class="NSMutableArray" key="31.IBViewMetadataConstraints">
-					<reference ref="720782266"/>
+					<reference ref="76114410"/>
 				</array>
 				<boolean value="NO" key="31.IBViewMetadataTranslatesAutoresizingMaskIntoConstraints"/>
 				<boolean value="NO" key="31.showNotes"/>
@@ -1248,7 +1248,7 @@
 					<reference ref="360417460"/>
 					<reference ref="987344554"/>
 					<reference ref="993399704"/>
-					<reference ref="991562144"/>
+					<reference ref="996861866"/>
 					<reference ref="608349999"/>
 					<reference ref="934109200"/>
 					<reference ref="609563448"/>
@@ -1294,10 +1294,10 @@
 			<string key="business-team.png">{29, 30}</string>
 			<string key="folder.png">{30, 30}</string>
 			<string key="image.png">{30, 30}</string>
-			<string key="paper-plane-fix.png">{20, 20}</string>
 			<string key="people-communicate.png">{30, 30}</string>
 			<string key="photography-camera.png">{30, 30}</string>
 			<string key="tool_multiply-symbol-mini.png">{20, 20}</string>
+			<string key="tool_paper-plane-fix.png">{44, 30}</string>
 		</dictionary>
 		<bool key="IBDocument.UseAutolayout">YES</bool>
 		<string key="IBCocoaTouchPluginVersion">3746</string>

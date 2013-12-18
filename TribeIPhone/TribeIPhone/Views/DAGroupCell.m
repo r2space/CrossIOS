@@ -55,9 +55,7 @@
     }
     
     if (group.photo != nil) {
-        [[DAFileModule alloc] getPicture:group.photo.small callback:^(NSError *err, NSString *pictureId){
-            cell.imgPortrait.image = [DACommon getCatchedImage:pictureId];
-        }];
+        cell.imgPortrait.image = [group getGroupPhotoImage];
     } else {
         cell.imgPortrait.image = [UIImage imageNamed:@"group_gray.png"];
     }

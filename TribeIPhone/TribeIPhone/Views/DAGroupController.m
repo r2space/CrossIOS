@@ -27,7 +27,7 @@
 
 - (void)viewDidLoad
 {
-    withoutGetMore = YES;
+    withoutGetMore = NO;
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
     
@@ -41,7 +41,7 @@
     if ([self preFetch]) {
         return;
     }
-    [[DAGroupModule alloc] getGroupListByUser:self.uid start:0 count:20 callback:^(NSError *error, DAGroupList *groups){
+    [[DAGroupModule alloc] getGroupListByUser:self.uid start:start count:count callback:^(NSError *error, DAGroupList *groups){
         [self finishFetch:groups.items error:error];
     }];
 }

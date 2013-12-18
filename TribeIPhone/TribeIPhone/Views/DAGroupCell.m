@@ -54,8 +54,10 @@
         cell.groupIcon.image = [UIImage imageNamed:@"department.png"];
     }
     
-    if (group.photo != nil) {
-        cell.imgPortrait.image = [group getGroupPhotoImage];
+    if (group.photo != nil && group.photo.small.length > 0) {
+        [[DAFileModule alloc] getPicture:group.photo.small callback:^(NSError *err, NSString *pictureId){
+            cell.imgPortrait.image = [DACommon getCatchedImage:pictureId];
+        }];
     } else {
         cell.imgPortrait.image = [UIImage imageNamed:@"group_gray.png"];
     }

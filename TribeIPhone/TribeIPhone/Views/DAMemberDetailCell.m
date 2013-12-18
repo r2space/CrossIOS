@@ -43,7 +43,7 @@
 
     
     cell.user = user;
-    if (user.photo != nil) {
+    if (user.photo != nil && user.photo.big.length > 0) {
         [[DAFileModule alloc] getPicture:user.photo.big callback:^(NSError *err, NSString *pictureId){
             cell.imgPortrait.image = [DACommon getCatchedImage:pictureId];
         }];

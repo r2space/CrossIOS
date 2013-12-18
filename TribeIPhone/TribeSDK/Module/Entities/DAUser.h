@@ -55,6 +55,10 @@
 @property (retain, nonatomic) NSString *zip;
 @end
 
+@interface UserEmail : Jastor <NSCoding>
+@property (retain, nonatomic) NSString *email1;
+@end
+
 
 @interface DAUser : Jastor <NSCoding>
 // TODO 服务器返回的JSON结构中有的地方是id有的地方是_id，需要进行统一
@@ -71,6 +75,7 @@
 @property (retain, nonatomic) UserAddress *address;
 @property (retain, nonatomic) NSString *lang;
 @property (retain, nonatomic) NSString *title;
+@property (retain, nonatomic) UserEmail *email;
 
 -(NSString *)getUserName;
 -(NSString *)getUserPhotoId;

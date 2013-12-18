@@ -206,7 +206,7 @@
                     break;
                 case 3:
                     
-                    [self rendCell:cell title:[DAHelper localizedStringWithKey:@"user.email" comment:@"邮件"] icon: @"tab_email.png" value:self.user.uid tag:3 hasDetail:NO];
+                    [self rendCell:cell title:[DAHelper localizedStringWithKey:@"user.email" comment:@"邮件"] icon: @"tab_email.png" value:self.user.email.email1 tag:3 hasDetail:NO];
                     
                     break;
                 case 4:
@@ -227,16 +227,12 @@
                     [self rendCell:cell title:[DAHelper localizedStringWithKey:@"user.tel" comment:@"手机"] icon: @"table_phone.png" value:self.user.tel.mobile tag:2 hasDetail:NO];
                     break;
                 case 2:
-                    [self rendCell:cell title:[DAHelper localizedStringWithKey:@"user.email" comment:@"邮件"] icon: @"tab_email.png" value:self.user.uid tag:3 hasDetail:NO];
+                    [self rendCell:cell title:[DAHelper localizedStringWithKey:@"user.email" comment:@"邮件"] icon: @"tab_email.png" value:self.user.email.email1 tag:3 hasDetail:NO];
                     break;
                 case 3:
                     [self rendCell:cell title:[DAHelper localizedStringWithKey:@"user.description" comment:@"简介"] icon: @"table_document-scroll.png" value:self.user.custom != nil?self.user.custom.memo:@"" tag:5 hasDetail:NO];
                     break;
-                case 4:
-                    
-                    [self rendCell:cell title:[DAHelper localizedStringWithKey:@"user.address" comment:@"住址"] icon: @"table_rural-house.png" value:self.user.address!=nil?self.user.address.city:@"" tag:4  hasDetail:NO];
-                    
-                    break;
+                
                 default:
                     break;
             }
@@ -362,7 +358,7 @@
     }
     // tag 3   设置邮件
     if (tag == 3) {
-        [cell.txtValue setEnabled:NO];
+        [cell.txtValue setEnabled:YES];
     }
     
     cell.imgPortrait.image = [UIImage imageNamed:icon];
@@ -397,8 +393,11 @@
         }
         self.user.tel.mobile = TextField.text;
     } else if(TextField.tag == 3){
-        self.user.uid = TextField.text;
-        
+        if (self.user.email==nil) {
+            UserEmail * email = [[UserEmail alloc] init];
+            self.user.email = email;
+        }
+        self.user.email.email1 = TextField.text;
     } else if(TextField.tag == 4){
         if (self.user.custom==nil) {
             UserCustom * custom = [[UserCustom alloc] init];

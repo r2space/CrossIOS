@@ -31,7 +31,8 @@
         [[NSUserDefaults standardUserDefaults] setObject:serverAddress forKey:kServerAddress];
         [[NSUserDefaults standardUserDefaults] setInteger:serverPort.integerValue forKey:kServerPort];
     }
-    
+    [[NSUserDefaults standardUserDefaults] removeObjectForKey:@"jp.co.dreamarts.smart.message.userid"];
+    [[NSUserDefaults standardUserDefaults] removeObjectForKey:@"jp.co.dreamarts.smart.message.password"];
     // 初始化侧边栏（保留）
     //UIStoryboard *mainStoryboard = [UIStoryboard storyboardWithName:@"MainStoryboard" bundle: nil];
     //DAMainViewController *mainController = (DAMainViewController*)[mainStoryboard instantiateViewControllerWithIdentifier: @"DAMainViewController"];

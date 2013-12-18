@@ -24,6 +24,19 @@
 }
 @end
 
+@implementation UserEmail
+- (void)encodeWithCoder:(NSCoder *)aCoder
+{
+    [aCoder encodeObject:self.email1 forKey:@"email1"];
+}
+
+- (id)initWithCoder:(NSCoder *)aDecoder
+{
+    self = [super init];
+    self.email1 = [aDecoder decodeObjectForKey:@"email1"];
+    return self;
+}
+@end
 
 @implementation UserPhoto
 - (void)encodeWithCoder:(NSCoder *)aCoder
@@ -171,6 +184,7 @@
     [aCoder encodeObject:self.tel forKey:@"tel"];
     [aCoder encodeObject:self.lang forKey:@"lang"];
     [aCoder encodeObject:self.title forKey:@"title"];
+    [aCoder encodeObject:self.email forKey:@"email"];
 }
 
 - (id)initWithCoder:(NSCoder *)aDecoder
@@ -185,7 +199,7 @@
     self.tel = [aDecoder decodeObjectForKey:@"tel"];
     self.lang = [aDecoder decodeObjectForKey:@"lang"];
     self.title = [aDecoder decodeObjectForKey:@"title"];
-    
+    self.email = [aDecoder decodeObjectForKey:@"email"];
     return self;
 }
 

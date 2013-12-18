@@ -43,7 +43,7 @@
     }
     if (editEnable&&self.group.name.name_zh.length > 0) {
         self.saveBtn.enabled = YES;
-        [self.saveBtn setImage:[UIImage imageNamed:@"tool_save.png"]];
+        [self.saveBtn setImage:[UIImage imageNamed:@"tool_save-fix.png"]];
     }
     if (ISNEW) {
         self.saveBtn.enabled = NO;

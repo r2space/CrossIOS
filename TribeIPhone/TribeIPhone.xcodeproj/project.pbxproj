@@ -205,6 +205,16 @@
 		47A021B317261BEF00E2AF6C /* DAMessageFileView.m in Sources */ = {isa = PBXBuildFile; fileRef = 47A021B217261BEF00E2AF6C /* DAMessageFileView.m */; };
 		47A021B5172660B100E2AF6C /* DAContributeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 47A021B4172660B100E2AF6C /* DAContributeViewController.xib */; };
 		47D476B51774323C003B15E3 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 47D476B71774323C003B15E3 /* Localizable.strings */; };
+		E01C080C186147DC00D4B10D /* tool_write-box-mini-fix@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E01C0804186147DC00D4B10D /* tool_write-box-mini-fix@2x.png */; };
+		E01C080D186147DC00D4B10D /* tool_write-box-mini-fix.png in Resources */ = {isa = PBXBuildFile; fileRef = E01C0805186147DC00D4B10D /* tool_write-box-mini-fix.png */; };
+		E01C080E186147DC00D4B10D /* tool_save-fix@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E01C0806186147DC00D4B10D /* tool_save-fix@2x.png */; };
+		E01C080F186147DC00D4B10D /* tool_save-fix.png in Resources */ = {isa = PBXBuildFile; fileRef = E01C0807186147DC00D4B10D /* tool_save-fix.png */; };
+		E01C0810186147DC00D4B10D /* tool_paper-plane-fix@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E01C0808186147DC00D4B10D /* tool_paper-plane-fix@2x.png */; };
+		E01C0811186147DC00D4B10D /* tool_paper-plane-fix.png in Resources */ = {isa = PBXBuildFile; fileRef = E01C0809186147DC00D4B10D /* tool_paper-plane-fix.png */; };
+		E01C0812186147DC00D4B10D /* tool_business-team-fix@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E01C080A186147DC00D4B10D /* tool_business-team-fix@2x.png */; };
+		E01C0813186147DC00D4B10D /* tool_business-team-fix.png in Resources */ = {isa = PBXBuildFile; fileRef = E01C080B186147DC00D4B10D /* tool_business-team-fix.png */; };
+		E01C08191861666700D4B10D /* tick-mini-fix@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E01C08171861666700D4B10D /* tick-mini-fix@2x.png */; };
+		E01C081A1861666700D4B10D /* tick-mini-fix.png in Resources */ = {isa = PBXBuildFile; fileRef = E01C08181861666700D4B10D /* tick-mini-fix.png */; };
 		F223E2D5171D8A760095F1C1 /* DAGroupDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F223E2D3171D8A750095F1C1 /* DAGroupDetailViewController.m */; };
 		F223E2D6171D8A760095F1C1 /* DAGroupDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F223E2D4171D8A750095F1C1 /* DAGroupDetailViewController.xib */; };
 		F223E2E1171E3AEC0095F1C1 /* DAGroupDetailCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F223E2E0171E3AEC0095F1C1 /* DAGroupDetailCell.m */; };
@@ -762,6 +772,16 @@
 		47D476B61774323C003B15E3 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		47D476B817743425003B15E3 /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/Localizable.strings; sourceTree = "<group>"; };
 		47D476B9177434D5003B15E3 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Localizable.strings"; sourceTree = "<group>"; };
+		E01C0804186147DC00D4B10D /* tool_write-box-mini-fix@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tool_write-box-mini-fix@2x.png"; sourceTree = "<group>"; };
+		E01C0805186147DC00D4B10D /* tool_write-box-mini-fix.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tool_write-box-mini-fix.png"; sourceTree = "<group>"; };
+		E01C0806186147DC00D4B10D /* tool_save-fix@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tool_save-fix@2x.png"; sourceTree = "<group>"; };
+		E01C0807186147DC00D4B10D /* tool_save-fix.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tool_save-fix.png"; sourceTree = "<group>"; };
+		E01C0808186147DC00D4B10D /* tool_paper-plane-fix@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tool_paper-plane-fix@2x.png"; sourceTree = "<group>"; };
+		E01C0809186147DC00D4B10D /* tool_paper-plane-fix.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tool_paper-plane-fix.png"; sourceTree = "<group>"; };
+		E01C080A186147DC00D4B10D /* tool_business-team-fix@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tool_business-team-fix@2x.png"; sourceTree = "<group>"; };
+		E01C080B186147DC00D4B10D /* tool_business-team-fix.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tool_business-team-fix.png"; sourceTree = "<group>"; };
+		E01C08171861666700D4B10D /* tick-mini-fix@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tick-mini-fix@2x.png"; sourceTree = "<group>"; };
+		E01C08181861666700D4B10D /* tick-mini-fix.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tick-mini-fix.png"; sourceTree = "<group>"; };
 		F223E2D2171D8A750095F1C1 /* DAGroupDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DAGroupDetailViewController.h; sourceTree = "<group>"; };
 		F223E2D3171D8A750095F1C1 /* DAGroupDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DAGroupDetailViewController.m; sourceTree = "<group>"; };
 		F223E2D4171D8A750095F1C1 /* DAGroupDetailViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DAGroupDetailViewController.xib; sourceTree = "<group>"; };
@@ -1444,6 +1464,16 @@
 		471A05A8171BC3D10040CB93 /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				E01C08171861666700D4B10D /* tick-mini-fix@2x.png */,
+				E01C08181861666700D4B10D /* tick-mini-fix.png */,
+				E01C0804186147DC00D4B10D /* tool_write-box-mini-fix@2x.png */,
+				E01C0805186147DC00D4B10D /* tool_write-box-mini-fix.png */,
+				E01C0806186147DC00D4B10D /* tool_save-fix@2x.png */,
+				E01C0807186147DC00D4B10D /* tool_save-fix.png */,
+				E01C0808186147DC00D4B10D /* tool_paper-plane-fix@2x.png */,
+				E01C0809186147DC00D4B10D /* tool_paper-plane-fix.png */,
+				E01C080A186147DC00D4B10D /* tool_business-team-fix@2x.png */,
+				E01C080B186147DC00D4B10D /* tool_business-team-fix.png */,
 				0ACE3617177E98A6002D6CCF /* lock-open.png */,
 				0ACE3618177E98A6002D6CCF /* lock-open@2x.png */,
 				4778D556177D166700E05BAC /* arrow-box-out-right-mini_gray.png */,
@@ -2437,6 +2467,7 @@
 				F29725C017268C5F0070B406 /* DASettingViewController.storyboard in Resources */,
 				F24FC31C172775DB00C26D12 /* DAFileViewController.xib in Resources */,
 				471648F31727B62600622D5F /* DAGroupSelectViewController.xib in Resources */,
+				E01C081A1861666700D4B10D /* tick-mini-fix.png in Resources */,
 				471648F81727BFF400622D5F /* DAGroupCell.xib in Resources */,
 				471648FD1729140700622D5F /* DAMemberSelectViewController.xib in Resources */,
 				F2A6EABE172AD09900C1A9BF /* DAShortmailViewController.xib in Resources */,
@@ -2466,6 +2497,7 @@
 				F22B38721733C35E0017A986 /* mkv.png in Resources */,
 				F22B38731733C35E0017A986 /* mov.png in Resources */,
 				F22B38741733C35E0017A986 /* mp3.png in Resources */,
+				E01C08191861666700D4B10D /* tick-mini-fix@2x.png in Resources */,
 				F22B38751733C35E0017A986 /* mp4.png in Resources */,
 				F22B38761733C35E0017A986 /* mpg.png in Resources */,
 				F22B38771733C35E0017A986 /* odbc.png in Resources */,
@@ -2510,6 +2542,7 @@
 				475AC8481769C3200097851B /* gateway_binoculars.png in Resources */,
 				475AC8491769C3200097851B /* gateway_cross.png in Resources */,
 				475AC84E1769D97A0097851B /* DAFileFilterViewController.xib in Resources */,
+				E01C0812186147DC00D4B10D /* tool_business-team-fix@2x.png in Resources */,
 				475AC852176B03320097851B /* group_add.png in Resources */,
 				F232971C176B1487003DF0BE /* detail_btn_bg_normal.png in Resources */,
 				F2329793176B20AE003DF0BE /* bubbleSquareIncoming.png in Resources */,
@@ -2538,6 +2571,7 @@
 				F23297AA176B20AE003DF0BE /* messageSent.aiff in Resources */,
 				0AB15094176E978F002F31FB /* DAMemberFilterViewController.xib in Resources */,
 				476855D3176F08FF00759389 /* DAGroupFilterViewController.xib in Resources */,
+				E01C080F186147DC00D4B10D /* tool_save-fix.png in Resources */,
 				476855D517705CCB00759389 /* group_add_highlight.png in Resources */,
 				476855D7177063CA00759389 /* photo_highlight.png in Resources */,
 				476855D9177063D700759389 /* camera_highlight.png in Resources */,
@@ -2566,6 +2600,7 @@
 				F22F07F7177708A4003F3479 /* tab_business-team.png in Resources */,
 				F22F07F8177708A4003F3479 /* tab_business-team@2x.png in Resources */,
 				F22F07FB17770997003F3479 /* tab_more-option.png in Resources */,
+				E01C0813186147DC00D4B10D /* tool_business-team-fix.png in Resources */,
 				F22F07FC17770997003F3479 /* tab_more-option@2x.png in Resources */,
 				F22F07FF17770A36003F3479 /* tool_email-mini.png in Resources */,
 				F22F080017770A36003F3479 /* tool_email-mini@2x.png in Resources */,
@@ -2592,6 +2627,7 @@
 				F22CA1EC1778728300415341 /* btn_photo.png in Resources */,
 				F22CA1F31778794300415341 /* btn_camera.png in Resources */,
 				F22CA1F41778794300415341 /* btn_document.png in Resources */,
+				E01C080D186147DC00D4B10D /* tool_write-box-mini-fix.png in Resources */,
 				F22CA1F51778794300415341 /* btn_people.png in Resources */,
 				F22CA1F61778794300415341 /* btn_business.png in Resources */,
 				F22CA1F917787C3400415341 /* tool_arrow-box-out-right-mini.png in Resources */,
@@ -2681,6 +2717,7 @@
 				0A04AF951779C78D002F44C5 /* home@2x.png in Resources */,
 				0AE48ED0177A83420028F4F5 /* bell.png in Resources */,
 				0AE48ED1177A83420028F4F5 /* bell@2x.png in Resources */,
+				E01C080E186147DC00D4B10D /* tool_save-fix@2x.png in Resources */,
 				0AE48ED4177A837C0028F4F5 /* folder.png in Resources */,
 				0AE48ED5177A837C0028F4F5 /* folder@2x.png in Resources */,
 				0AE48ED8177AA8EF0028F4F5 /* big-tick.png in Resources */,
@@ -2701,6 +2738,7 @@
 				0AE48EF5177AB6A90028F4F5 /* image@2x.png in Resources */,
 				0AE48EF8177AB6D10028F4F5 /* photography-man-shaking.png in Resources */,
 				0AE48EF9177AB6D10028F4F5 /* photography-man-shaking@2x.png in Resources */,
+				E01C0810186147DC00D4B10D /* tool_paper-plane-fix@2x.png in Resources */,
 				0AE48EFC177AB7600028F4F5 /* judges.png in Resources */,
 				0AE48EFD177AB7600028F4F5 /* judges@2x.png in Resources */,
 				0AE48F00177AB9790028F4F5 /* people-single.png in Resources */,
@@ -2733,8 +2771,10 @@
 				0A59B1DB177C04B3005CEC15 /* jigsaw-mini.png in Resources */,
 				0A59B1DC177C04B3005CEC15 /* jigsaw-mini@2x.png in Resources */,
 				0A59B1DF177C0546005CEC15 /* note-write.png in Resources */,
+				E01C0811186147DC00D4B10D /* tool_paper-plane-fix.png in Resources */,
 				0A59B1E0177C0546005CEC15 /* note-write@2x.png in Resources */,
 				0A59B1E3177C0A66005CEC15 /* privacy-settings.png in Resources */,
+				E01C080C186147DC00D4B10D /* tool_write-box-mini-fix@2x.png in Resources */,
 				0A59B1E4177C0A66005CEC15 /* privacy-settings@2x.png in Resources */,
 				0A59B1E7177C0A86005CEC15 /* tag.png in Resources */,
 				0A59B1E8177C0A86005CEC15 /* tag@2x.png in Resources */,
@@ -3061,8 +3101,8 @@
 		471A059D171BC1AE0040CB93 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				CODE_SIGN_IDENTITY = "iPhone Developer: li lin (825XTWAPVU)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: li lin (825XTWAPVU)";
+				CODE_SIGN_IDENTITY = "iPhone Distribution: UNIQLO CO., LTD.";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: UNIQLO CO., LTD.";
 				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "TribeIPhone/TribeIPhone-Prefix.pch";
@@ -3081,8 +3121,8 @@
 		471A059E171BC1AE0040CB93 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				CODE_SIGN_IDENTITY = "iPhone Developer: li lin (825XTWAPVU)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: li lin (825XTWAPVU)";
+				CODE_SIGN_IDENTITY = "iPhone Distribution: UNIQLO CO., LTD.";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: UNIQLO CO., LTD.";
 				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "TribeIPhone/TribeIPhone-Prefix.pch";

@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="4510" systemVersion="13A603" targetRuntime="iOS.CocoaTouch" variant="6xAndEarlier" propertyAccessControl="none" useAutolayout="YES" initialViewController="4yk-1H-mB6">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="4514" systemVersion="13B42" targetRuntime="iOS.CocoaTouch" variant="6xAndEarlier" propertyAccessControl="none" useAutolayout="YES" initialViewController="4yk-1H-mB6">
     <dependencies>
         <deployment defaultVersion="1536" identifier="iOS"/>
         <development version="4600" identifier="xcode"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3742"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3746"/>
     </dependencies>
     <scenes>
         <!--Time Line View Controller - First-->
@@ -15,7 +15,10 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" barStyle="black" translatesAutoresizingMaskIntoConstraints="NO" id="Bfz-zi-UQB">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                                <rect key="frame" x="0.0" y="0.0" width="334" height="44"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="334" id="D1W-9E-Nxy"/>
+                                </constraints>
                                 <items>
                                     <barButtonItem image="tool_bell-mini.png" style="plain" id="cjn-aa-Xo4">
                                         <connections>
@@ -35,7 +38,7 @@
                                         </connections>
                                     </barButtonItem>
                                     <barButtonItem style="plain" systemItem="flexibleSpace" id="5rg-Zm-BGG"/>
-                                    <barButtonItem image="tool_write-box-mini.png" style="plain" id="Lhj-2i-DTE">
+                                    <barButtonItem image="tool_write-box-mini-fix.png" style="plain" id="Lhj-2i-DTE">
                                         <connections>
                                             <action selector="onContributeClicked:" destination="eIR-Ka-I3l" id="2aI-9I-uXo"/>
                                         </connections>
@@ -55,12 +58,11 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="1DX-X1-3K0" firstAttribute="bottom" secondItem="FNU-vK-0QF" secondAttribute="bottom" type="default" id="5ph-AX-ylC"/>
-                            <constraint firstItem="Bfz-zi-UQB" firstAttribute="leading" secondItem="FNU-vK-0QF" secondAttribute="leading" type="default" id="Cd4-A5-BTV"/>
                             <constraint firstItem="1DX-X1-3K0" firstAttribute="top" secondItem="Bfz-zi-UQB" secondAttribute="bottom" type="default" id="Qge-aO-6rG"/>
                             <constraint firstItem="Bfz-zi-UQB" firstAttribute="top" secondItem="FNU-vK-0QF" secondAttribute="top" type="default" id="Zyo-rv-EGO"/>
                             <constraint firstItem="1DX-X1-3K0" firstAttribute="trailing" secondItem="FNU-vK-0QF" secondAttribute="trailing" type="default" id="iux-8U-FMy"/>
-                            <constraint firstItem="Bfz-zi-UQB" firstAttribute="trailing" secondItem="FNU-vK-0QF" secondAttribute="trailing" type="default" id="jdW-uO-0GF"/>
-                            <constraint firstItem="1DX-X1-3K0" firstAttribute="leading" secondItem="FNU-vK-0QF" secondAttribute="leading" type="default" id="zKf-iK-FsH"/>
+                            <constraint firstItem="Bfz-zi-UQB" firstAttribute="leading" secondItem="FNU-vK-0QF" secondAttribute="leading" type="default" id="lfJ-3P-cbC"/>
+                            <constraint firstItem="Bfz-zi-UQB" firstAttribute="leading" secondItem="1DX-X1-3K0" secondAttribute="leading" type="default" id="xS7-fw-7Ju"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="F5e-iY-kob"/>
@@ -385,7 +387,7 @@
         <image name="tool_bell-mini.png" width="19" height="20"/>
         <image name="tool_document-add-mini.png" width="20" height="20"/>
         <image name="tool_down.png" width="10" height="10"/>
-        <image name="tool_write-box-mini.png" width="20" height="20"/>
+        <image name="tool_write-box-mini-fix.png" width="34" height="20"/>
     </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>

@@ -136,13 +136,13 @@
         if (0==section) {
             return 3;
         }else{
-            return 6;
+            return 5;
         }
     }else{
         if (0==section) {
             return 3;
         }else{
-            return 5;
+            return 4;
         }
     }
     
@@ -211,13 +211,7 @@
                     break;
                 case 4:
                     
-                    [self rendCell:cell title:[DAHelper localizedStringWithKey:@"user.address" comment:@"住址"] icon: @"table_rural-house.png" value:self.user.address!=nil?self.user.address.city:@"" tag:4 hasDetail:NO];
-                    
-                    break;
-                case 5:
-                    
-                    [self rendCell:cell title:[DAHelper localizedStringWithKey:@"user.description" comment:@"简介"] icon: @"table_document-scroll.png" value:self.user.custom != nil?self.user.custom.memo:@"" tag:5 hasDetail:NO];
-                    
+                    [self rendCell:cell title:[DAHelper localizedStringWithKey:@"user.description" comment:@"简介"] icon: @"table_document-scroll.png" value:self.user.custom != nil?self.user.custom.memo:@"" tag:4 hasDetail:NO];
                     
                     break;
                 default:
@@ -236,12 +230,12 @@
                     [self rendCell:cell title:[DAHelper localizedStringWithKey:@"user.email" comment:@"邮件"] icon: @"tab_email.png" value:self.user.uid tag:3 hasDetail:NO];
                     break;
                 case 3:
-                    
-                    [self rendCell:cell title:[DAHelper localizedStringWithKey:@"user.address" comment:@"住址"] icon: @"table_rural-house.png" value:self.user.address!=nil?self.user.address.city:@"" tag:4  hasDetail:NO];
+                    [self rendCell:cell title:[DAHelper localizedStringWithKey:@"user.description" comment:@"简介"] icon: @"table_document-scroll.png" value:self.user.custom != nil?self.user.custom.memo:@"" tag:5 hasDetail:NO];
                     break;
                 case 4:
                     
-                    [self rendCell:cell title:[DAHelper localizedStringWithKey:@"user.description" comment:@"简介"] icon: @"table_document-scroll.png" value:self.user.custom != nil?self.user.custom.memo:@"" tag:5 hasDetail:NO];
+                    [self rendCell:cell title:[DAHelper localizedStringWithKey:@"user.address" comment:@"住址"] icon: @"table_rural-house.png" value:self.user.address!=nil?self.user.address.city:@"" tag:4  hasDetail:NO];
+                    
                     break;
                 default:
                     break;
@@ -404,13 +398,8 @@
         self.user.tel.mobile = TextField.text;
     } else if(TextField.tag == 3){
         self.user.uid = TextField.text;
+        
     } else if(TextField.tag == 4){
-        if (self.user.address==nil) {
-            UserAddress * address = [[UserAddress alloc] init];
-            self.user.address = address;
-        }
-        self.user.address.city = TextField.text;
-    } else if(TextField.tag == 5){
         if (self.user.custom==nil) {
             UserCustom * custom = [[UserCustom alloc] init];
             self.user.custom = custom;

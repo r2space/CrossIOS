@@ -60,8 +60,10 @@
 
     
     NSString *userid = [[NSUserDefaults standardUserDefaults] objectForKey:@"jp.co.dreamarts.smart.message.userid"];
+    NSString *firstIn = [[NSUserDefaults standardUserDefaults] objectForKey:@"jp.co.dreamarts.smart.message.firstin"];
+    
     NSLog(@"current user : %@", userid);
-    if (userid == nil) {
+    if (userid == nil || firstIn != nil) {
         [[NSNotificationCenter defaultCenter] postNotification:[NSNotification notificationWithName:@"NeedsLogin" object:nil]];
     }
     DALoginProxy *loginProxy = [DALoginProxy sharedInstance];

@@ -21,7 +21,8 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    
+
+
     // 设定背景颜色
     UIImage *backgroundImage = [UIImage imageNamed:@"4.png"];
     self.view.backgroundColor = [UIColor colorWithPatternImage:backgroundImage];
@@ -30,6 +31,28 @@
     self.txtPassword.placeholder = [DAHelper localizedStringWithKey:@"login.password.placeholder" comment:@"密码"];
     self.lblLogin.text = [DAHelper localizedStringWithKey:@"login.login" comment:@"登录"];
     
+    NSString *firstIn = [[NSUserDefaults standardUserDefaults] objectForKey:@"jp.co.dreamarts.smart.message.firstin"];
+    
+    if(firstIn != nil){
+        [[NSUserDefaults standardUserDefaults] removeObjectForKey:@"jp.co.dreamarts.smart.message.firstin"];
+        
+        double lastExitTime = [[[NSUserDefaults standardUserDefaults] objectForKey:@"jp.co.dreamarts.smart.message.lastaccess"] doubleValue];
+        double now = [[NSDate date] timeIntervalSince1970];
+        
+        NSString *userId = [[NSUserDefaults standardUserDefaults] objectForKey:@"jp.co.dreamarts.smart.message.userid"];
+        NSString *passWord = [[NSUserDefaults standardUserDefaults] objectForKey:@"jp.co.dreamarts.smart.message.password"];
+        
+        if (now - lastExitTime < 3600) {
+            if (userId != nil && passWord != nil) {
+                self.txtUserId.text = userId;
+                self.txtPassword.text = passWord;
+            }
+            
+        } else {
+            self.txtUserId.text = userId;
+            self.txtPassword.text = @"";
+        }
+    }
     
     
     // 注册键盘显示的Notification

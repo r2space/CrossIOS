@@ -29,7 +29,8 @@
 
 - (void)viewDidLoad
 {
-    withoutGetMore = YES;
+    withoutGetMore = NO;
+    withoutRefresh = YES;
     [super viewDidLoad];
 
     _allGroups = [[NSArray alloc] init];
@@ -59,8 +60,9 @@
     if ([self preFetch]) {
         return;
     }
-    [[DAGroupModule alloc] getGroupListByUser:[DALoginModule getLoginUserId] start:0 count:20 callback:^(NSError *error, DAGroupList *groups){
-        _allGroups = groups.items;
+    [[DAGroupModule alloc] getGroupListByUser:[DALoginModule getLoginUserId] start:start count:count callback:^(NSError *error, DAGroupList *groups){
+        _allGroups = [_allGroups arrayByAddingObjectsFromArray:groups.items];
+        //_allGroups = groups.items;
         [self setUnSelectGroups];
         [self finishFetch:groups.items error:error];
     }];

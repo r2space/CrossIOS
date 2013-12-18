@@ -30,7 +30,8 @@
 
 - (void)viewDidLoad
 {
-    withoutGetMore = YES;
+    withoutGetMore = NO;
+    withoutRefresh = YES;
     [super viewDidLoad];
     loginuid = [DALoginModule getLoginUserId];
     _allUsers = [[NSArray alloc] init];
@@ -60,14 +61,14 @@
         return;
     }
     if (_inGroup != nil) {
-        [[DAUserModule alloc] getUserListInGroup:_inGroup._id uid:[DALoginModule getLoginUserId] start:start count:20 keywords:@"" callback:^(NSError *error, DAUserList *users) {
-            _allUsers = users.items;
+        [[DAUserModule alloc] getUserListInGroup:_inGroup._id uid:[DALoginModule getLoginUserId] start:start count:count keywords:@"" callback:^(NSError *error, DAUserList *users) {
+            _allUsers = [_allUsers arrayByAddingObjectsFromArray:users.items];
             [self setUnSelectUsers];
             [self finishFetch:users.items error:error];
         }];
     } else {
-        [[DAUserModule alloc] getUserListStart:start count:20 keywords:@"" callback:^(NSError *error, DAUserList *users){
-            _allUsers = users.items;
+        [[DAUserModule alloc] getUserListStart:start count:count keywords:@"" callback:^(NSError *error, DAUserList *users){
+            _allUsers = [_allUsers arrayByAddingObjectsFromArray:users.items];
             [self setUnSelectUsers];
             [self finishFetch:users.items error:error];
         }];

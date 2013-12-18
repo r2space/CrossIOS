@@ -14,6 +14,7 @@
 {
     NSArray *theMembers;
     NSString *loginuid ;
+    BOOL containSelf ;
 }
 
 @end
@@ -33,13 +34,18 @@
 {
     [super viewDidLoad];
     loginuid = [DALoginModule getLoginUserId];
+    [self fetch];
+}
+
+- (void)fetch
+{
     if ([self preFetch]) {
         return;
     }
     if (self.kind == DAMemberListAll) {
         self.barTitle.title = [DAHelper localizedStringWithKey:@"user.title.select" comment:@"选择用户"];
         self.backBtn.image = [UIImage imageNamed:@"tool_multiply-symbol-mini.png"];
-        [[DAUserModule alloc] getUserListStart:0 count:20 keywords:@"" callback:^(NSError *error, DAUserList *users){
+        [[DAUserModule alloc] getUserListStart:start count:count keywords:@"" callback:^(NSError *error, DAUserList *users){
             [progress hide:YES];
             if (error != nil) {
                 [self showMessage:[DAHelper localizedStringWithKey:@"error.FetchError" comment:@"无法获取数据"] detail:[NSString stringWithFormat:@"error : %d", [error code]]];
@@ -51,52 +57,73 @@
             for (DAUser *user in users.items) {
                 if (![[DALoginModule getLoginUserId] isEqualToString:user._id]) {
                     [array addObject:user];
+                }else{
+                    containSelf = YES;
                 }
             }
-            theMembers = array;
-            [self.tblUsers reloadData];
+            [self finishFetch:array error:error];
         }];
-
+        
     }
     if (self.kind == DAMemberListFollower) {
         self.barTitle.title = [DAHelper localizedStringWithKey:@"user.follower" comment:@"粉丝"];
         
-        [[DAUserModule alloc] getUserFollowerListByUser:self.uid start:0 count:20 keywords:@"" callback:^(NSError *error, DAUserList *users){
-            [progress hide:YES];
-            if (error != nil) {
-                [self showMessage:[DAHelper localizedStringWithKey:@"error.FetchError" comment:@"无法获取数据"] detail:[NSString stringWithFormat:@"error : %d", [error code]]];
-                return ;
-            }
-            theMembers = users.items;
-            [self.tblUsers reloadData];
+        [[DAUserModule alloc] getUserFollowerListByUser:self.uid start:start count:count keywords:@"" callback:^(NSError *error, DAUserList *users){
+            [self finishFetch:users.items error:error];
         }];
     }
     if (self.kind == DAMemberListFollowing) {
         self.barTitle.title = [DAHelper localizedStringWithKey:@"user.folling" comment:@"关注的人"];
-
-        [[DAUserModule alloc] getUserFollowingListByUser:self.uid start:0 count:20 keywords:@"" callback:^(NSError *error, DAUserList *users){
-            [progress hide:YES];
-            if (error != nil) {
-                [self showMessage:[DAHelper localizedStringWithKey:@"error.FetchError" comment:@"无法获取数据"] detail:[NSString stringWithFormat:@"error : %d", [error code]]];
-                return ;
-            }
-            theMembers = users.items;
-            [self.tblUsers reloadData];
+        
+        [[DAUserModule alloc] getUserFollowingListByUser:self.uid start:start count:count keywords:@"" callback:^(NSError *error, DAUserList *users){
+            [self finishFetch:users.items error:error];
         }];
     }
     if (self.kind == DAMemberListGroupMember) {
         self.barTitle.title = [DAHelper localizedStringWithKey:@"user.title" comment:@"成员"];
-        [[DAGroupModule alloc] getUserListInGroup:self.gid start:0 count:20 callback:^(NSError *error, DAUserList *users){
-            [progress hide:YES];
-            if (error != nil) {
-                [self showMessage:[DAHelper localizedStringWithKey:@"error.FetchError" comment:@"无法获取数据"] detail:[NSString stringWithFormat:@"error : %d", [error code]]];
-                return ;
-            }
-            theMembers = users.items;
-            [self.tblUsers reloadData];
+        [[DAGroupModule alloc] getUserListInGroup:self.gid start:start count:count callback:^(NSError *error, DAUserList *users){
+            [self finishFetch:users.items error:error];
         }];
     }
 }
+
+- (BOOL)finishFetch:(NSArray *)result error:(NSError *)error
+{
+    [progress hide:YES];
+    [refresh endRefreshing];
+    [((UIActivityIndicatorView *)self.tableView.tableFooterView) stopAnimating];
+    
+    // 判断是否有错误
+    if (error == nil) {
+        
+        // 如果获取的实际数小于，指定的数，则标记为没有更多数据
+        if (result.count < count && !containSelf) {
+            hasMore = NO;
+        } else if(result.count < count-1 && containSelf){
+            hasMore = NO;
+        }else{
+            hasMore = YES;
+        }
+        
+        // 保存数据
+        if (list == nil || start == 0) {
+            list = result;
+        } else {
+            list = [list arrayByAddingObjectsFromArray:result];
+        }
+        theMembers = list;
+        // 刷新UITableView
+        [self.tblUsers reloadData];
+        return NO;
+    }
+    
+    // 显示错误消息
+    [self showMessage:[DAHelper localizedStringWithKey:@"error.FetchError" comment:@"无法获取数据"] detail:[NSString stringWithFormat:@"error : %d", [error code]]];
+    
+    NSLog(@"%@", error);
+    return YES;
+}
+
 -(void) viewDidAppear:(BOOL)animated
 {
     [super viewDidAppear:animated];

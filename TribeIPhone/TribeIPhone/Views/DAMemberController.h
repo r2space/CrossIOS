@@ -23,10 +23,10 @@ typedef enum {
 
 typedef void (^UserDidSelected)(DAUser *);
 
-@interface DAMemberController : DABaseViewController
-
-@property (weak, nonatomic) IBOutlet UITableView *tblUsers;
+@interface DAMemberController : DABaseViewController<UISearchBarDelegate>
+@property (weak, nonatomic) IBOutlet UITableView *tableView;
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *backBtn;
+@property (weak, nonatomic) IBOutlet UISearchBar *searchBar;
 @property (nonatomic) DAMemberListType kind;
 @property (weak, nonatomic) NSString *uid;
 @property (weak, nonatomic) NSString *gid;

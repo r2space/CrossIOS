@@ -15,6 +15,7 @@
     NSArray *theMembers;
     NSString *loginuid ;
     BOOL containSelf ;
+    NSString *_keywords;
 }
 
 @end
@@ -32,6 +33,8 @@
 
 - (void)viewDidLoad
 {
+    withoutRefresh = YES;
+     _keywords =@"";
     [super viewDidLoad];
     loginuid = [DALoginModule getLoginUserId];
     [self fetch];
@@ -45,7 +48,7 @@
     if (self.kind == DAMemberListAll) {
         self.barTitle.title = [DAHelper localizedStringWithKey:@"user.title.select" comment:@"选择用户"];
         self.backBtn.image = [UIImage imageNamed:@"tool_multiply-symbol-mini.png"];
-        [[DAUserModule alloc] getUserListStart:start count:count keywords:@"" callback:^(NSError *error, DAUserList *users){
+        [[DAUserModule alloc] getUserListStart:start count:count keywords:_keywords callback:^(NSError *error, DAUserList *users){
             [progress hide:YES];
             if (error != nil) {
                 [self showMessage:[DAHelper localizedStringWithKey:@"error.FetchError" comment:@"无法获取数据"] detail:[NSString stringWithFormat:@"error : %d", [error code]]];
@@ -68,14 +71,14 @@
     if (self.kind == DAMemberListFollower) {
         self.barTitle.title = [DAHelper localizedStringWithKey:@"user.follower" comment:@"粉丝"];
         
-        [[DAUserModule alloc] getUserFollowerListByUser:self.uid start:start count:count keywords:@"" callback:^(NSError *error, DAUserList *users){
+        [[DAUserModule alloc] getUserFollowerListByUser:self.uid start:start count:count keywords:_keywords callback:^(NSError *error, DAUserList *users){
             [self finishFetch:users.items error:error];
         }];
     }
     if (self.kind == DAMemberListFollowing) {
         self.barTitle.title = [DAHelper localizedStringWithKey:@"user.folling" comment:@"关注的人"];
         
-        [[DAUserModule alloc] getUserFollowingListByUser:self.uid start:start count:count keywords:@"" callback:^(NSError *error, DAUserList *users){
+        [[DAUserModule alloc] getUserFollowingListByUser:self.uid start:start count:count keywords:_keywords callback:^(NSError *error, DAUserList *users){
             [self finishFetch:users.items error:error];
         }];
     }
@@ -113,7 +116,7 @@
         }
         theMembers = list;
         // 刷新UITableView
-        [self.tblUsers reloadData];
+        [self.tableView reloadData];
         return NO;
     }
     
@@ -186,4 +189,26 @@
 //    [self dismissViewControllerAnimated:YES completion:nil];
     
 }
+
+#pragma mark -
+#pragma mark UISearchDisplayController Delegate Methods
+
+
+-(void)searchBarSearchButtonClicked:(UISearchBar *)searchBar
+{
+    
+    [self.view endEditing:YES];
+    _keywords = searchBar.text;
+    [self refresh];
+}
+
+-(void)searchBarCancelButtonClicked:(UISearchBar *)searchBar
+{
+    
+    [_searchBar resignFirstResponder];
+    _searchBar.text = @"";
+    _keywords = @"";
+    [self refresh];
+}
+
 @end

@@ -9,7 +9,7 @@
 #import <Foundation/Foundation.h>
 #import "TribeSDKHeader.h"
 #import "CQMFloatingController.h"
-#import "DALeftSideViewController.h"
+#import "MBProgressHUD.h"
 
 #define DAColor [UIColor colorWithRed:102.0f/255.0f green:0.0f/255.0f blue:204.0f/255.0f alpha:1.0f]
 

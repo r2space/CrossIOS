@@ -11,17 +11,13 @@
 #import "DABaseViewController.h"
 
 
-@interface DALeftSideViewController : UIViewController
-
-@property (nonatomic, retain) NSArray *dataList;
-
-@property (weak, nonatomic) IBOutlet UITableView *tblFilter;
+@interface DALeftSideViewController : DABaseViewController<UITableViewDelegate,UITableViewDataSource>
 
 @property (retain, nonatomic) UIViewController *contentController;
 
 @property (weak, nonatomic) IBOutlet UISegmentedControl *segType;
 
-
+@property (weak, nonatomic) IBOutlet UITableView *tableView;
 
 -(IBAction)setSegment:(id)sender;
 

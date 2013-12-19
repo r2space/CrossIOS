@@ -46,7 +46,7 @@
         self.joinClickedBlock(_group._id);
     }
 }
-- (void)setJoinAndInviteBtn:(BOOL)isMember
+- (void)setJoinAndInviteBtn:(BOOL)isMember owner:(BOOL) isOwner
 {
     if ([@"1" isEqualToString:self.group.type]) {
         // group
@@ -64,6 +64,9 @@
     NSString *title = isMember ? [DAHelper localizedStringWithKey:@"group.leave" comment:@"退出"] : [DAHelper localizedStringWithKey:@"group.join" comment:@"加入"];
     [DAHelper setDefaultButtonStyle:self.btnJoin name:title];
     
+    if (isMember && isOwner) {
+        [self.btnJoin setHidden:YES];
+    }
     
 }
 

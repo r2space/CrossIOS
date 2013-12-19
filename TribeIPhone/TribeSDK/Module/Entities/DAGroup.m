@@ -20,6 +20,9 @@
 +(Class) member_class {
     return [NSString class];
 }
++(Class) owner_class {
+    return [NSString class];
+}
 
 -(UIImage *) getGroupPhotoImage
 {

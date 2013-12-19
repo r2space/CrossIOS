@@ -32,5 +32,5 @@ typedef void (^GroupClicked)(NSString *groupId);
 
 +(DAGroupDetailCell *)initWithMessage:(DAGroup *)group tableView:(UITableView *)tableView;
 
-- (void)setJoinAndInviteBtn:(BOOL)isMember;
+- (void)setJoinAndInviteBtn:(BOOL)isMember owner:(BOOL)isOwner;
 @end

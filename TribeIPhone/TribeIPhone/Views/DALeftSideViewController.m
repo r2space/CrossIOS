@@ -7,7 +7,6 @@
 //
 
 #import "DALeftSideViewController.h"
-#import "CQMFloatingController.h"
 #import "DATimeLineViewController.h"
 
 @interface DALeftSideViewController ()
@@ -19,7 +18,7 @@
 @end
 
 @implementation DALeftSideViewController
-@synthesize contentController ,dataList;
+@synthesize contentController;
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
@@ -31,19 +30,17 @@
 
 - (void)viewDidLoad
 {
+    withoutRefresh = YES;
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
     type = @"group";
-    
     [self.segType setTitle:[DAHelper localizedStringWithKey:@"user.joinGroup" comment:@"参加的组"] forSegmentAtIndex:0];
     [self.segType setTitle:[DAHelper localizedStringWithKey:@"user.folling" comment:@"关注的人"] forSegmentAtIndex:1];
-    
+    self.segType.selectedSegmentIndex = 0;
+
     loginuid = [DALoginModule getLoginUserId];
     
-    [[DAGroupModule alloc] getGroupListByUser:loginuid start:0 count:20 callback:^(NSError *error, DAGroupList *groups){
-        self.dataList = groups.items;
-        [self.tblFilter reloadData];
-    }];
+    [self refresh];
 }
 
 - (void)didReceiveMemoryWarning
@@ -52,28 +49,34 @@
     // Dispose of any resources that can be recreated.
 }
 
+- (void)fetch
+{
+    if ([self preFetch]) {
+        return;
+    }
+    if ([type isEqualToString:@"group"]) {
+        [[DAGroupModule alloc] getGroupListByUser:loginuid start:start count:count callback:^(NSError *error, DAGroupList *groups){
+            [self finishFetch:groups.items error:error];
+        }];
+    }
+    if ([type isEqualToString:@"user"]) {
+        [[DAUserModule alloc] getUserFollowingListByUser:loginuid start:start count:count keywords:@"" callback:^(NSError *error, DAUserList *users){
+            [self finishFetch:users.items error:error];
+        }];
+    }
+}
+
+
 -(void)setSegment:(id)sender
 {
     UISegmentedControl *segmentedControl = (UISegmentedControl *)sender;
     NSInteger segment = segmentedControl.selectedSegmentIndex;
     if (0==segment) {
         type = @"group";
-        [[DAGroupModule alloc] getGroupListByUser:loginuid start:0 count:20 callback:^(NSError *error, DAGroupList *groups){
-            self.dataList = groups.items;
-            [self.tblFilter reloadData];
-        }];
-        
     }else{
         type = @"user";
-        
-        [[DAUserModule alloc] getUserFollowingListByUser:loginuid start:0 count:20 keywords:@"" callback:^(NSError *error, DAUserList *users){
-            self.dataList = users.items;
-            
-            [self.tblFilter reloadData];
-            
-        }];
-        
     }
+    [self refresh];
 }
 
 
@@ -81,7 +84,7 @@
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
     
-    return [dataList count];
+    return [list count];
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -94,7 +97,7 @@
     }
     NSUInteger row = [indexPath row];
     if ([type isEqualToString:@"group"]) {
-        DAGroup *g = [self.dataList objectAtIndex:row];
+        DAGroup *g = [list objectAtIndex:row];
         
         cell.detailTextLabel.text = g.name.name_zh;
         
@@ -102,7 +105,7 @@
     }
     if ([type isEqualToString:@"user"]) {
         NSUInteger row = [indexPath row];
-        cell.detailTextLabel.text = [NSString stringWithFormat:@"%@", [((DAUser *)[self.dataList objectAtIndex:row]) getUserName]];
+        cell.detailTextLabel.text = [NSString stringWithFormat:@"%@", [((DAUser *)[list objectAtIndex:row]) getUserName]];
         
     }
     
@@ -122,10 +125,10 @@
     
     [DAHelper hidePopup];
     if ([type isEqualToString:@"group"]) {
-        DAGroup *filteredGroup = [[self dataList] objectAtIndex:[indexPath row]];
+        DAGroup *filteredGroup = [list objectAtIndex:[indexPath row]];
         [((DATimeLineViewController *) contentController) filter:@"group" filterid:[filteredGroup _id] filtername:[[filteredGroup name] name_zh] ];
     }else{
-        DAUser *filteredUser = [[self dataList]objectAtIndex:[indexPath row]];
+        DAUser *filteredUser = [list objectAtIndex:[indexPath row]];
         
         [(DATimeLineViewController *) contentController filter:@"user" filterid:[filteredUser _id] filtername:[[filteredUser name] name_zh] ];
     }

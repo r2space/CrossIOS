@@ -38,6 +38,7 @@
 @property (retain, nonatomic) NSString* id;
 @property (retain, nonatomic) GroupName* name;
 @property (retain, nonatomic) NSArray* member;
+@property (retain, nonatomic) NSArray* owner;
 @property (retain, nonatomic) GroupPhoto* photo;
 @property (retain, nonatomic) NSString* description;
 @property (retain, nonatomic) NSString* type;

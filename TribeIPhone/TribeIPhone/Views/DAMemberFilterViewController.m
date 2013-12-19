@@ -11,8 +11,7 @@
 
 @interface DAMemberFilterViewController ()
 {
-    NSArray *_list;
-    NSArray *_groupList;
+    NSArray *_userTypeList;
     NSArray *_typeList;
     NSString *_typesegment;
 }
@@ -37,24 +36,37 @@
         [self.tableView reloadData];
     }else{
         _typesegment = @"group";
-        [self.tableView reloadData];
+        [self refresh];
     }
 }
 - (void)viewDidLoad
 {
     [self.segType setTitle:[DAHelper localizedStringWithKey:@"user.title" comment:@"成员"] forSegmentAtIndex:0];
     [self.segType setTitle:[DAHelper localizedStringWithKey:@"group.title" comment:@"组/部门"] forSegmentAtIndex:1];
+    self.segType.selectedSegmentIndex = 0;
+    withoutRefresh = YES;
     
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
-    _list = @[[DAHelper localizedStringWithKey:@"user.filter.type.follower" comment:@"粉丝"], [DAHelper localizedStringWithKey:@"user.filter.type.following" comment:@"关注"]];
+    _userTypeList = @[[DAHelper localizedStringWithKey:@"user.filter.type.follower" comment:@"粉丝"], [DAHelper localizedStringWithKey:@"user.filter.type.following" comment:@"关注"]];
     _typeList = @[@"follower", @"following"];
     
     [[DAGroupModule alloc] getGroupListStart:0 count:20  type:@"" keywords:@"" callback:^(NSError *error, DAGroupList *groups){
-        _groupList = groups.items;
+        list = groups.items;
         
     }];
     _typesegment = @"user";
+}
+
+-(void) fetch{
+    if ([self preFetch]) {
+        return;
+    }
+    if([_typesegment isEqualToString:@"group"]){
+        [[DAGroupModule alloc] getGroupListStart:start count:count  type:@"" keywords:@"" callback:^(NSError *error, DAGroupList *groups){
+             [self finishFetch:groups.items error:error];
+        }];
+    }
 }
 
 - (void)didReceiveMemoryWarning
@@ -71,10 +83,10 @@
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleValue2 reuseIdentifier:CellWithIdentifier];
     }
     if ([_typesegment isEqualToString:@"group"]) {
-        DAGroup *group = [_groupList objectAtIndex:indexPath.row];
+        DAGroup *group = [list objectAtIndex:indexPath.row];
         cell.detailTextLabel.text = group.name.name_zh;
     }else{
-        cell.detailTextLabel.text = [_list objectAtIndex:indexPath.row];
+        cell.detailTextLabel.text = [_userTypeList objectAtIndex:indexPath.row];
     }
     return cell;
 }
@@ -83,7 +95,7 @@
 {
     if ([_typesegment isEqualToString:@"group"])
     {
-        DAGroup *group = [_groupList objectAtIndex:indexPath.row];
+        DAGroup *group = [list objectAtIndex:indexPath.row];
         if (self.selectedBlocks != nil) {
             self.selectedBlocks(group._id,_typesegment,group.name.name_zh);
         }
@@ -91,7 +103,7 @@
     else
     {
         if (self.selectedBlocks != nil) {
-            self.selectedBlocks([_typeList objectAtIndex:indexPath.row],_typesegment,[_list objectAtIndex:indexPath.row]);
+            self.selectedBlocks([_typeList objectAtIndex:indexPath.row],_typesegment,[_userTypeList objectAtIndex:indexPath.row]);
         }
     }
     
@@ -105,9 +117,9 @@
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
     if ([_typesegment isEqualToString:@"group"]) {
-        return _groupList.count;
+        return list.count;
     }else{
-        return _list.count;
+        return _userTypeList.count;
     }
 }
 

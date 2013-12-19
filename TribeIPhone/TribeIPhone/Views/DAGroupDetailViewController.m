@@ -16,6 +16,7 @@
     DAGroup *theGroup;
     int _messagesTotal;
     BOOL isMember;
+    BOOL isOwner;
     DAGroupDetailCell *groupCell;
 }
 
@@ -68,6 +69,13 @@
         for (NSString *member in group.member) {
             if ([member isEqualToString:[DALoginModule getLoginUserId]]) {
                 isMember = YES;
+                break;
+            }
+        }
+        
+        for (NSString *member in group.owner) {
+            if([member  isEqualToString:[DALoginModule getLoginUserId]]){
+                isOwner = YES;
                 break;
             }
         }
@@ -131,7 +139,7 @@
         } else {
             cell.imgGroup.image = [UIImage imageNamed:@"department.png"];
         }
-        [cell setJoinAndInviteBtn:isMember];
+        [cell setJoinAndInviteBtn:isMember owner:isOwner];
         
         cell.nameClickedBlock = ^(NSString *groupId){
             DAGroupMoreContainerViewController *moreViewController = [[DAGroupMoreContainerViewController alloc] initWithNibName:@"DAGroupMoreContainerViewController" bundle:nil];
@@ -288,7 +296,7 @@
 - (void)didFinishJoin:(DAGroup *)group
 {
     isMember = !isMember;
-    [groupCell setJoinAndInviteBtn:isMember];
+    [groupCell setJoinAndInviteBtn:isMember owner:isOwner];
 }
 
 - (IBAction)btnHomeTouched:(id)sender {

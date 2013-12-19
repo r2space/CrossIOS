@@ -10,7 +10,7 @@
 #import "TribeSDKHeader.h"
 #import "DAGroupDetailCell.h"
 #import "DAMessageCell.h"
-
+#import "DABaseViewController.h"
 @interface DAGroupDetailViewController : DABaseViewController <UITabBarDelegate>
 - (IBAction)onCancelTouched:(id)sender;
 @property (weak, nonatomic) IBOutlet UITableView *tableView;

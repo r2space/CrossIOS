@@ -8,10 +8,11 @@
 
 #import <UIKit/UIKit.h>
 #import "TribeSDKHeader.h"
+#import "DABaseViewController.h"
 typedef void (^FilterDidSelected)(NSString *,NSString *,NSString *);
 
 
-@interface DAMemberFilterViewController : UIViewController<UITableViewDataSource,UITableViewDelegate>
+@interface DAMemberFilterViewController : DABaseViewController<UITableViewDataSource,UITableViewDelegate>
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 @property(strong, nonatomic)FilterDidSelected selectedBlocks;
 @property (weak, nonatomic) IBOutlet UISegmentedControl *segType;

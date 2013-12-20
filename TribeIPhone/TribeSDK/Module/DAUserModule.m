@@ -15,11 +15,9 @@
 #define kURLFollow                  @"/user/follow.json?_id=%@"
 #define kURLUnfollow                @"/user/unfollow.json?_id=%@"
 #define kURLUpdate                  @"/user/update.json?_id=%@"
-
-
 #define kURLGetUserSearchListBykeywords             @"/user/list.json?start=%d&count=%d&kind=all&gid=%@&keywords=%@"
-
 #define kURLGetUserInGroupListBykeywords             @"/user/list.json?start=%d&count=%d&uid=%@&kind=group&gid=%@&keywords=%@"
+#define kURLUpdateUserPhoto         @"/image/cropAndThumb.json?width=%f&x=0&y=0"
 @implementation DAUserModule
 
 - (void) getUserListStart:(int)start count:(int)count keywords:(NSString *)keywords callback:(void (^)(NSError *error, DAUserList *users))callback;
@@ -172,5 +170,56 @@
         }
     }];
 }
+
+- (void)uploadUserPhoto:(NSData *)data fileName:(NSString *)fileName width:(float)width callback:(void (^)(NSError *error, NSDictionary *photos))callback {
+    
+    NSString *mimeType = @"image/jpg";
+    
+    DAAFHttpClient *httpClient = [DAAFHttpClient sharedClient];
+    NSString *path = [NSString stringWithFormat:kURLUpdateUserPhoto,width];
+    // 添加formData到Request
+    NSMutableURLRequest *request = [httpClient multipartFormRequestWithMethod:@"POST"
+                                                                         path:path
+                                                                   parameters:nil
+                                                    constructingBodyWithBlock: ^(id <AFMultipartFormData>formData) {
+                                                        
+                                                        [formData appendPartWithFileData:data name:@"files" fileName:fileName mimeType:mimeType];
+                                                    }];
+    
+    // 设定上传进度block
+    AFHTTPRequestOperation *operation = [[AFHTTPRequestOperation alloc] initWithRequest:request];
+//    [operation setUploadProgressBlock:^(NSUInteger bytesWritten, long long totalBytesWritten, long long totalBytesExpectedToWrite) {
+//        if (progress) {
+//            progress((CGFloat)totalBytesWritten / (CGFloat)totalBytesExpectedToWrite);
+//        }
+//    }];
+    
+    // 设定上传结束block
+    [operation setCompletionBlockWithSuccess:^(AFHTTPRequestOperation *operation, id responseObject){
+        if (callback) {
+            NSError *jsonError = nil;
+            NSDictionary *result = [NSJSONSerialization JSONObjectWithData:responseObject options:NSJSONReadingAllowFragments error:&jsonError];
+//            DAFileList *files = [[DAFileList alloc] initWithDictionary:[result objectForKey:@"data"]];
+//            NSString *big = [[[[result objectForKey:@"data"] objectForKey:@"big"] objectAtIndex:0] objectForKey:@"_id"];
+//            NSString *middle = [[[[result objectForKey:@"data"] objectForKey:@"middle"] objectAtIndex:0] objectForKey:@"_id"];
+//            NSString *small = [[[[result objectForKey:@"data"] objectForKey:@"small"] objectAtIndex:0] objectForKey:@"_id"];
+            NSDictionary *photos = [NSDictionary  dictionaryWithObjectsAndKeys :
+                                    [[[[result objectForKey:@"data"] objectForKey:@"big"] objectAtIndex:0] objectForKey:@"_id"],@"big",
+                                    [[[[result objectForKey:@"data"] objectForKey:@"middle"] objectAtIndex:0] objectForKey:@"_id"],@"middle",
+                                    [[[[result objectForKey:@"data"] objectForKey:@"small"] objectAtIndex:0] objectForKey:@"_id"],@"small",
+                                    nil];
+            callback(jsonError, photos);
+        }
+        
+    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+        
+        if (callback) {
+            callback(error, nil);
+        }
+    }];
+    
+    [httpClient enqueueHTTPRequestOperation:operation];
+}
+
 
 @end

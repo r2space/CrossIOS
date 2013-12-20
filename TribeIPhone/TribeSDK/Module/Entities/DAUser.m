@@ -44,10 +44,10 @@
     [aCoder encodeObject:self.small forKey:@"small"];
     [aCoder encodeObject:self.middle forKey:@"middle"];
     [aCoder encodeObject:self.big forKey:@"big"];
-    [aCoder encodeObject:self.fid forKey:@"fid"];
-    [aCoder encodeObject:self.x forKey:@"x"];
-    [aCoder encodeObject:self.y forKey:@"y"];
-    [aCoder encodeObject:self.width forKey:@"width"];
+//    [aCoder encodeObject:self.fid forKey:@"fid"];
+//    [aCoder encodeObject:self.x forKey:@"x"];
+//    [aCoder encodeObject:self.y forKey:@"y"];
+//    [aCoder encodeObject:self.width forKey:@"width"];
 }
 
 - (id)initWithCoder:(NSCoder *)aDecoder
@@ -56,10 +56,10 @@
     self.small = [aDecoder decodeObjectForKey:@"small"];
     self.middle = [aDecoder decodeObjectForKey:@"middle"];
     self.big = [aDecoder decodeObjectForKey:@"big"];
-    self.fid = [aDecoder decodeObjectForKey:@"fid"];
-    self.x = [aDecoder decodeObjectForKey:@"x"];
-    self.y = [aDecoder decodeObjectForKey:@"y"];
-    self.width = [aDecoder decodeObjectForKey:@"width"];
+//    self.fid = [aDecoder decodeObjectForKey:@"fid"];
+//    self.x = [aDecoder decodeObjectForKey:@"x"];
+//    self.y = [aDecoder decodeObjectForKey:@"y"];
+//    self.width = [aDecoder decodeObjectForKey:@"width"];
     return self;
 }
 @end

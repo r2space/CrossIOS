@@ -84,31 +84,34 @@
     }else{
         if ([DAHelper isFileExist:file]) {
             UIImage *image = [[UIImage alloc] initWithContentsOfFile:file];
-            [[DAFileModule alloc] uploadPicture:UIImageJPEGRepresentation(image, 1.0) fileName:file mimeType:@"image/jpg" callback:^(NSError *error, DAFile *file){
+            [[DAUserModule alloc] uploadUserPhoto:UIImageJPEGRepresentation(image, 1.0) fileName:file width:image.size.width callback:^(NSError *error, NSDictionary *photos){
                 if (error != nil) {
                     [DAHelper alert:self.view message:[DAHelper localizedStringWithKey:@"error.updateError" comment:@"更新失败"] detail:[NSString stringWithFormat:@"error : %d", [error code]] delay:0.6 yOffset:0];
                     return ;
                 }
-                [self updateGroup: file._id imageWidth:image.size.width];
+                [self updateGroup: photos imageWidth:image.size.width];
                 
-            } progress:nil];
+            }];
             isPhotoChanged = NO;
         }
     }
 }
 
-- (void)updateGroup:(NSString *)fileId imageWidth:(float)imageWidth
+- (void)updateGroup:(NSDictionary *)photos imageWidth:(float)imageWidth
 {
     // 没有，则创建组
     //    self.group.secure = GroupSecureTypePublic;
     
     // 如果头像存在，指定新照片的切割范围
-    if (fileId) {
+    if (photos) {
         GroupPhoto * photo = [[GroupPhoto alloc] init];
-        photo.fid = fileId;
-        photo.x = @"0";
-        photo.y = @"0";
-        photo.width = [NSString stringWithFormat:@"%d",(int)imageWidth];
+//        photo.fid = fileId;
+//        photo.x = @"0";
+//        photo.y = @"0";
+//        photo.width = [NSString stringWithFormat:@"%d",(int)imageWidth];
+        photo.big =[photos objectForKey:@"big"];
+        photo.middle =[photos objectForKey:@"middle"];
+        photo.small =[photos objectForKey:@"small"];
         
         self.group.photo = photo;
     }
@@ -401,7 +404,7 @@
     cell.txtValue.placeholder = title;
     //tag  9  设置头像
     if (tag == 9) {
-        if (self.group.photo != nil) {
+        if (self.group.photo != nil && self.group.photo.big.length > 0) {
             [[DAFileModule alloc] getPicture:self.group.photo.big callback:^(NSError *err, NSString *pictureId){
                 photoView.image = [DACommon getCatchedImage:pictureId];
             }];

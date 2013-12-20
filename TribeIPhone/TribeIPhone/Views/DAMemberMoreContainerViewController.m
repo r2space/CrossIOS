@@ -75,22 +75,20 @@
 {
     // 更新的照片名称
     NSString *file = [DAHelper documentPath:@"upload.jpg"];
-    
-    
-    
+
     // 如果照片存在，则上传照片，然后更新
     if (isPhotoChanged&&[DAHelper isFileExist:file]) {
         
         UIImage *image = [[UIImage alloc] initWithContentsOfFile:file];
-        [[DAFileModule alloc] uploadPicture:UIImageJPEGRepresentation(image, 1.0) fileName:file mimeType:@"image/jpg" callback:^(NSError *error, DAFile *file){
+        [[DAUserModule alloc] uploadUserPhoto:UIImageJPEGRepresentation(image, 1.0) fileName:file width:image.size.width callback:^(NSError *error, NSDictionary *photos ){
 
             if (error != nil) {
                 [DAHelper alert:self.view message:[DAHelper localizedStringWithKey:@"error.updateError" comment:@"更新失败"] detail:[NSString stringWithFormat:@"error : %d", [error code]] delay:0.6 yOffset:0];
                 return ;
             }
-            [self update:file._id imageWidth:image.size.width];
+            [self update:photos imageWidth:image.size.width];
             isPhotoChanged = NO;
-        } progress:nil];
+        }];
     } else {
         
         // 更新
@@ -99,15 +97,18 @@
 }
 
 // 更新用户信息
-- (void) update:(NSString *)photoId imageWidth:(float)imageWidth
+- (void) update:(NSDictionary *)photos imageWidth:(float)imageWidth
 {
     
-    if (photoId) {
-        UserPhoto * photo = [[UserPhoto alloc] init];
-        photo.fid = photoId;
-        photo.x = @"0";
-        photo.y = @"0";
-        photo.width = [NSString stringWithFormat:@"%d",(int)imageWidth];
+    if (photos) {
+        UserPhoto *photo = [[UserPhoto alloc] init];
+//        photo.fid = @"";
+//        photo.x = @"0";
+//        photo.y = @"0";
+//        photo.width = [NSString stringWithFormat:@"%d",(int)imageWidth];
+        photo.big =[photos objectForKey:@"big"];
+        photo.middle =[photos objectForKey:@"middle"];
+        photo.small =[photos objectForKey:@"small"];
         self.user.photo = photo;
     }
     
@@ -343,7 +344,7 @@
     if (tag == 9) {
         if (self.user.photo != nil) {
             [[DAFileModule alloc] getPicture:self.user.photo.big callback:^(NSError *err, NSString *pictureId){
-                photoView.image = [DACommon getCatchedImage:pictureId];
+                photoView.image = [DACommon getCatchedImage:pictureId defaultImage:[UIImage imageNamed:@"user_thumb.png"]];
             }];
         } else {
             photoView.image = [UIImage imageNamed:@"user_thumb.png"];

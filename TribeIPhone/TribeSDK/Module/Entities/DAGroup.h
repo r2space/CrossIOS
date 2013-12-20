@@ -24,10 +24,10 @@
 @property (retain, nonatomic) NSString *small;
 @property (retain, nonatomic) NSString *middle;
 @property (retain, nonatomic) NSString *big;
-@property (retain, nonatomic) NSString *fid;
-@property (retain, nonatomic) NSString *x;
-@property (retain, nonatomic) NSString *y;
-@property (retain, nonatomic) NSString *width;
+//@property (retain, nonatomic) NSString *fid;
+//@property (retain, nonatomic) NSString *x;
+//@property (retain, nonatomic) NSString *y;
+//@property (retain, nonatomic) NSString *width;
 @end
 
 

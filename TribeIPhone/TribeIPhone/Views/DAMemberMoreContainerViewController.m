@@ -12,6 +12,7 @@
 #import "DAMemberMoreDetailCell.h"
 #import "DAGroupController.h"
 #import "DAMemberController.h"
+#import "DAMemberPasswordViewController.h"
 
 @interface DAMemberMoreContainerViewController ()
 {
@@ -22,6 +23,7 @@
     float viewHeight;
     UIImageView *photoView;
     int editingRow  ;
+    DAUser *userBackup;
     
 }
 @end
@@ -49,6 +51,7 @@
     }
     [[DAUserModule alloc]getUserById:self.userid callback:^(NSError *error, DAUser *userdb){
         self.user = userdb;
+        userBackup = [[DAUser alloc]initWithDictionary:[self.user toDictionary]];
         [self.tableView reloadData];
     }];
     
@@ -126,7 +129,11 @@
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
     // Return the number of sections.
-    return 2;
+    if(isMine){
+        return 3;
+    }else{
+        return 2;
+    }
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
@@ -136,14 +143,18 @@
     if (isMine) {
         if (0==section) {
             return 3;
-        }else{
+        }else if(1==section){
             return 5;
+        }else{
+            return 1;
         }
     }else{
         if (0==section) {
             return 3;
-        }else{
+        }else if(1==section){
             return 4;
+        }else{
+            return 1;
         }
     }
     
@@ -170,7 +181,7 @@
         cell = [array objectAtIndex:0];
     }
     
-    if (indexPath.section ==0 ) {
+    if (indexPath.section == 0 ) {
         switch (indexPath.row) {
             case 0:
                 [self rendCell:cell title:[DAHelper localizedStringWithKey:@"user.joinGroup" comment:@"参加的组"] icon: @"table_business-team.png" value:@"0" tag:6 hasDetail:YES];
@@ -188,7 +199,7 @@
             default:
                 break;
         }
-    }else{
+    }else if(indexPath.section == 1){
         if (isMine) {
             switch (indexPath.row) {
                 case 0:
@@ -238,7 +249,10 @@
                     break;
             }
         }
-        
+    }else{
+        if(isMine){
+            [self rendCell:cell title:[DAHelper localizedStringWithKey:@"user.password.change" comment:@"修改密码"] icon: @"privacy-settings.png" value:@"0" tag:10 hasDetail:YES];
+        }
     }
     
     return cell;
@@ -297,7 +311,7 @@
             [self.navigationController pushViewController:members animated:YES];
             
         }
-    }else{
+    }else if (indexPath.section == 1){
         if (indexPath.row == 0 ) {
             
         }else if(indexPath.row == 1&&isMine){
@@ -331,6 +345,11 @@
             
         }
         
+    }else{
+        DAMemberPasswordViewController *password = [[DAMemberPasswordViewController alloc] initWithNibName:@"DAMemberPasswordViewController" bundle:nil];
+        password.user = userBackup;
+        password.hidesBottomBarWhenPushed = YES;
+        [self.navigationController pushViewController:password animated:YES];
     }
 }
 
@@ -369,7 +388,7 @@
     }else{
         [cell setAccessoryType:UITableViewCellAccessoryNone];
     }
-     [cell.txtValue addTarget:self action:@selector(textFieldDidChange:) forControlEvents:UIControlEventEditingChanged];
+    [cell.txtValue addTarget:self action:@selector(textFieldDidChange:) forControlEvents:UIControlEventEditingChanged];
     [cell.txtValue addTarget:self action:@selector(textFieldDidChange:) forControlEvents:UIControlEventEditingDidBegin];
     [cell.txtValue setTag:tag];
     return cell;

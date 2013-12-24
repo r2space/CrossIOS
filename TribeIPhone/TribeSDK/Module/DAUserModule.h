@@ -34,7 +34,10 @@
 - (void)follow:(NSString *)uid callback:(void (^)(NSError *error, NSString *uid))callback;
 - (void)unfollow:(NSString *)uid callback:(void (^)(NSError *error, NSString *uid))callback;
 - (void)update:(DAUser *)user callback:(void (^)(NSError *error, DAUser *user))callback;
-
+- (void)changePassword:(DAUser*)user
+           oldPassword:(NSString*)password
+           newPassword:(NSString*)newPassword
+            callback:(void (^)(NSError *error, DAUser *users))callback;
 - (void)uploadUserPhoto:(NSData *)data fileName:(NSString *)fileName width:(float)width callback:(void (^)(NSError *error, NSDictionary *photos)) callback;
 
 @end

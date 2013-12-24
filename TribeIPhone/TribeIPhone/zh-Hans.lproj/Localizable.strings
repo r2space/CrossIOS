@@ -44,7 +44,10 @@
 "user.homepage.title" = "用户主页";
 "user.detail.title" = "用户详细";
 "user.select.title" = "用户选择";
-
+"user.password.old" = "原密码";
+"user.password.new" = "新密码";
+"user.password.retry" = "再次输入";
+"user.password.change" = "修改密码";
 // Groups
 "group.join" = "加入";
 "group.invite" = "邀请";
@@ -110,6 +113,7 @@
 "error.nullPassWord" = "密码不能为空";
 "error.loginError" = "登录失败";
 "error.loginError.detail" = "登录验证失败";
+"error.password.confirm" = "确认密码不正确";
 
 // shortMail
 "shortmail.title" = "私信";

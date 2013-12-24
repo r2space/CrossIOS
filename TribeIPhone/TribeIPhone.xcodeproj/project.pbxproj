@@ -215,6 +215,12 @@
 		E01C0813186147DC00D4B10D /* tool_business-team-fix.png in Resources */ = {isa = PBXBuildFile; fileRef = E01C080B186147DC00D4B10D /* tool_business-team-fix.png */; };
 		E01C08191861666700D4B10D /* tick-mini-fix@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E01C08171861666700D4B10D /* tick-mini-fix@2x.png */; };
 		E01C081A1861666700D4B10D /* tick-mini-fix.png in Resources */ = {isa = PBXBuildFile; fileRef = E01C08181861666700D4B10D /* tick-mini-fix.png */; };
+		E0F564ED186962A400593096 /* DAMemberPasswordViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E0F564EA186962A400593096 /* DAMemberPasswordViewController.xib */; };
+		E0F564EE186962A400593096 /* DAMemberPasswordViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E0F564EB186962A400593096 /* DAMemberPasswordViewController.m */; };
+		E0F564F3186965B300593096 /* recycle-bin@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E0F564EF186965B300593096 /* recycle-bin@2x.png */; };
+		E0F564F4186965B300593096 /* recycle-bin.png in Resources */ = {isa = PBXBuildFile; fileRef = E0F564F0186965B300593096 /* recycle-bin.png */; };
+		E0F564F5186965B300593096 /* lock@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E0F564F1186965B300593096 /* lock@2x.png */; };
+		E0F564F6186965B300593096 /* lock.png in Resources */ = {isa = PBXBuildFile; fileRef = E0F564F2186965B300593096 /* lock.png */; };
 		F223E2D5171D8A760095F1C1 /* DAGroupDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F223E2D3171D8A750095F1C1 /* DAGroupDetailViewController.m */; };
 		F223E2D6171D8A760095F1C1 /* DAGroupDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F223E2D4171D8A750095F1C1 /* DAGroupDetailViewController.xib */; };
 		F223E2E1171E3AEC0095F1C1 /* DAGroupDetailCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F223E2E0171E3AEC0095F1C1 /* DAGroupDetailCell.m */; };
@@ -782,6 +788,13 @@
 		E01C080B186147DC00D4B10D /* tool_business-team-fix.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tool_business-team-fix.png"; sourceTree = "<group>"; };
 		E01C08171861666700D4B10D /* tick-mini-fix@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tick-mini-fix@2x.png"; sourceTree = "<group>"; };
 		E01C08181861666700D4B10D /* tick-mini-fix.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tick-mini-fix.png"; sourceTree = "<group>"; };
+		E0F564EA186962A400593096 /* DAMemberPasswordViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DAMemberPasswordViewController.xib; sourceTree = "<group>"; };
+		E0F564EB186962A400593096 /* DAMemberPasswordViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DAMemberPasswordViewController.m; sourceTree = "<group>"; };
+		E0F564EC186962A400593096 /* DAMemberPasswordViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DAMemberPasswordViewController.h; sourceTree = "<group>"; };
+		E0F564EF186965B300593096 /* recycle-bin@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "recycle-bin@2x.png"; sourceTree = "<group>"; };
+		E0F564F0186965B300593096 /* recycle-bin.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "recycle-bin.png"; sourceTree = "<group>"; };
+		E0F564F1186965B300593096 /* lock@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "lock@2x.png"; sourceTree = "<group>"; };
+		E0F564F2186965B300593096 /* lock.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = lock.png; sourceTree = "<group>"; };
 		F223E2D2171D8A750095F1C1 /* DAGroupDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DAGroupDetailViewController.h; sourceTree = "<group>"; };
 		F223E2D3171D8A750095F1C1 /* DAGroupDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DAGroupDetailViewController.m; sourceTree = "<group>"; };
 		F223E2D4171D8A750095F1C1 /* DAGroupDetailViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DAGroupDetailViewController.xib; sourceTree = "<group>"; };
@@ -1464,6 +1477,10 @@
 		471A05A8171BC3D10040CB93 /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				E0F564EF186965B300593096 /* recycle-bin@2x.png */,
+				E0F564F0186965B300593096 /* recycle-bin.png */,
+				E0F564F1186965B300593096 /* lock@2x.png */,
+				E0F564F2186965B300593096 /* lock.png */,
 				E01C08171861666700D4B10D /* tick-mini-fix@2x.png */,
 				E01C08181861666700D4B10D /* tick-mini-fix.png */,
 				E01C0804186147DC00D4B10D /* tool_write-box-mini-fix@2x.png */,
@@ -1887,6 +1904,9 @@
 		F24F5E59171D277F0032E93B /* Member */ = {
 			isa = PBXGroup;
 			children = (
+				E0F564EA186962A400593096 /* DAMemberPasswordViewController.xib */,
+				E0F564EB186962A400593096 /* DAMemberPasswordViewController.m */,
+				E0F564EC186962A400593096 /* DAMemberPasswordViewController.h */,
 				F29FBF88171D2FDE006C9CCB /* DALoginViewController.h */,
 				F29FBF89171D2FDE006C9CCB /* DALoginViewController.m */,
 				F29FBF8A171D2FDE006C9CCB /* DALoginViewController.xib */,
@@ -2586,6 +2606,7 @@
 				0ABFF7BA17729FD300BFA909 /* user_thumb_11.png in Resources */,
 				476855EA1772A8F600759389 /* list_line.png in Resources */,
 				F22F07E41776FF1D003F3479 /* 1.png in Resources */,
+				E0F564F6186965B300593096 /* lock.png in Resources */,
 				F22F07E51776FF1D003F3479 /* 2.png in Resources */,
 				F22F07E61776FF1D003F3479 /* 3.png in Resources */,
 				F22F07E71776FF1D003F3479 /* 4.png in Resources */,
@@ -2607,6 +2628,7 @@
 				F22F080317770AB6003F3479 /* tool_write-box-mini.png in Resources */,
 				F22F080417770AB6003F3479 /* tool_write-box-mini@2x.png in Resources */,
 				F22F080717770B23003F3479 /* tool_document-add-mini.png in Resources */,
+				E0F564F5186965B300593096 /* lock@2x.png in Resources */,
 				F22F080817770B23003F3479 /* tool_document-add-mini@2x.png in Resources */,
 				F22F080B17770BCF003F3479 /* tool_referral-mini.png in Resources */,
 				F22F080C17770BCF003F3479 /* tool_referral-mini@2x.png in Resources */,
@@ -2686,6 +2708,7 @@
 				0A04AF571779719B002F44C5 /* arrow-box-out-right-mini@2x.png in Resources */,
 				0A04AF5A17797202002F44C5 /* chat-quote-mini.png in Resources */,
 				0A04AF5B17797202002F44C5 /* chat-quote-mini@2x.png in Resources */,
+				E0F564ED186962A400593096 /* DAMemberPasswordViewController.xib in Resources */,
 				0A04AF6217798123002F44C5 /* business-meeting-mini.png in Resources */,
 				0A04AF6317798123002F44C5 /* business-meeting-mini@2x.png in Resources */,
 				0A04AF6417798123002F44C5 /* business-network-mini.png in Resources */,
@@ -2735,6 +2758,7 @@
 				0AE48EF0177AB68D0028F4F5 /* message-notification.png in Resources */,
 				0AE48EF1177AB68D0028F4F5 /* message-notification@2x.png in Resources */,
 				0AE48EF4177AB6A90028F4F5 /* image.png in Resources */,
+				E0F564F4186965B300593096 /* recycle-bin.png in Resources */,
 				0AE48EF5177AB6A90028F4F5 /* image@2x.png in Resources */,
 				0AE48EF8177AB6D10028F4F5 /* photography-man-shaking.png in Resources */,
 				0AE48EF9177AB6D10028F4F5 /* photography-man-shaking@2x.png in Resources */,
@@ -2763,6 +2787,7 @@
 				0A59B1CA177BE6A1005CEC15 /* info@2x.png in Resources */,
 				0A59B1CD177BEABF005CEC15 /* info-white.png in Resources */,
 				0A59B1CE177BEABF005CEC15 /* info-white@2x.png in Resources */,
+				E0F564F3186965B300593096 /* recycle-bin@2x.png in Resources */,
 				0A59B1D0177BFDA9005CEC15 /* info_one.png in Resources */,
 				0A59B1D3177C0274005CEC15 /* price-tag.png in Resources */,
 				0A59B1D4177C0274005CEC15 /* price-tag@2x.png in Resources */,
@@ -2892,6 +2917,7 @@
 				F2C9423B184EC176006D05D5 /* UIImageView+AFNetworking.m in Sources */,
 				F2C9423C184EC176006D05D5 /* Jastor.m in Sources */,
 				F2C94228184EC176006D05D5 /* DAFileList.m in Sources */,
+				E0F564EE186962A400593096 /* DAMemberPasswordViewController.m in Sources */,
 				F2C9421D184EC176006D05D5 /* DAShortmailModule.m in Sources */,
 				0A1AA9421858074B00FAE1E2 /* DALoginProxy.m in Sources */,
 				47A021B317261BEF00E2AF6C /* DAMessageFileView.m in Sources */,

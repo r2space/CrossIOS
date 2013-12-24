@@ -171,6 +171,27 @@
     }];
 }
 
+- (void)changePassword:(DAUser*)user oldPassword:(NSString*)password newPassword:(NSString*)newPassword callback:(void (^)(NSError *error, DAUser *users))callback
+{
+
+    NSString *path = [NSString stringWithFormat:kURLUpdate, user._id];
+    NSMutableDictionary *param = [NSMutableDictionary dictionaryWithObjectsAndKeys:password,@"pwd",newPassword,@"pwd1", nil];
+    param = [NSMutableDictionary dictionaryWithObjectsAndKeys:param,@"password_new", nil];
+    [param addEntriesFromDictionary:[user toDictionary]];
+    [[DAAFHttpClient sharedClient] putPath:path parameters:param success:^(AFHTTPRequestOperation *operation, id responseObject) {
+        
+        if (callback) {
+            callback(nil, [[DAUser alloc] initWithDictionary:[responseObject valueForKeyPath:@"data"]]);
+        }
+    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+        
+        if (callback) {
+            callback(error, nil);
+        }
+    }];
+
+}
+
 - (void)uploadUserPhoto:(NSData *)data fileName:(NSString *)fileName width:(float)width callback:(void (^)(NSError *error, NSDictionary *photos))callback {
     
     NSString *mimeType = @"image/jpg";

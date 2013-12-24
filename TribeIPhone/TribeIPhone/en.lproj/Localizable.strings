@@ -43,6 +43,10 @@
 "user.homepage.title" = "ユーザプロフィール";
 "user.detail.title" = "ユーザ詳細";
 "user.select.title" = "ユーザ選択";
+"user.password.old" = "古いパスワード";
+"user.password.new" = "新しいパスワード";
+"user.password.retry" = "パスワードの確認入力";
+"user.password.change" = "パスワードを変更";
 
 // Groups
 "group.join" = "参加";
@@ -108,7 +112,7 @@
 "error.nullPassWord" = "パスワードを入力してください";
 "error.loginError" = "登録失敗";
 "error.loginError.detail" = "認証失敗";
-
+"error.password.confirm" = "入力された確認用パスワードに誤りがあります";
 // shortMail
 "shortmail.title" = "Sメール";
 

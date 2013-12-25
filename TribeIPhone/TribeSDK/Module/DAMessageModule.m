@@ -8,17 +8,19 @@
 
 #import "DAMessageModule.h"
 
-#define kURLCreate @"/message/create.json"
-#define kURLForward @"/message/forward.json"
-#define kURLMessage @"/message/get.json?mid=%@"
+#define kURLCreate              @"/message/create.json"
+#define kURLForward             @"/message/forward.json"
+#define kURLMessage             @"/message/get.json?mid=%@"
 
-#define kURLMessagesInTimeLine @"/message/list/home.json?start=%d&count=%d&before=%@"
-#define kURLMessagesInGroup @"/message/list/group.json?start=%d&count=%d&gid=%@&before=%@"
-#define kURLMessagesByUser @"/message/list/user.json?start=%d&count=%d&uid=%@&before=%@"
+#define kURLMessagesInTimeLine  @"/message/list/home.json?start=%d&count=%d&before=%@"
+#define kURLMessagesInGroup     @"/message/list/group.json?start=%d&count=%d&gid=%@&before=%@"
+#define kURLMessagesByUser      @"/message/list/user.json?start=%d&count=%d&uid=%@&before=%@"
 
-#define kURLComments @"/message/list/reply.json?mid=%@&start=%d&count=%d"
-#define kURLLike    @"/message/like.json"
-#define kURLUnlike    @"/message/unlike.json"
+#define kURLComments            @"/message/list/reply.json?mid=%@&start=%d&count=%d"
+#define kURLLike                @"/message/like.json"
+#define kURLUnlike              @"/message/unlike.json"
+#define kURLDelete              @"/message/delete.json"
+#define kURLUpdate              @"/message/update.json"
 
 @implementation DAMessageModule
 
@@ -120,6 +122,24 @@
     }];
 }
 
+-(void)update:(DAMessage *)message callback:(void (^)(NSError *, DAMessage *))callback
+{
+    NSDictionary *params = [message toDictionary];
+    
+    [[DAAFHttpClient sharedClient] postPath:kURLUpdate parameters:params success:^(AFHTTPRequestOperation *operation, id responseObject) {
+        
+        if (callback) {
+            callback(nil, [[DAMessage alloc] initWithDictionary:[responseObject valueForKeyPath:@"data"]]);
+        }
+        
+    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+        
+        if (callback) {
+            callback(error, nil);
+        }
+    }];
+}
+
 -(void)forward:(DAMessage *)message callback:(void (^)(NSError *, DAMessage *))callback
 {
     NSDictionary *params = [message toDictionary];
@@ -162,6 +182,22 @@
     [[DAAFHttpClient sharedClient] putPath:path parameters:param success:^(AFHTTPRequestOperation *operation, id responseObject) {
         if (callback) {
             callback(nil, [[DAMessage alloc] initWithDictionary:[responseObject valueForKeyPath:@"data"]]);
+        }
+    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+        if (callback) {
+            callback(error, nil);
+        }
+    }];
+}
+
+-(void)deleteMessage:(NSString *)messageId callback:(void (^)(NSError *, DAMessage *))callback
+{
+    NSString *path = kURLDelete;
+    NSDictionary *param = [[NSDictionary alloc] initWithObjectsAndKeys:messageId, @"mid", nil];
+    
+    [[DAAFHttpClient sharedClient] deletePath:path parameters:param success:^(AFHTTPRequestOperation *operation, id responseObject) {
+        if (callback) {
+            callback(nil, nil);
         }
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
         if (callback) {

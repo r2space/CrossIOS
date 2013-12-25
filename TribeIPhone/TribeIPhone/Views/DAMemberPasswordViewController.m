@@ -31,6 +31,7 @@
 {
     [super viewDidLoad];
     self.btnSave.enabled = NO;
+    self.barTitle.title  =[DAHelper localizedStringWithKey:@"user.password.change" comment:@"修改密码"];
     // Do any additional setup after loading the view from its nib.
 }
 
@@ -81,14 +82,14 @@
     return 10;
 }
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    NSString *identifier = @"DAMemberMoreDetailCell";
+    NSString *identifier = @"DAMemberPasswordCell";
     DAMemberMoreDetailCell *cell = [tableView dequeueReusableCellWithIdentifier:identifier];
     if (cell == nil) {
         UINib *nib = [UINib nibWithNibName:identifier bundle:nil];
         NSArray *array = [nib instantiateWithOwner:nil options:nil];
         cell = [array objectAtIndex:0];
     }
-    
+
     switch (indexPath.row) {
         case 0:
             [self rendCell:cell title:[DAHelper localizedStringWithKey:@"user.password.old" comment:@"原密码"] icon: @"recycle-bin.png" value:@"" tag:1 hasDetail:NO];
@@ -108,14 +109,13 @@
 }
 -(DAMemberMoreDetailCell *)rendCell:(DAMemberMoreDetailCell *)cell title:(NSString *)title icon:(NSString *)icon value:(NSString *)value tag:(int )tag hasDetail:(BOOL)hasDetail
 {
-    cell.lblName.text = title;
+    cell.lblName.text = @"";
     cell.txtValue.text = value;
     cell.txtValue.delegate = self;
     cell.txtValue.placeholder = title;
     cell.txtValue.secureTextEntry = YES;
     cell.txtValue.enabled = YES;
     cell.txtValue.tag = tag;
-
     [cell.txtValue addTarget:self action:@selector(textFieldDidChange:) forControlEvents:UIControlEventEditingChanged];
     [cell.txtValue addTarget:self action:@selector(textFieldDidChange:) forControlEvents:UIControlEventEditingDidBegin];
     

@@ -189,7 +189,7 @@
         
         [[NSUserDefaults standardUserDefaults] setObject:userId forKey:@"jp.co.dreamarts.smart.message.userid"];
         [[NSUserDefaults standardUserDefaults] setObject:password forKey:@"jp.co.dreamarts.smart.message.password"];
-        
+        [[NSUserDefaults standardUserDefaults] setObject:user._id forKey:@"jp.co.dreamarts.smart.message.useridentifier"];
         // 保存用户数据
         NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
         NSString* documentDir = [paths objectAtIndex:0];

@@ -215,6 +215,10 @@
 		E01C0813186147DC00D4B10D /* tool_business-team-fix.png in Resources */ = {isa = PBXBuildFile; fileRef = E01C080B186147DC00D4B10D /* tool_business-team-fix.png */; };
 		E01C08191861666700D4B10D /* tick-mini-fix@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E01C08171861666700D4B10D /* tick-mini-fix@2x.png */; };
 		E01C081A1861666700D4B10D /* tick-mini-fix.png in Resources */ = {isa = PBXBuildFile; fileRef = E01C08181861666700D4B10D /* tick-mini-fix.png */; };
+		E0C4AE47186AEF80004E1B0B /* write-box.png in Resources */ = {isa = PBXBuildFile; fileRef = E0C4AE46186AEF80004E1B0B /* write-box.png */; };
+		E0C4AE49186AEFE9004E1B0B /* write-box@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E0C4AE48186AEFE9004E1B0B /* write-box@2x.png */; };
+		E0C4AE4F186AF5A8004E1B0B /* DAMemberPasswordCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E0C4AE4E186AF5A8004E1B0B /* DAMemberPasswordCell.m */; };
+		E0C4AE51186AF5D9004E1B0B /* DAMemberPasswordCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E0C4AE50186AF5D9004E1B0B /* DAMemberPasswordCell.xib */; };
 		E0F564ED186962A400593096 /* DAMemberPasswordViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E0F564EA186962A400593096 /* DAMemberPasswordViewController.xib */; };
 		E0F564EE186962A400593096 /* DAMemberPasswordViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E0F564EB186962A400593096 /* DAMemberPasswordViewController.m */; };
 		E0F564F3186965B300593096 /* recycle-bin@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E0F564EF186965B300593096 /* recycle-bin@2x.png */; };
@@ -788,6 +792,11 @@
 		E01C080B186147DC00D4B10D /* tool_business-team-fix.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tool_business-team-fix.png"; sourceTree = "<group>"; };
 		E01C08171861666700D4B10D /* tick-mini-fix@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tick-mini-fix@2x.png"; sourceTree = "<group>"; };
 		E01C08181861666700D4B10D /* tick-mini-fix.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tick-mini-fix.png"; sourceTree = "<group>"; };
+		E0C4AE46186AEF80004E1B0B /* write-box.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "write-box.png"; sourceTree = "<group>"; };
+		E0C4AE48186AEFE9004E1B0B /* write-box@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "write-box@2x.png"; sourceTree = "<group>"; };
+		E0C4AE4D186AF5A8004E1B0B /* DAMemberPasswordCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DAMemberPasswordCell.h; sourceTree = "<group>"; };
+		E0C4AE4E186AF5A8004E1B0B /* DAMemberPasswordCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DAMemberPasswordCell.m; sourceTree = "<group>"; };
+		E0C4AE50186AF5D9004E1B0B /* DAMemberPasswordCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DAMemberPasswordCell.xib; sourceTree = "<group>"; };
 		E0F564EA186962A400593096 /* DAMemberPasswordViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DAMemberPasswordViewController.xib; sourceTree = "<group>"; };
 		E0F564EB186962A400593096 /* DAMemberPasswordViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DAMemberPasswordViewController.m; sourceTree = "<group>"; };
 		E0F564EC186962A400593096 /* DAMemberPasswordViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DAMemberPasswordViewController.h; sourceTree = "<group>"; };
@@ -1477,6 +1486,8 @@
 		471A05A8171BC3D10040CB93 /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				E0C4AE48186AEFE9004E1B0B /* write-box@2x.png */,
+				E0C4AE46186AEF80004E1B0B /* write-box.png */,
 				E0F564EF186965B300593096 /* recycle-bin@2x.png */,
 				E0F564F0186965B300593096 /* recycle-bin.png */,
 				E0F564F1186965B300593096 /* lock@2x.png */,
@@ -1904,6 +1915,9 @@
 		F24F5E59171D277F0032E93B /* Member */ = {
 			isa = PBXGroup;
 			children = (
+				E0C4AE4D186AF5A8004E1B0B /* DAMemberPasswordCell.h */,
+				E0C4AE4E186AF5A8004E1B0B /* DAMemberPasswordCell.m */,
+				E0C4AE50186AF5D9004E1B0B /* DAMemberPasswordCell.xib */,
 				E0F564EA186962A400593096 /* DAMemberPasswordViewController.xib */,
 				E0F564EB186962A400593096 /* DAMemberPasswordViewController.m */,
 				E0F564EC186962A400593096 /* DAMemberPasswordViewController.h */,
@@ -2603,6 +2617,7 @@
 				476855E81771877700759389 /* document_highlight.png in Resources */,
 				F22D9A031772D16100D58187 /* Icon.png in Resources */,
 				F22D9A041772D16100D58187 /* Icon@2x.png in Resources */,
+				E0C4AE51186AF5D9004E1B0B /* DAMemberPasswordCell.xib in Resources */,
 				0ABFF7BA17729FD300BFA909 /* user_thumb_11.png in Resources */,
 				476855EA1772A8F600759389 /* list_line.png in Resources */,
 				F22F07E41776FF1D003F3479 /* 1.png in Resources */,
@@ -2677,6 +2692,7 @@
 				F22CA225177888D600415341 /* table_entrance.png in Resources */,
 				F22CA226177888D600415341 /* table_entrance@2x.png in Resources */,
 				F22CA22917788AEC00415341 /* table_anchor.png in Resources */,
+				E0C4AE47186AEF80004E1B0B /* write-box.png in Resources */,
 				F22CA22A17788AEC00415341 /* table_anchor@2x.png in Resources */,
 				F22CA22D17788D0400415341 /* tab_friend-win.png in Resources */,
 				F22CA22E17788D0400415341 /* tab_friend-win@2x.png in Resources */,
@@ -2728,6 +2744,7 @@
 				0A04AF7E17799113002F44C5 /* people-talk.png in Resources */,
 				0A04AF7F17799113002F44C5 /* people-talk@2x.png in Resources */,
 				0A04AF8117799CEB002F44C5 /* group_blank.png in Resources */,
+				E0C4AE49186AEFE9004E1B0B /* write-box@2x.png in Resources */,
 				0A04AF861779C542002F44C5 /* people-add.png in Resources */,
 				0A04AF871779C542002F44C5 /* people-add@2x.png in Resources */,
 				0A04AF881779C542002F44C5 /* people-minus.png in Resources */,
@@ -2959,6 +2976,7 @@
 				F29ACD261762CA1400AC0B68 /* CQMFloatingFrameView.m in Sources */,
 				F29ACD271762CA1400AC0B68 /* CQMFloatingMaskControl.m in Sources */,
 				F29ACD281762CA1400AC0B68 /* CQMFloatingNavigationBar.m in Sources */,
+				E0C4AE4F186AF5A8004E1B0B /* DAMemberPasswordCell.m in Sources */,
 				F29ACD291762CA1400AC0B68 /* CQMPathUtilities.m in Sources */,
 				F29ACD311762CC3700AC0B68 /* IISideController.m in Sources */,
 				F29ACD321762CC3700AC0B68 /* IIViewDeckController.m in Sources */,

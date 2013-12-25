@@ -17,6 +17,10 @@
 "message.comment.count" = "コメント：%d";
 "message.forward.count" = "転送：%d";
 "message.like.count" = "いいね：%d";
+"message.action.delete"="削除";
+"message.edit"="編集";
+"message.delete"="削除";
+
 
 // Users
 "user.follower.count" = "フォロワー：";
@@ -113,6 +117,7 @@
 "error.loginError" = "登録失敗";
 "error.loginError.detail" = "認証失敗";
 "error.password.confirm" = "入力された確認用パスワードに誤りがあります";
+"error.deleteError"="削除に失敗しました";
 // shortMail
 "shortmail.title" = "Sメール";
 

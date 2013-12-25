@@ -60,6 +60,9 @@
             for (MessageAttach *file in message.attach) {
                 [ids addObject:file.fileid];
             }
+            for(UIView *subview in [cell.scrollView subviews]) {
+                [subview removeFromSuperview];
+            }
             [cell.scrollView renderWithPictureIds:ids];
             
             [cell.scrollView setHidden:NO];

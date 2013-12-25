@@ -21,6 +21,7 @@
     NSMutableArray *_documents;
     BOOL _photoFromCamera;
     NSString *_actionType;
+    BOOL imageUpdated;
 }
 
 @end
@@ -40,17 +41,25 @@
 
 - (void)viewDidLoad
 {
-    
     [self.txtMessage becomeFirstResponder];
     _geocoder = [[CLGeocoder alloc] init];
     
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
-//    _message = [[DAMessage alloc] init];
-    _message.contentType = message_contenttype_text;
-    _rangeGroup = [[NSMutableArray alloc] init];
-    _atGroups = [[NSMutableArray alloc] init];
-    _atUsers = [[NSMutableArray alloc] init];
+    
+    if(_isUpdate){
+        self.txtMessage.text = _message.content;
+        
+        _rangeGroup = [[NSMutableArray alloc] initWithObjects:_message.part.range, nil];
+        _atGroups = [[NSMutableArray alloc] initWithArray:_message.part.atgroups];
+        _atUsers = [[NSMutableArray alloc] initWithArray:_message.part.atusers];
+    }else{
+         _message.contentType = message_contenttype_text;
+        _rangeGroup = [[NSMutableArray alloc] init];
+        _atGroups = [[NSMutableArray alloc] init];
+        _atUsers = [[NSMutableArray alloc] init];
+    }
+    
     if (_documents == nil) {
         _documents = [[NSMutableArray alloc] init];
     }
@@ -83,6 +92,9 @@
     [self renderButtons];
     
     self.barBtnSend.enabled = NO;
+    if(_isUpdate){
+        [self.barBtnSend setEnabled:YES];
+    }
     
     self.txtMessage.delegate = self;
     
@@ -256,6 +268,7 @@
     [self dismissViewControllerAnimated:YES completion:nil];
     self.imgAttach.image = image;
     [UIImageJPEGRepresentation(image, 1.0) writeToFile:[DAHelper documentPath:@"attach.jpg"] atomically:YES];
+    imageUpdated = YES;
     _message.contentType = message_contenttype_image;
     self.btnClearImg.hidden = NO;
     if (picker.sourceType == UIImagePickerControllerSourceTypeCamera) {
@@ -279,49 +292,8 @@
         ctrl.inGroup = [_rangeGroup objectAtIndex:0];
     }
     [self presentViewController:ctrl animated:YES completion:nil];
-    
-//    UIActionSheet *actionSheet = [[UIActionSheet alloc] init];
-//    actionSheet.delegate = self;
-//    
-//    int cancelIdx = 1;
-//    [actionSheet addButtonWithTitle:@"@users"];
-//    if (![self hasRange]) {
-//        [actionSheet addButtonWithTitle:@"@groups"];
-//        cancelIdx = 2;
-//    }
-//    [actionSheet addButtonWithTitle:@"Cancel"];
-//    [actionSheet setCancelButtonIndex:cancelIdx];
-//    
-//    [actionSheet showInView:self.view];
 }
 
--(void)actionSheet:(UIActionSheet *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex
-{
-    NSString *btnString = [actionSheet buttonTitleAtIndex:buttonIndex];
-    if ([btnString isEqualToString:@"@groups"]) {
-        DAGroupSelectViewController *ctrl = [[DAGroupSelectViewController alloc]initWithNibName:@"DAGroupSelectViewController" bundle:nil];
-        ctrl.allowMultiSelect = YES;
-        ctrl.selectedBlocks = ^(NSArray *groups){
-            _atGroups = [NSMutableArray arrayWithArray:groups];
-            [self renderButtons];
-        };
-        ctrl.selectedGroups = _atGroups;
-        [self presentViewController:ctrl animated:YES completion:nil];
-    }
-    if ([btnString isEqualToString:@"@users"]) {
-        DAMemberSelectViewController *ctrl = [[DAMemberSelectViewController alloc]initWithNibName:@"DAMemberSelectViewController" bundle:nil];
-        ctrl.allowMultiSelect = YES;
-        ctrl.selectedBlocks = ^(NSArray *users){
-            _atUsers = [NSMutableArray arrayWithArray:users];
-            [self renderButtons];
-        };
-        ctrl.selectedUsers = _atUsers;
-        if ([self hasRange]) {
-            ctrl.inGroup = [_rangeGroup objectAtIndex:0];
-        }
-        [self presentViewController:ctrl animated:YES completion:nil];
-    }
-}
 
 
 - (IBAction)onMoticonClicked:(id)sender
@@ -424,7 +396,7 @@
     
     if ([message_contenttype_image isEqualToString:_message.contentType]) {
         NSString *file = [DAHelper documentPath:@"attach.jpg"];
-        if ([DAHelper isFileExist:file]) {
+        if (imageUpdated) {
             if ([self preUpdate]) {
                 return;
             }
@@ -454,7 +426,7 @@
                 [WTStatusBar setProgress:percent animated:YES];
             }];
         } else {
-            // TODO error
+            [self sendMessage:_message];
         }
     } else {
         if (_isForward) {
@@ -551,16 +523,30 @@
         return;
     }
     [self showIndicator:@"updating..."];
-    [[DAMessageModule alloc] send:message callback:^(NSError *error, DAMessage *message){
-        if ([self finishUpdateError:error]) {
-            return ;
-        }
-        
-        if (self.onComplet) {
-            self.onComplet();
-        }
-        [self dismissViewControllerAnimated:YES completion:nil];
-    }];
+    
+    if(_isUpdate){
+        [[DAMessageModule alloc] update:message callback:^(NSError *error, DAMessage *message){
+            if ([self finishUpdateError:error]) {
+                return ;
+            }
+            
+            if (self.onComplet) {
+                self.onComplet();
+            }
+            [self dismissViewControllerAnimated:YES completion:nil];
+        }];
+    }else{
+        [[DAMessageModule alloc] send:message callback:^(NSError *error, DAMessage *message){
+            if ([self finishUpdateError:error]) {
+                return ;
+            }
+            
+            if (self.onComplet) {
+                self.onComplet();
+            }
+            [self dismissViewControllerAnimated:YES completion:nil];
+        }];
+    }
 }
 
 -(void)forwardMessage:(DAMessage *)message
@@ -600,7 +586,6 @@
             self.barTitle.title = self.barTitle.title = ((DAGroup *)[_rangeGroup objectAtIndex:0]).name.name_zh;
         } else {
             self.barTitle.title = [DAHelper localizedStringWithKey:@"message.forward" comment:@"转发"];
-;
         }
     } else {
         if ([self hasRange]) {

@@ -16,7 +16,7 @@
 
 typedef void (^DAContributeViewControllerComplet)();
 
-@interface DAContributeViewController : DABaseViewController <UINavigationControllerDelegate, UIImagePickerControllerDelegate, UIActionSheetDelegate, CLLocationManagerDelegate,UITextViewDelegate>
+@interface DAContributeViewController : DABaseViewController <UINavigationControllerDelegate, UIImagePickerControllerDelegate, CLLocationManagerDelegate,UITextViewDelegate>
 {
 }
 @property (weak, nonatomic) IBOutlet UIButton *btnLocation;
@@ -36,6 +36,7 @@ typedef void (^DAContributeViewControllerComplet)();
 
 @property (retain, nonatomic) DAMessage *message;
 @property (nonatomic) BOOL isForward;
+@property (nonatomic) BOOL isUpdate;
 @property (strong, nonatomic) DAContributeViewControllerComplet onComplet;
 
 - (IBAction)onLocationClicked:(id)sender;

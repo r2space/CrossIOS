@@ -43,10 +43,13 @@
            callback:(void (^)(NSError *error, DAMessageList *messages))callback;
 
 -(void) send:(DAMessage *)message
-    callback:(void (^)(NSError *error, DAMessage *message))callback;
-
+        callback:(void (^)(NSError *error, DAMessage *message))callback;
+-(void) update:(DAMessage *)message
+   callback:(void (^)(NSError *, DAMessage *))callback;
 -(void) forward:(DAMessage *)message
-       callback:(void (^)(NSError *error, DAMessage *message))callback;
+        callback:(void (^)(NSError *error, DAMessage *message))callback;
+
+-(void) deleteMessage:(NSString *)messageId callback:(void (^)(NSError *error, DAMessage *message))callback;
 
 -(void) like:(NSString *)messageId callback:(void(^)(NSError *error, DAMessage *message))callback;
 

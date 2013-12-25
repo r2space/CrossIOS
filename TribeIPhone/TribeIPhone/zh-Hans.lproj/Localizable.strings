@@ -18,6 +18,9 @@
 "message.comment.count" = "评论：%d";
 "message.forward.count" = "转发：%d";
 "message.like.count" = "赞：%d";
+"message.action.delete"="删除";
+"message.edit"="编辑";
+"message.delete"="删除";
 
 // Users
 "user.follower.count" = "粉丝：";
@@ -114,6 +117,7 @@
 "error.loginError" = "登录失败";
 "error.loginError.detail" = "登录验证失败";
 "error.password.confirm" = "确认密码不正确";
+"error.deleteError"="删除失败";
 
 // shortMail
 "shortmail.title" = "私信";

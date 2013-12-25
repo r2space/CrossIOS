@@ -21,6 +21,7 @@
 {
     DAMessage* _message;
     int _commentsTotal;
+    BOOL _isFirstIn;
 }
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
@@ -35,7 +36,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    
+    _isFirstIn = YES;
     self.barTitle.title = [DAHelper localizedStringWithKey:@"message.detail" comment:@"消息详细"];
     UITabBarItem *item = (UITabBarItem*)[[self.tabBar items] objectAtIndex:0];
     item.title = [DAHelper localizedStringWithKey:@"message.comment" comment:@"评论"];
@@ -46,8 +47,8 @@
     item = (UITabBarItem*)[[self.tabBar items] objectAtIndex:2];
     item.title = [DAHelper localizedStringWithKey:@"message.like" comment:@"赞"];
     
-    item = (UITabBarItem*)[[self.tabBar items] objectAtIndex:3];
-    item.title = [DAHelper localizedStringWithKey:@"message.refresh" comment:@"刷新"];
+//    item = (UITabBarItem*)[[self.tabBar items] objectAtIndex:3];
+//    item.title = [DAHelper localizedStringWithKey:@"message.refresh" comment:@"刷新"];
     
     [self refresh];
     
@@ -282,6 +283,10 @@
     [[DAMessageModule alloc] getMessage:_messageId callback:^(NSError *error, DAMessage *message) {
         _message = message;
         [self setLike];
+        if(_isFirstIn){
+            _isFirstIn = NO;
+            [self adjustTabBar];
+        }
         [[DAMessageModule alloc] getComments:_messageId start:start count:count callback:^(NSError *error, DAMessageList *commentList){
             _commentsTotal = commentList.total.intValue;
             [self finishFetch:commentList.items error:error];
@@ -311,6 +316,36 @@
     } else {
         [self.tabBar setSelectedItem:nil];
 //        self.barLike.image = [UIImage  imageNamed:@"thumb-up-white.png"];
+    }
+}
+
+-(void) adjustTabBar{
+    NSString *userid = [[NSUserDefaults standardUserDefaults] objectForKey:@"jp.co.dreamarts.smart.message.useridentifier"];
+    if([_message.createby isEqualToString:userid] && _message.part.forwardNums.intValue == 0){
+        
+        NSMutableArray *newItems = [NSMutableArray arrayWithArray:self.tabBar.items];
+        
+        if(_message._id.length>0 && _message.target.length>0 && ![_message._id isEqualToString:_message.target]){
+            UITabBarItem *deleteBarItem = [[UITabBarItem alloc] init];
+            deleteBarItem.image = [UIImage imageNamed:@"recycle-bin.png"];
+            deleteBarItem.title = [DAHelper localizedStringWithKey:@"message.delete" comment:@"删除"];
+            deleteBarItem.tag = 6;
+            [newItems addObject:deleteBarItem];
+        
+        }else{
+            UITabBarItem *editBarItem = [[UITabBarItem alloc] init];
+            editBarItem.image = [UIImage imageNamed:@"write-box.png"];
+            editBarItem.title = [DAHelper localizedStringWithKey:@"message.edit" comment:@"编辑"];
+            editBarItem.tag = 5;
+            [newItems addObject:editBarItem];
+            
+            UITabBarItem *deleteBarItem = [[UITabBarItem alloc] init];
+            deleteBarItem.image = [UIImage imageNamed:@"recycle-bin.png"];
+            deleteBarItem.title = [DAHelper localizedStringWithKey:@"message.delete" comment:@"删除"];
+            deleteBarItem.tag = 6;
+            [newItems addObject:deleteBarItem];
+        }
+        [self.tabBar setItems:newItems animated:YES];
     }
 }
 
@@ -377,7 +412,52 @@
             }];
         }
     }
+    
+    if(5 == item.tag){
+        // edit
+        DAContributeViewController *ctrl = [[DAContributeViewController alloc] initWithNibName:@"DAContributeViewController" bundle:nil];
+        ctrl.message = _message;
+        ctrl.isUpdate = YES;
+        ctrl.onComplet = ^(){
+            [self refresh];
+        };
+        
+        [self presentViewController:ctrl animated:YES completion:nil];
+    }
+    
+    if(6 == item.tag){
+        //delete
+        UIActionSheet *sheet = [[UIActionSheet alloc] initWithTitle:nil
+                                                           delegate:self
+                                                  cancelButtonTitle:[DAHelper localizedStringWithKey:@"btn.cancel" comment:@"取消"]
+                                             destructiveButtonTitle:[DAHelper localizedStringWithKey:@"message.action.delete" comment:@"删除"]
+                                                  otherButtonTitles:nil];
+        [sheet showFromTabBar:tabBar];
+    }
+    
     [self setLike];
 }
+
+- (void)actionSheet:(UIActionSheet *)actionSheet didDismissWithButtonIndex:(NSInteger)buttonIndex{
+
+    if(buttonIndex == actionSheet.destructiveButtonIndex){
+        [self showIndicator:@"Loading..."];
+        [[DAMessageModule alloc] deleteMessage:_messageId callback:^(NSError *error, DAMessage *message) {
+            [progress hide:YES];
+            if (error != nil) {
+                [self showMessage:[DAHelper localizedStringWithKey:@"error.deleteError" comment:@"删除失败"] detail:[NSString stringWithFormat:@"error : %d", [error code]]];
+                return ;
+            }else{
+
+                if (self.navigationController) {
+                    [self.navigationController popViewControllerAnimated:YES];
+                }
+                
+                [self dismissViewControllerAnimated:YES completion:nil];
+            }
+        }];
+    }
+}
+
 
 @end

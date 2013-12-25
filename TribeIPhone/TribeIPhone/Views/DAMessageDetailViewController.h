@@ -14,7 +14,7 @@
 #import "DAContributeViewController.h"
 #import "DABaseViewController.h"
 
-@interface DAMessageDetailViewController : DABaseViewController<UITabBarDelegate>
+@interface DAMessageDetailViewController : DABaseViewController<UITabBarDelegate,UIActionSheetDelegate>
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 @property (retain, nonatomic) NSString* messageId;
 @property (weak, nonatomic) IBOutlet UITabBarItem *barLike;
